@@ -3,26 +3,24 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
-import pages.PageTrend;
-import utilities.ConfigReader;
+import pages.PageHYBS;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US_1_Stepdefinitions {
 
-    PageTrend pageTrend=new PageTrend();
+    PageHYBS pageTrend=new PageHYBS();
 
 
-    @Given("User goes to {string} page and The subscribe popup is closed")
-    public void userGoesToPageAndTheSubscribePopupIsClosed(String arg0) {
+    @Given("Login to HYBS site, click the Login button and log in with your User information.")
+    public void loginToHYBSSiteClickTheLoginButtonAndLogInWithYourUserInformation() {
 
-        ReusableMethods.enterPageAndClosePopUp();
-
+        ReusableMethods.loginHYBS("abdurrahman.alas","Als.2297");
     }
     @Then("it is verified that it went to the requested page")
     public void it_is_verified_that_it_went_to_the_requested_page() {
 
-        String expectedUrl="https://qa.trendlifebuy.com/";
+        String expectedUrl="https://kayserihybs.n2mobil.com.tr/hafriyat/";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl,expectedUrl);
 

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import pages.PageTrend;
+import pages.PageHYBS;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class ReusableMethods {
     // 5- *************************** SAYFAYA GİRİS VE POPUP KAPANISI********************//
 
     public static void enterPageAndClosePopUp() {
-        PageTrend pageTrend = new PageTrend();
+        PageHYBS pageTrend = new PageHYBS();
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         ReusableMethods.waitForClickablility(pageTrend.PopupExitButon, 15);
         pageTrend.PopupExitButon.click();
@@ -69,21 +69,18 @@ public class ReusableMethods {
 
 
     // 5- **************************** ADMIN VE CUSTOMER LOGIN  ****************************//
-    public static void loginTrendlife(String username, String password) {
+    public static void loginHYBS(String username, String password) {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
 
-        PageTrend pagesTrend = new PageTrend();
+        PageHYBS pageHYBS = new PageHYBS();
         Driver.getDriver().get(ConfigReader.getProperty("url"));
-        pagesTrend.PopupExitButon.click();
-        pagesTrend.userloginButon.click();
-        pagesTrend.emailAddres.sendKeys(username);
-        pagesTrend.password.sendKeys(password);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        pageHYBS.emailAddres.sendKeys(username);
+        pageHYBS.password.sendKeys(password);
+        pageHYBS.signInbutonu.click();
         ReusableMethods.wait(3);
 
-        pagesTrend.signInbutonu.click();
+
 
     }
 
@@ -92,7 +89,7 @@ public class ReusableMethods {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
 
-        PageTrend pagesTrend = new PageTrend();
+        PageHYBS pagesTrend = new PageHYBS();
         Driver.getDriver().get(ConfigReader.getProperty("urlAdmin"));
         // pagesTrend.PopupExitButon.click();
         // pagesTrend.userloginButon.click();
@@ -111,7 +108,7 @@ public class ReusableMethods {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
 
-        PageTrend pagesTrend = new PageTrend();
+        PageHYBS pagesTrend = new PageHYBS();
         Driver.getDriver().get(ConfigReader.getProperty("urlAdmin"));
         // pagesTrend.PopupExitButon.click();
         // pagesTrend.userloginButon.click();
@@ -163,7 +160,7 @@ public class ReusableMethods {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
 
-        PageTrend pagesTrend = new PageTrend();
+        PageHYBS pagesTrend = new PageHYBS();
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         pagesTrend.PopupExitButon.click();
         pagesTrend.userloginButon.click();
@@ -183,7 +180,7 @@ public class ReusableMethods {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
 
-        PageTrend pagesTrend = new PageTrend();
+        PageHYBS pagesTrend = new PageHYBS();
         pagesTrend.emailAddres.sendKeys(username);
         pagesTrend.password.sendKeys(password);
         Actions actions = new Actions(Driver.getDriver());
@@ -406,7 +403,7 @@ public class ReusableMethods {
     }
 
     public static void PurchaseHistoryWHD() {
-        PageTrend pageTrend = new PageTrend();
+        PageHYBS pageTrend = new PageHYBS();
         String ilkSayfaWHD = driver.getWindowHandle();
         pageTrend.purchaseHistoryActionInvoiceDownload.click();
         ReusableMethods.wait(5);

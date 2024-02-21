@@ -6,15 +6,180 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import java.util.List;
-import java.util.logging.XMLFormatter;
 
-public class PageTrend {
+public class PageHYBS {
 
-    public PageTrend() {
+    public PageHYBS() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    // 1- Login>email
+
+
+    @FindBy(xpath = "//*[@id=\"id_username\"]")
+    public WebElement emailAddres;
+
+    //2- Login > Password
+
+    @FindBy(xpath = "//input[@id=\"id_password\"]")
+    public WebElement password;
+
+    //3- Login > Sign In butonu
+    @FindBy(xpath = "//button[@id=\"login_button\"]")
+    public WebElement signInbutonu;
+
+
+    //4- Anaysayfalinki
+    @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[1]/a")
+    public  WebElement AnasayfaLink;
+
+
+    //5- IsletmeModuluLink
+   @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[2]/a")
+   public  WebElement isletmeModuluLink;
+
+
+ //6- IsletmeModuluLink
+ @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[4]/a/span")
+ public  WebElement TalepListeleriLink;
+
+
+  //7- Su ve K.i
+  @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[5]/a/span")
+  public  WebElement SuveKiTalepLink;
+
+  // 8- FirmaListesi
+  @FindBy(xpath = "//a[text()=\"Firma Listesi\"]")
+  public  WebElement FirmaListesi;
+
+ @FindBy(xpath = "//a[text()=\"Araç Listesi\"]")
+ public  WebElement AracListesi;
+
+
+ @FindBy(xpath = "//a[text()=\"Araç Kiralama\"]")
+ public  WebElement AracKiralama;
+
+
+ @FindBy(xpath = "//a[text()=\"Yapı Ruhsat Talebi\"]")
+ public  WebElement YapıRuhsatTalebiLinki;
+
+ @FindBy(xpath = " //a[text()=\"Harici Kazı Talebi\"]")
+ public  WebElement HariciKazıTalebiLinki;
+
+
+ @FindBy(xpath = "//span[text()=\"Su ve K.İ. Talep Listeleri\"]")
+ public  WebElement suveKiTalepLinki;
+
+
+
+
+ @FindBy(xpath = "//a[text()=\"Alt Yapı İş Talebi\"]")
+ public  WebElement altyapıTaleblink;
+
+ @FindBy(xpath = "//span[text()=\"İş Süreçleri\"]")
+ public  WebElement isSurecleriLink;
+
+
+ @FindBy(xpath = "//a[text()=\"Yapı Ruhsatlı İş Süreci\"]")
+ public  WebElement yapiRuhsatliisSurecleriLink;
+
+
+ @FindBy(xpath = "//a[text()=\"Harici Kazı İş Süreci\"]")
+ public  WebElement hariciKaziisSurecleriLink;
+
+
+ @FindBy(xpath = "//a[text()=\"İnşaat Dolgu İş Süreci\"]")
+ public  WebElement insaatDolguisSurecleriLink;
+
+
+ @FindBy(xpath = "//span[text()=\"Su ve K.İ. İş Süreçleri\"]")
+ public  WebElement suveKiissureclerilink;
+
+ @FindBy(xpath = "//a[text()=\"Döküm Sahası Hareketleri\"]")
+ public  WebElement dokumsahasihareketleri;
+
+
+ @FindBy(xpath = "//span[text()=\"Küçük Araç\"]")
+ public  WebElement kucukaraclink;
+
+
+ @FindBy(xpath = "//a[text()=\"Alt Yapı İş Süreci\"]")
+ public  WebElement altyapıissurecilink;
+
+
+ @FindBy(xpath = "//a[text()=\"Küçük Araç İşlemleri\"]")
+ public  WebElement kucukaracislemleri;
+
+
+ @FindBy(xpath = "//span[text()=\"Sistem Yönetimi\"]")
+ public  WebElement sistemyonetimilinki;
+
+
+ @FindBy(xpath = "//a[text()=\"Mali Listesi\"]")
+ public  WebElement maliListesilinki;
+
+
+ @FindBy(xpath = "//span[text()=\"Raporlar\"]")
+ public  WebElement raporlarlinki;
+
+ @FindBy(xpath = "//a[text()=\"Araç Takip Sistemi\"]")
+ public  WebElement aracTakipSistemilinki;
+
+ @FindBy(xpath = "//a[text()=\"Döküm Sahası Listesi\"]")
+ public  WebElement dokumsahasılistesi;
+
+ @FindBy(xpath = "//a[text()=\"Kullanıcı Listesi\"]")
+ public  WebElement kullanicilistesi;
+
+
+
+ @FindBy(xpath = "//a[text()=\"Log Listesi\"]")
+ public  WebElement loglistesi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   // ****************************************************************************************************************************************************
     //1- url > Subscribe pop-up exit butonu
     @FindBy(css = "#subscriptionModal > div > div.close_modal > i")
     public WebElement PopupExitButon;
@@ -48,18 +213,11 @@ public class PageTrend {
 
     // 7 -Login > Email
 
-    @FindBy(xpath = "//input[@placeholder=\"Email address\"]")
-    public WebElement emailAddres;
 
-    //8- Login > Password
 
-    @FindBy(xpath = "//input[@id=\"password\"]")
-    public WebElement password;
 
-    //9- Login > Sign In butonu
-    @FindBy(xpath = "//button[text()='Sign In']")
-    public WebElement signInbutonu;
 
+    //li[@class='active']/a[@href='/hafriyat/']
 
     //10- Homepage/Header > wishlist button
 
