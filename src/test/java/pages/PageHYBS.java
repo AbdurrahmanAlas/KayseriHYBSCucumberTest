@@ -138,7 +138,40 @@ public class PageHYBS {
  public  WebElement loglistesi;
 
 
+ @FindBy(id = " company_list_dt")
+ public  WebElement firmalistesitablosu;
 
+ @FindBy(xpath = " //th[text()=\" Firma Ünvanı\"]")
+ public  WebElement firmaUnvanibasligi;
+
+ @FindBy(xpath = "//th[text()=\"Işlem ve Mobil Uygulama Yetklisi Telefon\"]")
+ public  WebElement islemvemobiluygulamatelefonbasligi;
+
+ @FindBy(xpath = "//th[text()=\"İlçe\"]")
+ public  WebElement ilcebasligi;
+
+
+ @FindBy(xpath = "//th[text()=\"Adres\"]")
+ public  WebElement adresbasligi;
+
+
+ @FindBy(xpath = "//th[text()=\"E-Posta\"]")
+ public  WebElement epostabasligi;
+
+
+ @FindBy(xpath = "//th[text()=\"Sicil No\"]")
+ public  WebElement sicilnobasligi;
+
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[1]/div/label[2]")
+ public  WebElement firmalistesilütfengrupsecinizdropdown;
+
+
+ @FindBy(xpath = "//span[text()=\"Hafriyatçı\"]")
+ public  WebElement dropdowndakihafriyatci;
+
+
+ @FindBy(xpath = "//span[text()=\"İlçe Belediye\"]")
+ public  WebElement dropdowndakiilcebelediye;
 
 
 
