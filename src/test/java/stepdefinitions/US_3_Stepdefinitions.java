@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import pages.PageHYBS;
 import utilities.Driver;
@@ -14,6 +15,8 @@ public class US_3_Stepdefinitions {
     PageHYBS pageHYBS=new PageHYBS();
     Actions actions=new Actions(Driver.getDriver());
 
+    String expectedKelime;
+    String actualKelime;
     SoftAssert softAssert=new SoftAssert();
 
     @Given("User should be able to click on OPERATION MODULE")
@@ -40,7 +43,7 @@ public class US_3_Stepdefinitions {
     softAssert.assertTrue(pageHYBS.sicilnobasligi.isDisplayed());
     softAssert.assertAll();
 
-pageHYBS.firmalistesitablosu.isDisplayed();
+
 
     }
 
@@ -59,9 +62,40 @@ pageHYBS.firmalistesitablosu.isDisplayed();
 
 
         ReusableMethods.waitForPageToLoad(3);
-      //  ReusableMethods.verifyAllItemsAreClickable(pageHYBS.);
+      // ReusableMethods.verifyAllItemsAreClickable(pageHYBS.firmalistesilütfengrupsecinizdropdown,pageHYBS.companygroupCurrentsearchtext);
 
 
     }
+
+
+    @Given("click user passive radiobutton and verify user passive list")
+    public void click_user_passive_radiobutton_and_verify_user_passive_list() {
+
+        pageHYBS.userpassivelist.click();
+
+        Assert.assertTrue(pageHYBS.userpassivelistEVET.isDisplayed());
+        ReusableMethods.wait(2);
+        pageHYBS.userpassivelist.click();
+
+    }
+    @Given("click cleaning company radiobutton and verify cleaning company list")
+    public void click_cleaning_company_radiobutton_and_verify_cleaning_company_list() {
+
+            pageHYBS.blacklist.click();
+            Assert.assertTrue(pageHYBS.blacklistEVET.isDisplayed());
+        ReusableMethods.wait(2);
+        pageHYBS.blacklist.click();
+
+    }
+    @Given("click black list radiobutton and black list")
+    public void click_black_list_radiobutton_and_black_list() {
+        pageHYBS.cleancompanylist.click();
+        Assert.assertTrue(pageHYBS.cleancompanyEVET.isDisplayed());
+        ReusableMethods.wait(2);
+        pageHYBS.cleancompanylist.click();
+    }
+
+
+
 
 }

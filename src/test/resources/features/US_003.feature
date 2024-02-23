@@ -22,6 +22,16 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
     * User should be able to click on OPERATION MODULE
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     * click group dropdown
-
+# ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
     # 22.02 persembe burda kaldım hata alıyorum dropdowna tıklamıyor
     * Verifies that category dropbox options are visible and selectable
+  @tc05
+    Scenario: TC0303 Passipt, blacklist, deleted, checkboxes are clicked on the relevant headings should be sorted correctly.
+      #Pasife alınanlar,Kara Listeye alınanlar,Silinenler checkboxlarina tıklandıgında  ilgili baslıklar dogru şekilde sıralanmalıdır.
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+      * User should be able to click on OPERATION MODULE
+      * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
+      * click user passive radiobutton and verify user passive list
+    * click cleaning company radiobutton and verify cleaning company list
+    * click black list radiobutton and black list

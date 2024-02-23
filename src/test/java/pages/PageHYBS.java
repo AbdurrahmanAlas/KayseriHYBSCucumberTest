@@ -162,7 +162,7 @@ public class PageHYBS {
  @FindBy(xpath = "//th[text()=\"Sicil No\"]")
  public  WebElement sicilnobasligi;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[1]/div/label[2]")
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[1]/div/label[2]/span/span[1]/span/span[2]")
  public  WebElement firmalistesilütfengrupsecinizdropdown;
 
 
@@ -174,18 +174,27 @@ public class PageHYBS {
  public  WebElement dropdowndakiilcebelediye;
 
 
+ @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+ public  WebElement companygroupCurrentsearchtext;
+
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span/label")
+ public  WebElement userpassivelist;
+
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span")
+ public  WebElement userpassivelistEVET;
 
 
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span/label")
+ public  WebElement blacklist;
 
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span")
+ public  WebElement blacklistEVET;
 
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span/label")
+ public  WebElement cleancompanylist;
 
-
-
-
-
-
-
-
+ @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span")
+ public  WebElement cleancompanyEVET;
 
 
 
