@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class US_3_Stepdefinitions {
 
     PageHYBS pageHYBS=new PageHYBS();
     Actions actions=new Actions(Driver.getDriver());
-
+    String subjectText;
     String expectedKelime;
     String actualKelime;
     SoftAssert softAssert=new SoftAssert();
@@ -96,6 +97,21 @@ public class US_3_Stepdefinitions {
     }
 
 
+    @Given("When the user clicks on the SearchBoxes one by one, a listing should be made according to the categories to be searched.\"")
+    public void when_the_user_clicks_on_the_search_boxes_one_by_one_a_listing_should_be_made_according_to_the_categories_to_be_searched() {
+
+
+        subjectText = "BALOĞLU YAPI";
+        pageHYBS.firmasearchbox.sendKeys(subjectText);
+        String expectedAranan=subjectText;
+        String actualAranan=pageHYBS.quicksearchverigeldimi.getText();
+        Assert.assertTrue(actualAranan.contains(expectedAranan));
+        ReusableMethods.wait(1);
+
+
+
+
+    }
 
 
 }

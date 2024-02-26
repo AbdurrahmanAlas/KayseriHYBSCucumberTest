@@ -197,14 +197,18 @@ public class PageHYBS {
  public  WebElement cleancompanyEVET;
 
 
+ @FindBy(xpath = "//*[@id=\"name_filter\"]")
+ public  WebElement firmasearchbox;
 
 
+ @FindBy(xpath = "//*[@id=\"phone_filter\"]")
+ public  WebElement telefonsearchbox;
 
+ @FindBy(xpath = "//*[@id=\"province_filter\"]")
+ public  WebElement ilcesearchbox;
 
-
-
-
-
+ @FindBy(xpath = "//*[@id=\"address_filter\"]")
+ public  WebElement addresssearchbox;
 
 
 
@@ -1030,7 +1034,7 @@ public class PageHYBS {
     public WebElement quicksearch;
 
 
-    @FindBy(xpath = "//td[text()=\"No matching records found\"]")
+    @FindBy(xpath = "//td[text()=\"BALOĞLU YAPI\"]")
     public WebElement quicksearchverigeldimi;
 
 
