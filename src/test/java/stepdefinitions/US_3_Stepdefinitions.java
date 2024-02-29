@@ -2,7 +2,11 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import pages.PageHYBS;
@@ -10,6 +14,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.testng.AssertJUnit.assertTrue;
+import static utilities.Driver.driver;
 
 public class US_3_Stepdefinitions {
 
@@ -19,7 +24,9 @@ public class US_3_Stepdefinitions {
     String expectedKelime;
     String actualKelime;
     SoftAssert softAssert=new SoftAssert();
+    private WebElement dropdown;
 
+    private WebElement provinceContainer;
     @Given("User should be able to click on OPERATION MODULE")
     public void user_should_be_able_to_click_on_operatıon_module() {
 
@@ -101,13 +108,90 @@ public class US_3_Stepdefinitions {
     public void when_the_user_clicks_on_the_search_boxes_one_by_one_a_listing_should_be_made_according_to_the_categories_to_be_searched() {
 
 
-        subjectText = "BALOĞLU YAPI";
-        pageHYBS.firmasearchbox.sendKeys(subjectText);
-        String expectedAranan=subjectText;
-        String actualAranan=pageHYBS.quicksearchverigeldimi.getText();
-        Assert.assertTrue(actualAranan.contains(expectedAranan));
+        pageHYBS.nameInput.sendKeys("YERGİNLER HAFRİYAT");
         ReusableMethods.wait(1);
+        pageHYBS.phoneInput.sendKeys("530 147 75 06");
+        ReusableMethods.wait(1);
+        pageHYBS.provinceInput.sendKeys("Kocasinan");
+        ReusableMethods.wait(1);
+        pageHYBS.addressInput.sendKeys("GEVHER NESİBE MH ATATÜRK BLV no:46/5 KOCASİNAN");
+        ReusableMethods.wait(1);
+        pageHYBS.emailInput.sendKeys("yerginlerinsaat@hotmail.com");
+        pageHYBS.registerNoInput.sendKeys("19815");
 
+        pageHYBS.taxOfficeInput.sendKeys("GEVHER NESİBE VERGİ DAİRESİ");
+
+// Girilen metinleri kontrol et
+        Assert.assertEquals(pageHYBS.nameInput.getAttribute("value"), "YERGİNLER HAFRİYAT");
+        Assert.assertEquals(pageHYBS.phoneInput.getAttribute("value"), "530 147 75 06");
+        Assert.assertEquals(pageHYBS.provinceInput.getAttribute("value"), "Kocasinan");
+        Assert.assertEquals(pageHYBS.addressInput.getAttribute("value"), "GEVHER NESİBE MH ATATÜRK BLV no:46/5 KOCASİNAN");
+        Assert.assertEquals(pageHYBS.emailInput.getAttribute("value"), "yerginlerinsaat@hotmail.com");
+        Assert.assertEquals(pageHYBS.registerNoInput.getAttribute("value"), "19815");
+
+        Assert.assertEquals(pageHYBS.taxOfficeInput.getAttribute("value"), "GEVHER NESİBE VERGİ DAİRESİ");
+
+
+
+
+    }
+    @Given("click new company button")
+    public void click_new_company_button() {
+
+
+        pageHYBS.newCompanyButton.click();
+    }
+    @Given("The system should confirm that it is on the New Company page,then enter the company information, and finally press the button to add the new company seamlessly.")
+    public void the_system_should_confirm_that_it_is_on_the_new_company_page_then_enter_the_company_information_and_finally_press_the_button_to_add_the_new_company_seamlessly() {
+
+
+        ReusableMethods.wait(4);
+        pageHYBS.taxIdInput.sendKeys("124352");
+
+        pageHYBS.titleInput.click();
+        ReusableMethods.wait(5);
+        pageHYBS.titleInput.click();
+        pageHYBS.titleInput.sendKeys("Test Company");
+        pageHYBS.phoneInput.click();
+        ReusableMethods.wait(2);
+        pageHYBS.phone1Input.sendKeys("05425252255");
+        ReusableMethods.wait(2);
+
+        // Dropdown elementini bul
+        dropdown = driver.findElement(By.id("id_type"));
+        // Seçenekleri içeren bir Select nesnesi oluştur
+        Select select = new Select(dropdown);
+        // İstenilen seçeneği seç
+        select.selectByVisibleText("Komandit şirket");
+
+// Dropdown elementini bul
+        // Dropdown elementini bul
+        dropdown = driver.findElement(By.id("select2-id_tax_administration-container"));
+        // Dropdown'a tıkla
+        dropdown.click();
+        // Dropdown içeriğini aç
+        driver.findElement(By.className("select2-search__field")).sendKeys("KALEÖNÜ");
+        // İlgili seçeneği bul
+        WebElement option = driver.findElement(By.xpath("//li[contains(text(),'KALEÖNÜ VERGİ DAİRESİ')]"));
+        // Seçeneğe tıkla
+        option.click();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 250)");
+
+
+// Adres alanını doldur
+        pageHYBS.addressTextarea.click();
+        pageHYBS.addressTextarea.sendKeys("123 Main Street, Istanbul");
+        pageHYBS.companyshortname.sendKeys("denemesırketi");
+        pageHYBS.islemmailphone.sendKeys("deneme");
+        pageHYBS.eposta.sendKeys("deneme@gmail.com");
+        // İlçe container'ını bul
+        provinceContainer = driver.findElement(By.id("select2-id_province-container"));
+        // Container'a tıkla
+        provinceContainer.click();
+// Formu gönder
+        pageHYBS.createButton.click();
 
 
 

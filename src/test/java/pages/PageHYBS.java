@@ -197,35 +197,116 @@ public class PageHYBS {
  public  WebElement cleancompanyEVET;
 
 
- @FindBy(xpath = "//*[@id=\"name_filter\"]")
- public  WebElement firmasearchbox;
 
+ @FindBy(xpath="//*[@id=\"company_form\"]/fieldset/div[1]/div[1]/div/div")
+ public WebElement nameInput;
 
- @FindBy(xpath = "//*[@id=\"phone_filter\"]")
- public  WebElement telefonsearchbox;
+ @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[3]/div[1]/div/div")
+ public WebElement phoneInput;
 
- @FindBy(xpath = "//*[@id=\"province_filter\"]")
- public  WebElement ilcesearchbox;
+ @FindBy(id = "province_filter")
+ public WebElement provinceInput;
 
- @FindBy(xpath = "//*[@id=\"address_filter\"]")
- public  WebElement addresssearchbox;
+ @FindBy(id = "address_filter")
+ public WebElement addressInput;
 
+ @FindBy(id = "email_filter")
+ public WebElement emailInput;
 
-
-
-
-
-
-
-
+ @FindBy(id = "register_no_filter")
+ public WebElement registerNoInput;
 
 
 
+ @FindBy(id = "tax_office_filter")
+ public WebElement taxOfficeInput;
+
+
+
+    @FindBy(name = "tax_id")
+    public WebElement taxIdInput;
+
+    @FindBy(xpath = "//input[@name=\"name\"]")
+    public WebElement titleInput;
 
 
 
 
-   // ****************************************************************************************************************************************************
+
+    @FindBy(xpath = "//input[@name=\"phone1\"]")
+    public WebElement phone1Input;
+
+
+
+    @FindBy(id = "id_type")
+    public WebElement typeDropdown;
+
+    @FindBy(id = "id_province")
+    public WebElement provinceDropdown;
+
+    @FindBy(id = "id_tax_administration")
+    public WebElement taxAdministrationDropdown;
+
+    @FindBy(id = "id_group_type")
+    public WebElement groupTypeDropdown;
+
+    @FindBy(xpath = "//div[@class='col col-6 col-md-6']//textarea[@id='id_address']")
+    public WebElement addressTextarea;
+
+    @FindBy(xpath = "//input[@id=\"id_title\"]")
+    public  WebElement companyshortname;
+
+    @FindBy(xpath = "//input[@id=\"id_phone\"]")
+    public  WebElement islemmailphone;
+    @FindBy(xpath = "//input[@id=\"id_email\"]")
+    public  WebElement eposta;
+    @FindBy(id = "save")
+    public WebElement saveButton;
+
+    // Footer buttons
+    @FindBy(xpath = "//footer[@id='add_footer']//button[@type='reset']")
+    public WebElement cancelButton;
+
+    @FindBy(xpath = "//footer[@id='add_footer']//button[@id='save']")
+    public WebElement createButton;
+
+    @FindBy(xpath = "//footer[@id='edit_footer']//button[@id='reset_company']")
+    public WebElement editCancelButton;
+
+    @FindBy(xpath = "//footer[@id='edit_footer']//button[@id='update_button']")
+    public WebElement updateButton;
+
+ @FindBy(linkText = "Yeni Firma")
+ public WebElement newCompanyButton;
+
+
+
+
+/* public void fillForm(String taxId, String shortTitle, String fullName, String phone, String companyPhone, String email, String province, String taxAdministration, String groupType, String address) {
+  taxIdInputcompanyadd.sendKeys(taxId);
+  shortTitleInput.sendKeys(shortTitle);
+  fullNameInput.sendKeys(fullName);
+  phoneInput.sendKeys(phone);
+  companyPhoneInput.sendKeys(companyPhone);
+  emailInput.sendKeys(email);
+  provinceSelect.sendKeys(province);
+  taxAdministrationSelect.sendKeys(taxAdministration);
+  groupTypeSelect.sendKeys(groupType);
+  addressTextarea.sendKeys(address);
+ }*/
+ public void submitForm() {
+  saveButton.click();
+ }
+
+
+
+
+
+
+
+
+
+ // ****************************************************************************************************************************************************
     //1- url > Subscribe pop-up exit butonu
     @FindBy(css = "#subscriptionModal > div > div.close_modal > i")
     public WebElement PopupExitButon;

@@ -27,16 +27,15 @@ public class Driver {
         String browser= ConfigReader.getProperty("browser");
         if(driver==null) {
             switch (browser) {
-
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions ops = new ChromeOptions();
                     ops.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(ops);
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();

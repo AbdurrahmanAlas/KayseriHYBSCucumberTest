@@ -46,3 +46,13 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
        * When the user clicks on the SearchBoxes one by one, a listing should be made according to the categories to be searched."
 
 
+  @tc07
+       Scenario: TC0404 It should be determined that it is on the new company page, and the new company should be added smoothly by entering the company information
+       #
+
+
+         Given Login to HYBS site, click the Login button and log in with your User information.
+         * User should be able to click on OPERATION MODULE
+         * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
+         * click new company button
+         * The system should confirm that it is on the New Company page,then enter the company information, and finally press the button to add the new company seamlessly.
