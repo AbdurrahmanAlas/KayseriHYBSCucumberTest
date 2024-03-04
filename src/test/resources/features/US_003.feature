@@ -49,7 +49,7 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
 
 
 
-  @tc07
+
        Scenario: TC0404 It should be determined that it is on the new company page, and the new company should be added smoothly by entering the company information
        #
 

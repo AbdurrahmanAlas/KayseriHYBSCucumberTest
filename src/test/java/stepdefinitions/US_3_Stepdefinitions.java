@@ -145,54 +145,34 @@ public class US_3_Stepdefinitions {
     public void the_system_should_confirm_that_it_is_on_the_new_company_page_then_enter_the_company_information_and_finally_press_the_button_to_add_the_new_company_seamlessly() {
 
 
+        pageHYBS.vergiNumarasi.sendKeys("1234567890");
+        pageHYBS.firmaKisaAd.click();
         ReusableMethods.wait(4);
-        pageHYBS.taxIdInput.sendKeys("124352");
+        pageHYBS.firmaKisaAd.sendKeys("Test Company");
+        pageHYBS.firmaUnvani.sendKeys("Test Company");
+        pageHYBS.telefon.sendKeys("1234567890");
 
-        pageHYBS.titleInput.click();
-        ReusableMethods.wait(5);
-        pageHYBS.titleInput.click();
-        pageHYBS.titleInput.sendKeys("Test Company");
-        pageHYBS.phoneInput.click();
-        ReusableMethods.wait(2);
-        pageHYBS.phone1Input.sendKeys("05425252255");
-        ReusableMethods.wait(2);
+        Select typeDropdown = new Select(pageHYBS.firmaTipi);
+        typeDropdown.selectByVisibleText("A.Ş.");
 
-        // Dropdown elementini bul
-        dropdown = driver.findElement(By.id("id_type"));
-        // Seçenekleri içeren bir Select nesnesi oluştur
-        Select select = new Select(dropdown);
-        // İstenilen seçeneği seç
-        select.selectByVisibleText("Komandit şirket");
+        Select provinceDropdown = new Select(pageHYBS.ilce);
+        provinceDropdown.selectByVisibleText("Yahyalı");
 
-// Dropdown elementini bul
-        // Dropdown elementini bul
-        dropdown = driver.findElement(By.id("select2-id_tax_administration-container"));
-        // Dropdown'a tıkla
-        dropdown.click();
-        // Dropdown içeriğini aç
-        driver.findElement(By.className("select2-search__field")).sendKeys("KALEÖNÜ");
-        // İlgili seçeneği bul
-        WebElement option = driver.findElement(By.xpath("//li[contains(text(),'KALEÖNÜ VERGİ DAİRESİ')]"));
-        // Seçeneğe tıkla
-        option.click();
+        pageHYBS.ecompanyposta.sendKeys("test@test.com"); // E-posta alanı ekleniyor
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 250)");
+        Select taxAdministrationDropdown = new Select(pageHYBS.vergiDairesi);
+        taxAdministrationDropdown.selectByVisibleText("DEVELİ VERGİ DAİRESİ");
+
+        Select groupTypeDropdown = new Select(pageHYBS.firmaGrup);
+        groupTypeDropdown.selectByVisibleText("Hafriyatçı");
+
+        pageHYBS.adres.sendKeys("Test Address");
 
 
-// Adres alanını doldur
-        pageHYBS.addressTextarea.click();
-        pageHYBS.addressTextarea.sendKeys("123 Main Street, Istanbul");
-        pageHYBS.companyshortname.sendKeys("denemesırketi");
-        pageHYBS.islemmailphone.sendKeys("deneme");
-        pageHYBS.eposta.sendKeys("deneme@gmail.com");
-        // İlçe container'ını bul
-        provinceContainer = driver.findElement(By.id("select2-id_province-container"));
-        // Container'a tıkla
-        provinceContainer.click();
-// Formu gönder
-        pageHYBS.createButton.click();
 
+
+
+        pageHYBS.olusturButton.click();
 
 
     }

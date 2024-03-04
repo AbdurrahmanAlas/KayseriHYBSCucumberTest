@@ -250,10 +250,10 @@ public class PageHYBS {
     @FindBy(id = "id_group_type")
     public WebElement groupTypeDropdown;
 
-    @FindBy(xpath = "//div[@class='col col-6 col-md-6']//textarea[@id='id_address']")
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[6]/div[2]")
     public WebElement addressTextarea;
 
-    @FindBy(xpath = "//input[@id=\"id_title\"]")
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[1]/div[2]/div/div")
     public  WebElement companyshortname;
 
     @FindBy(xpath = "//input[@id=\"id_phone\"]")
@@ -279,6 +279,90 @@ public class PageHYBS {
  @FindBy(linkText = "Yeni Firma")
  public WebElement newCompanyButton;
 
+
+
+    @FindBy(id = "id_tax_id")
+    public WebElement vergiNumarasi;
+
+    @FindBy(id = "id_title")
+    public WebElement firmaKisaAd;
+
+    @FindBy(id = "id_name")
+    public WebElement firmaUnvani;
+
+    @FindBy(id = "id_phone")
+    public WebElement telefon;
+
+    @FindBy(id = "id_email")
+    public WebElement ecompanyposta;
+
+    @FindBy(id = "id_type")
+    public WebElement firmaTipi;
+
+    @FindBy(id = "id_province")
+    public WebElement ilce;
+
+    @FindBy(id = "id_tax_administration")
+    public WebElement vergiDairesi;
+
+    @FindBy(id = "id_group_type")
+    public WebElement firmaGrup;
+
+    @FindBy(id = "id_address")
+    public WebElement adres;
+
+    @FindBy(id = "save") // Olustur butonunun locatoru ekleniyor
+    public WebElement olusturButton;
+
+
+
+
+
+
+
+    @FindBy(xpath = "//span[@class='col-sm-4 text-center no-padding']/a[@class='btn btn-xs btn-success']")
+    public WebElement incelegözsimgesi;
+    @FindBy(xpath = " //div[@class=\"col-md-6 col-lg-6 no-padding\"]")
+    public WebElement firmaAdıveSicilNoGeldimi;
+
+    @FindBy(xpath = "//button[text()=\"ATS Belgesi Süresi Uzat\"]")
+    public WebElement ATSOnayBelgesiButton;
+
+    @FindBy(xpath = "//div/a[text()=\"Kara Listeye Al\"]")
+    public WebElement karaListeyeAlbutton;
+
+    @FindBy(xpath = "//h4[text()=\"ATS Belgesi Uzat\"]")
+    public WebElement ATSBelgesiUzatText;
+    @FindBy(xpath = "//*[@id=\"form_ats_doc_extend\"]/footer/button[2]")
+    public WebElement ATSBelgesiUzatTextinUzerindekiCarpı;
+
+    @FindBy(xpath = "//h4[text()=\"Kara Liste\"]")
+    public WebElement karalisteText;
+
+
+    @FindBy(xpath = "//*[@id=\"blackListForm\"]/footer/button[2]")
+    public WebElement KaralisteTextIptalbutonu;
+
+    @FindBy(id = "filoDropdown")
+    public WebElement filoDropdown;
+
+    @FindBy(xpath = "//div[@id='filoDropdown']//option[@value='firma1']")
+    public WebElement secilenFirma;
+
+    @FindBy(id = "aracDropdown")
+    public WebElement aracDropdown;
+
+    @FindBy(xpath = "//div[@id='aracDropdown']//option[@value='arac1']")
+    public WebElement secilenArac;
+
+    @FindBy(id = "baslangicTarih")
+    public WebElement baslangicTarih;
+
+    @FindBy(id = "bitisTarih")
+    public WebElement bitisTarih;
+
+    @FindBy(id = "olusturButton")
+    public WebElement n2olusturbutton;
 
 
 
