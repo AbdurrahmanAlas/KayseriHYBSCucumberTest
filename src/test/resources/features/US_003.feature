@@ -45,6 +45,9 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
        * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
        * When the user clicks on the SearchBoxes one by one, a listing should be made according to the categories to be searched."
 
+       #degisiklik deneme
+
+
 
   @tc07
        Scenario: TC0404 It should be determined that it is on the new company page, and the new company should be added smoothly by entering the company information
