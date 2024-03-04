@@ -37,13 +37,16 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
     * click black list radiobutton and black list
 
 
-     Scenario: TC0304 Searchbox Lara should be listed according to the categories to be searched when you are clicking on one by one.
+     Scenario: TC0304 Searchbox Lara should be listed according to the categories to be searched when you are clicking on ong by one.
         #SearchBox lara tek tek tıklandıgında arama yapılacak kategorilere göre listeleme yapılabilmelidir.
 
        Given Login to HYBS site, click the Login button and log in with your User information.
        * User should be able to click on OPERATION MODULE
        * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
        * When the user clicks on the SearchBoxes one by one, a listing should be made according to the categories to be searched."
+
+       #degisiklik deneme
+
 
 
   @tc07
