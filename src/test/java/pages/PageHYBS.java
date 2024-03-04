@@ -250,10 +250,10 @@ public class PageHYBS {
     @FindBy(id = "id_group_type")
     public WebElement groupTypeDropdown;
 
-    @FindBy(xpath = "//div[@class='col col-6 col-md-6']//textarea[@id='id_address']")
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[6]/div[2]")
     public WebElement addressTextarea;
 
-    @FindBy(xpath = "//input[@id=\"id_title\"]")
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[1]/div[2]/div/div")
     public  WebElement companyshortname;
 
     @FindBy(xpath = "//input[@id=\"id_phone\"]")
@@ -278,6 +278,60 @@ public class PageHYBS {
 
  @FindBy(linkText = "Yeni Firma")
  public WebElement newCompanyButton;
+
+
+
+    @FindBy(id = "id_tax_id")
+    public WebElement vergiNumarasi;
+
+    @FindBy(id = "id_title")
+    public WebElement firmaKisaAd;
+
+    @FindBy(id = "id_name")
+    public WebElement firmaUnvani;
+
+    @FindBy(id = "id_phone")
+    public WebElement telefon;
+
+    @FindBy(id = "id_email")
+    public WebElement ecompanyposta;
+
+    @FindBy(id = "id_type")
+    public WebElement firmaTipi;
+
+    @FindBy(id = "id_province")
+    public WebElement ilce;
+
+    @FindBy(id = "id_tax_administration")
+    public WebElement vergiDairesi;
+
+    @FindBy(id = "id_group_type")
+    public WebElement firmaGrup;
+
+    @FindBy(id = "id_address")
+    public WebElement adres;
+
+    @FindBy(id = "save") // Olustur butonunun locatoru ekleniyor
+    public WebElement olusturButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
