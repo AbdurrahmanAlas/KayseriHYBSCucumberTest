@@ -320,19 +320,49 @@ public class PageHYBS {
 
 
 
+    @FindBy(xpath = "//span[@class='col-sm-4 text-center no-padding']/a[@class='btn btn-xs btn-success']")
+    public WebElement incelegözsimgesi;
+    @FindBy(xpath = " //div[@class=\"col-md-6 col-lg-6 no-padding\"]")
+    public WebElement firmaAdıveSicilNoGeldimi;
+
+    @FindBy(xpath = "//button[text()=\"ATS Belgesi Süresi Uzat\"]")
+    public WebElement ATSOnayBelgesiButton;
+
+    @FindBy(xpath = "//div/a[text()=\"Kara Listeye Al\"]")
+    public WebElement karaListeyeAlbutton;
+
+    @FindBy(xpath = "//h4[text()=\"ATS Belgesi Uzat\"]")
+    public WebElement ATSBelgesiUzatText;
+    @FindBy(xpath = "//*[@id=\"form_ats_doc_extend\"]/footer/button[2]")
+    public WebElement ATSBelgesiUzatTextinUzerindekiCarpı;
+
+    @FindBy(xpath = "//h4[text()=\"Kara Liste\"]")
+    public WebElement karalisteText;
 
 
+    @FindBy(xpath = "//*[@id=\"blackListForm\"]/footer/button[2]")
+    public WebElement KaralisteTextIptalbutonu;
 
+    @FindBy(id = "filoDropdown")
+    public WebElement filoDropdown;
 
+    @FindBy(xpath = "//div[@id='filoDropdown']//option[@value='firma1']")
+    public WebElement secilenFirma;
 
+    @FindBy(id = "aracDropdown")
+    public WebElement aracDropdown;
 
+    @FindBy(xpath = "//div[@id='aracDropdown']//option[@value='arac1']")
+    public WebElement secilenArac;
 
+    @FindBy(id = "baslangicTarih")
+    public WebElement baslangicTarih;
 
+    @FindBy(id = "bitisTarih")
+    public WebElement bitisTarih;
 
-
-
-
-
+    @FindBy(id = "olusturButton")
+    public WebElement n2olusturbutton;
 
 
 
