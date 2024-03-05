@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -363,6 +364,65 @@ public class PageHYBS {
 
     @FindBy(id = "olusturButton")
     public WebElement n2olusturbutton;
+
+
+    @FindBy(xpath = " //div[@id=\"right-menu-open\"]")
+    public WebElement aractakipsagusttekarelerisareti;
+
+
+    @FindBy(xpath = "//input[@id=\"username\"]")
+    public WebElement aractakipEmailgiris;
+
+    @FindBy(xpath = "//input[@id=\"password\"]")
+    public WebElement aractakipPasswordgiris;
+
+
+    @FindBy(xpath = "//button[@id=\"login-button\"]")
+    public WebElement aractakipgirisbutonu;
+
+    @FindBy(xpath = "//button[text()=\"OK\"]")
+    public WebElement aractakipgirisdeOKBUTONU;
+
+
+
+    @FindBy(xpath = "//li/a[@href=\"/track_history_page\"]")
+    public WebElement gecmisIzlemeRaporuLink;
+
+
+
+    @FindBy(id = "fleet_select2_")
+    private WebElement firmaDropdown;
+
+    @FindBy(xpath = "//select[@id='fleet_select2_']/option")
+    private List<WebElement> firmaOptions;
+
+    @FindBy(xpath = "//div[@id='vehicle_']//option")
+    private List<WebElement> aracOptions;
+
+    public PageHYBS(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
+    public WebElement getFirmaDropdown() {
+        return firmaDropdown;
+    }
+
+    public List<WebElement> getFirmaOptions() {
+        return firmaOptions;
+    }
+
+    public List<WebElement> getAracOptions() {
+        return aracOptions;
+
+
+    }
+
+
+
+
+
+
+
 
 
 

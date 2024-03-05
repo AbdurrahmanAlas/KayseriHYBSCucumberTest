@@ -84,6 +84,23 @@ public class ReusableMethods {
 
     }
 
+
+    public static void TakipLoginHYBS(String username, String password) {
+
+        // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
+
+        PageHYBS pageHYBS = new PageHYBS();
+        Driver.getDriver().get(ConfigReader.getProperty("urlTakipSistemi"));
+        pageHYBS.aractakipEmailgiris.sendKeys(username);
+        pageHYBS.aractakipPasswordgiris.sendKeys(password);
+        pageHYBS.aractakipgirisbutonu.click();
+
+        ReusableMethods.wait(3);
+
+
+
+    }
+
     //*********************ADMIN LOGIN****************************//
     public static void AdminloginTrendlife(String username, String password) {
 
