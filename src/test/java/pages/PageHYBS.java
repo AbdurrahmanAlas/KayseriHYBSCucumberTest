@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -344,7 +346,7 @@ public class PageHYBS {
     @FindBy(xpath = "//*[@id=\"blackListForm\"]/footer/button[2]")
     public WebElement KaralisteTextIptalbutonu;
 
-    @FindBy(id = "filoDropdown")
+    @FindBy(xpath = "//span[@id=\"select2-fleet_select2_-container\"]")
     public WebElement filoDropdown;
 
     @FindBy(xpath = "//div[@id='filoDropdown']//option[@value='firma1']")
@@ -390,43 +392,17 @@ public class PageHYBS {
 
 
 
-    @FindBy(id = "fleet_select2_")
-    private WebElement firmaDropdown;
-
-    @FindBy(xpath = "//select[@id='fleet_select2_']/option")
-    private List<WebElement> firmaOptions;
-
-    @FindBy(xpath = "//div[@id='vehicle_']//option")
-    private List<WebElement> aracOptions;
-
-    public PageHYBS(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-
-    public WebElement getFirmaDropdown() {
-        return firmaDropdown;
-    }
-
-    public List<WebElement> getFirmaOptions() {
-        return firmaOptions;
-    }
-
-    public List<WebElement> getAracOptions() {
-        return aracOptions;
 
 
-    }
+    @FindBy(xpath = "//select[@id=\"fleet_select2_\"]")
+    public List<WebElement> aractakipfirmalist;
 
 
 
+   /* public File getHaritaResmiScreenshot() throws IOException {
+        return haritaResmi.getScreenshotAs(OutputType.FILE);
 
-
-
-
-
-
-
-/* public void fillForm(String taxId, String shortTitle, String fullName, String phone, String companyPhone, String email, String province, String taxAdministration, String groupType, String address) {
+    /* public void fillForm(String taxId, String shortTitle, String fullName, String phone, String companyPhone, String email, String province, String taxAdministration, String groupType, String address) {
   taxIdInputcompanyadd.sendKeys(taxId);
   shortTitleInput.sendKeys(shortTitle);
   fullNameInput.sendKeys(fullName);
@@ -481,6 +457,48 @@ public class PageHYBS {
 
     @FindBy(xpath = "//*[@id=\"sticky-header\"]/div[2]/div/div/div/div/div[3]/div[1]/div/span/a[1]")
     public WebElement userloginButon;
+
+
+
+
+    @FindBy(xpath = "(//div[@id=\"vehicle_\"])[1]")
+    public WebElement aractakipListButton;
+
+
+
+
+    @FindBy(xpath = "(//div[@id=\"vehicle_\"])[1]//select[@id=\"fleet_select2_\"]")
+    public WebElement araclistesicurrenttext;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // 7 -Login > Email
 
@@ -1201,8 +1219,7 @@ public class PageHYBS {
     public WebElement categoryListButton;
     //div[@class="nice-select primary_select mb-15 open"]
     // New Ticket > priority List Butonu;
-    @FindBy(xpath = "(//span[@class='current'])[3]")
-    public WebElement priorityListButton;
+
 
     // New Ticket > user List Butonu;
     @FindBy(xpath = "(//span[@class='current'])[4]")
@@ -1236,8 +1253,7 @@ public class PageHYBS {
     public WebElement categoryListCurrentText;
 
     // Support Ticket > Priority Current Text;
-    @FindBy(xpath = "(//div[@class='primary_input mb-25']//span[@class='current'])[2]")
-    public WebElement priorityListCurrentText;
+
 
     // Support Ticket > statusList Current Text;
     @FindBy(xpath = "(//div[@class='primary_input mb-25']//span[@class='current'])[3]")
