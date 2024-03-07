@@ -391,11 +391,137 @@ public class PageHYBS {
     public WebElement gecmisIzlemeRaporuLink;
 
 
+    @FindBy(xpath = "//*[@id=\"fleet_select2_\"]")
+    public WebElement firmadropdown;
+
 
 
 
     @FindBy(xpath = "//select[@id=\"fleet_select2_\"]")
     public List<WebElement> aractakipfirmalist;
+
+
+
+
+
+    @FindBy(xpath = "//ul[@id='myTab2']/li[contains(@class, 'active')]/a")
+    public WebElement companyInformationLink;
+
+
+    @FindBy(xpath = "//form[@id=\"company_form\"]")
+    public WebElement companyInformationlinkTable;
+
+
+    @FindBy(xpath = "//a[@id='companyEmployeTab']")
+    public WebElement companyPersonnelLink;
+    @FindBy(xpath = "(//div[@id=\"__specifications4\"])[1]")
+    public WebElement companyPersonnelLinkTable;
+
+    @FindBy(xpath = "//a[@id='companyUserTab']")
+    public WebElement companyUsersLink;
+
+    @FindBy(xpath = "(//div[@id=\"__specifications13\"])[1]")
+    public WebElement companyUsersLinkTable;
+
+    @FindBy(xpath = "//a[@id='company_docs']")
+    public WebElement companyDocumentsLink;
+
+    @FindBy(xpath = "(//form[@id=\"uploadDocumentForm\"])[1]")
+    public WebElement companyDocumentsLinkTable;
+
+    @FindBy(xpath = "//li[@id='vehicleLi']/a")
+    public WebElement vehiclesLink;
+
+    @FindBy(xpath = "(//div[@id=\"__specifications4Table\"])[1]")
+    public WebElement vehiclesLinkTable;
+
+    @FindBy(xpath = "//a[@id='vehicle_docs']")
+    public WebElement vehicleDocumentsLink;
+
+    @FindBy(xpath = "(//form[@id=\"uploadVehicleDocumentForm\"])[1]")
+    public WebElement vehicleDocumentsLinkTable;
+
+    @FindBy(xpath = "//li[@id='budget_li']/a")
+    public WebElement financialTransactionsLink;
+
+    @FindBy(xpath = "//div[@id=\"budget_dt_table_wrapper\"]")
+    public WebElement financialTransactionsLinkTable;
+
+    @FindBy(xpath = "//a[@id='tib_li']")
+    public WebElement TIBLink;
+
+    @FindBy(xpath = "//table[@id=\"vehicleTibDT\"]")
+    public WebElement TIBLinkTable;
+
+    @FindBy(xpath = "//a[contains(@href, 'specifications12')]")
+    public WebElement balanceMovementsLink;
+
+    @FindBy(xpath = "//form[@id=\"logFrom\"]")
+    public WebElement balanceMovementsLinkTable;
+
+
+    @FindBy(xpath = "//a[@id='companyCallListTab']")
+    public WebElement callListLink;
+
+    @FindBy(xpath = "//div[@id=\"company_call_list_wrapper\"]")
+    public WebElement callListLinkTable;
+
+    @FindBy(xpath = "//a[@id='construction_fillListTab']")
+    public WebElement constructionFillListLink;
+    @FindBy(xpath = "//table[@id=\"construction_fill_list\"]")
+    public WebElement constructionFillListLinkTable;
+
+    @FindBy(xpath = "(//a[@id='fineListTab'])[1]")
+    public WebElement penaltyListLink;
+
+    @FindBy(xpath = "//div[@id=\"fine_list_dt_wrapper\"]")
+    public WebElement penaltyListLinkTable;
+
+    @FindBy(xpath = "(//a[@id='fineListTab'])[2]")
+    public WebElement complaintListLink;
+
+
+    @FindBy(xpath = "//div[@id=\"plaint_page_form_wrapper\"]")
+    public WebElement complaintListLinkTable;
+
+    @FindBy(xpath = "//button[contains(text(), 'Taahhütname')]")
+    public WebElement createUndertakingButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

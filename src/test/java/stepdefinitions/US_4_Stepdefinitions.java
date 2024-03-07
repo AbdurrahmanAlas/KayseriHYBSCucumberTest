@@ -51,4 +51,45 @@ public class US_4_Stepdefinitions {
 
     }
 
+
+    @Given("the user clicks on Company_Information,Company_Personnel,Company_Users,Company_Documents,Vehicles,Vehicle_Documents,Financial_Transactions,TIB,Balance_Movements,Call_List,Construction_Fill_List,Penalty_List,Complaint_List,CONTRACT link")
+    public void the_user_clicks_on_company_ınformation_company_personnel_company_users_company_documents_vehicles_vehicle_documents_financial_transactions_tıb_balance_movements_call_list_construction_fill_list_penalty_list_complaint_list_contract_link() {
+
+        pageHYBS.companyInformationLink.click();
+        Assert.assertTrue(pageHYBS.companyInformationlinkTable.isDisplayed());
+        pageHYBS.companyPersonnelLink.click();
+        Assert.assertTrue(pageHYBS.companyPersonnelLinkTable.isDisplayed());
+        pageHYBS.companyUsersLink.click();
+        Assert.assertTrue(pageHYBS.companyUsersLinkTable.isDisplayed());
+        pageHYBS.companyDocumentsLink.click();
+        Assert.assertTrue(pageHYBS.companyDocumentsLinkTable.isDisplayed());
+        pageHYBS.vehicleDocumentsLink.click();
+        Assert.assertTrue(pageHYBS.vehicleDocumentsLinkTable.isDisplayed());
+        pageHYBS.financialTransactionsLink.click();
+        Assert.assertTrue(pageHYBS.financialTransactionsLinkTable.isDisplayed());
+        pageHYBS.TIBLink.click();
+        Assert.assertTrue(pageHYBS.TIBLinkTable.isDisplayed());
+        pageHYBS.balanceMovementsLink.click();
+        Assert.assertTrue(pageHYBS.balanceMovementsLinkTable.isDisplayed());
+        pageHYBS.callListLink.click();
+        Assert.assertTrue(pageHYBS.callListLinkTable.isDisplayed());
+        pageHYBS.constructionFillListLink.click();
+        Assert.assertTrue(pageHYBS.constructionFillListLinkTable.isDisplayed());
+        pageHYBS.penaltyListLink.click();
+        Assert.assertTrue(pageHYBS.penaltyListLinkTable.isDisplayed());
+        pageHYBS.complaintListLink.click();
+        Assert.assertTrue(pageHYBS.complaintListLinkTable.isDisplayed());
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

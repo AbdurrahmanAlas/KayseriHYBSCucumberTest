@@ -21,7 +21,7 @@ import static utilities.Driver.driver;
 public class ARAC_TAKIP_SISTEMI {
 
     PageHYBS pageHYBS = new PageHYBS();
-
+    int i;
     @Given("Log in n2mobil to the website.")
     public void log_in_n2mobil_to_the_website() {
 
@@ -46,40 +46,23 @@ public class ARAC_TAKIP_SISTEMI {
     @Given("Generate historical reports for all vehicles.")
     public void generate_historical_reports_for_all_vehicles() throws InterruptedException {
 
+        ReusableMethods.wait(10);
+   // Locatorunu al
+        WebElement dropdownelement=driver.findElement(By.id("//*[@id=\"fleet_select2_\"]"));
+
+        // select nesne uret
+
+        Select select=new Select(dropdownelement);
+
+        select.selectByVisibleText("ADEM BÖLÜKBAŞ");
 
 
 
-        // Firmalar listesi
-        String[] firmalar = {"ABDULLAH AYASILI", "Firma2", "Firma3"}; // Firmaların gerçek isimlerini buraya ekleyin
 
-        // Her bir firma için işlemi tekrarla
-        for (String firma : firmalar) {
-            // Firma seçimini yap
-            Select firmaDropdown = new Select(driver.findElement(By.id("firma")));
-            firmaDropdown.selectByVisibleText(firma);
 
-            // Diğer işlemleri gerçekleştir
-            WebElement araçDropdown = driver.findElement(By.id("araç"));
-            // Aracı seçmek için gerekli kodu buraya ekleyin
-
-            WebElement başlangıçAlanı = driver.findElement(By.id("başlangıç"));
-            // Başlangıç tarihini girmek için gerekli kodu buraya ekleyin
-
-            WebElement bitişAlanı = driver.findElement(By.id("bitiş"));
-            // Bitiş tarihini girmek için gerekli kodu buraya ekleyin
-
-            WebElement oluşturButonu = driver.findElement(By.id("oluştur"));
-            oluşturButonu.click();
-
-            // Sonuçları işle
-            // Burada rapor sonuçlarını alabilir veya başka işlemler yapabilirsiniz
-
-        }
 
 
     }
-
-
 
 
 
