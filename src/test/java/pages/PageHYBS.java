@@ -323,7 +323,7 @@ public class PageHYBS {
 
 
 
-    @FindBy(xpath = "//span[@class='col-sm-4 text-center no-padding']/a[@class='btn btn-xs btn-success']")
+    @FindBy(xpath = "(//span[@class=\"col-sm-4 text-center no-padding\"])[4]")
     public WebElement incelegözsimgesi;
     @FindBy(xpath = " //div[@class=\"col-md-6 col-lg-6 no-padding\"]")
     public WebElement firmaAdıveSicilNoGeldimi;
@@ -487,17 +487,41 @@ public class PageHYBS {
     @FindBy(xpath = "//button[contains(text(), 'Taahhütname')]")
     public WebElement createUndertakingButton;
 
+    @FindBy(xpath = "(//button[text()=\"Güncelle\"])[1]")
+    public WebElement companyinformationUpdateButton;
+
+    @FindBy(xpath = "//input[@id=\"id_tax_id\"]")
+    public WebElement companyinformationUpdateTAXNO;
 
 
+    @FindBy(xpath = "(//input[@id=\"id_name\"])[1]")
+    public WebElement companyinformationUpdateNAME;
+
+    @FindBy(xpath = "//input[@id=\"id_phone1\"]")
+    public WebElement companyinformationUpdatePHONE;
+
+    @FindBy(xpath = "(//select[@id=\"id_type\"])[1]")
+    public WebElement companyinformationUpdateCOMPANYTIP;
+
+    @FindBy(xpath = "//*[@id=\"id_tax_administration\"]")
+    public WebElement companyinformationUpdateTAXADDRESS;
+
+    @FindBy(xpath = "//*[@id=\"id_address\"]")
+    public WebElement companyinformationADDRESS;
+
+    @FindBy(xpath = "//*[@id=\"id_title\"]")
+    public WebElement companyinformationCOMPANYSHORTNAME;
 
 
+    @FindBy(xpath = "//*[@id=\"id_phone\"]")
+    public WebElement companyinformationPHONE;
 
 
+    @FindBy(xpath = "//select[@id=\"id_province\"]")
+    public WebElement companyinformationILCE;
 
-
-
-
-
+    @FindBy(xpath = "//select[@id=\"id_group_type\"]")
+    public WebElement companyinformationHAFRIYATCI;
 
 
 

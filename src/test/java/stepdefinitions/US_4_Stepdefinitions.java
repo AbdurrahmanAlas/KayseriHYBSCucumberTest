@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pages.PageHYBS;
 import utilities.Driver;
@@ -80,6 +81,55 @@ public class US_4_Stepdefinitions {
         pageHYBS.complaintListLink.click();
         Assert.assertTrue(pageHYBS.complaintListLinkTable.isDisplayed());
 
+    }
+    @Given("the user clicks on the {string} link and the user verifies that the company information is correctly loaded")
+    public void the_user_clicks_on_the_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded(String string) {
+
+        pageHYBS.companyInformationLink.click();
+        Assert.assertTrue(pageHYBS.companyInformationlinkTable.isDisplayed());
+
+
+    }
+    @Given("the user clicks on the {string} button the user verifies that the company information update form is opened")
+    public void the_user_clicks_on_the_button_the_user_verifies_that_the_company_information_update_form_is_opened(String string) {
+
+       pageHYBS.companyinformationUpdateButton.click();
+
+    }
+    @Given("the user enters new information the user verifies that the information is updated")
+    public void the_user_enters_new_information_the_user_verifies_that_the_information_is_updated() {
+
+
+        pageHYBS.companyinformationUpdateTAXNO.clear();
+        pageHYBS.companyinformationUpdateTAXNO.sendKeys("1234567777");
+
+        pageHYBS.companyinformationUpdateNAME.click();
+        ReusableMethods.wait(10);
+
+        pageHYBS.companyinformationUpdateNAME.clear();
+        pageHYBS.companyinformationUpdateNAME.sendKeys("YeniCompany");
+
+        pageHYBS.companyinformationUpdatePHONE.clear();
+        pageHYBS.companyinformationUpdatePHONE.sendKeys("11111111111");
+
+
+
+        Select typeDropdown = new Select(pageHYBS.companyinformationUpdateCOMPANYTIP);
+        typeDropdown.selectByVisibleText("A.Ş.");
+
+        ReusableMethods.scrolldown_600();
+
+        ReusableMethods.wait(3);
+        Select provinceDropdown = new Select(pageHYBS.companyinformationUpdateTAXADDRESS);
+        provinceDropdown.selectByVisibleText("ERCİYES VERGİ DAİRESİ");
+
+        pageHYBS.companyinformationADDRESS.clear();
+        pageHYBS.companyinformationADDRESS.sendKeys("YENİ MAHALLE KAYSERİ");
+
+        pageHYBS.companyinformationCOMPANYSHORTNAME.clear();
+        pageHYBS.companyinformationCOMPANYSHORTNAME.sendKeys("Abdurrahmandeneme");
+
+     /// burda kaldık   kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
     }
 
 
