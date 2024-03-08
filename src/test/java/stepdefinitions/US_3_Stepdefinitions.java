@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -13,24 +14,28 @@ import pages.PageHYBS;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.security.Key;
+import java.time.Instant;
+
 import static org.testng.AssertJUnit.assertTrue;
 import static utilities.Driver.driver;
 
 public class US_3_Stepdefinitions {
 
-    PageHYBS pageHYBS=new PageHYBS();
-    Actions actions=new Actions(Driver.getDriver());
+    PageHYBS pageHYBS = new PageHYBS();
+    Actions actions = new Actions(Driver.getDriver());
     String subjectText;
     String expectedKelime;
     String actualKelime;
-    SoftAssert softAssert=new SoftAssert();
+    SoftAssert softAssert = new SoftAssert();
     private WebElement dropdown;
 
     private WebElement provinceContainer;
+
     @Given("User should be able to click on OPERATION MODULE")
     public void user_should_be_able_to_click_on_operatıon_module() {
 
-    pageHYBS.isletmeModuluLink.click();
+        pageHYBS.isletmeModuluLink.click();
         actions.moveToElement(pageHYBS.FirmaListesi).perform();
         assertTrue(pageHYBS.FirmaListesi.isDisplayed());
         actions.moveToElement(pageHYBS.AracListesi).perform();
@@ -38,19 +43,19 @@ public class US_3_Stepdefinitions {
 
 
     }
+
     @Given("The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed.\"")
     public void the_user_clicks_on_the_company_lıst_link_and_goes_to_the_relevant_page_and_it_is_tested_that_the_information_about_the_companies_is_listed() {
 
-    pageHYBS.FirmaListesi.click();
+        pageHYBS.FirmaListesi.click();
 
-    softAssert.assertTrue(pageHYBS.firmaUnvanibasligi.isDisplayed());
-    softAssert.assertTrue(pageHYBS.islemvemobiluygulamatelefonbasligi.isDisplayed());
-    softAssert.assertTrue(pageHYBS.ilcebasligi.isDisplayed());
-    softAssert.assertTrue(pageHYBS.adresbasligi.isDisplayed());
-    softAssert.assertTrue(pageHYBS.epostabasligi.isDisplayed());
-    softAssert.assertTrue(pageHYBS.sicilnobasligi.isDisplayed());
-    softAssert.assertAll();
-
+        softAssert.assertTrue(pageHYBS.firmaUnvanibasligi.isDisplayed());
+        softAssert.assertTrue(pageHYBS.islemvemobiluygulamatelefonbasligi.isDisplayed());
+        softAssert.assertTrue(pageHYBS.ilcebasligi.isDisplayed());
+        softAssert.assertTrue(pageHYBS.adresbasligi.isDisplayed());
+        softAssert.assertTrue(pageHYBS.epostabasligi.isDisplayed());
+        softAssert.assertTrue(pageHYBS.sicilnobasligi.isDisplayed());
+        softAssert.assertAll();
 
 
     }
@@ -65,12 +70,13 @@ public class US_3_Stepdefinitions {
 
 
     }
+
     @Given("Verifies that category dropbox options are visible and selectable")
-    public void verifies_that_category_dropbox_options_are_visible_and_selectable()  throws InterruptedException {
+    public void verifies_that_category_dropbox_options_are_visible_and_selectable() throws InterruptedException {
 
 
         ReusableMethods.waitForPageToLoad(3);
-      // ReusableMethods.verifyAllItemsAreClickable(pageHYBS.firmalistesilütfengrupsecinizdropdown,pageHYBS.companygroupCurrentsearchtext);
+        // ReusableMethods.verifyAllItemsAreClickable(pageHYBS.firmalistesilütfengrupsecinizdropdown,pageHYBS.companygroupCurrentsearchtext);
 
 
     }
@@ -86,15 +92,17 @@ public class US_3_Stepdefinitions {
         pageHYBS.userpassivelist.click();
 
     }
+
     @Given("click cleaning company radiobutton and verify cleaning company list")
     public void click_cleaning_company_radiobutton_and_verify_cleaning_company_list() {
 
-            pageHYBS.blacklist.click();
-            Assert.assertTrue(pageHYBS.blacklistEVET.isDisplayed());
+        pageHYBS.blacklist.click();
+        Assert.assertTrue(pageHYBS.blacklistEVET.isDisplayed());
         ReusableMethods.wait(2);
         pageHYBS.blacklist.click();
 
     }
+
     @Given("click black list radiobutton and black list")
     public void click_black_list_radiobutton_and_black_list() {
         pageHYBS.cleancompanylist.click();
@@ -132,50 +140,68 @@ public class US_3_Stepdefinitions {
         Assert.assertEquals(pageHYBS.taxOfficeInput.getAttribute("value"), "GEVHER NESİBE VERGİ DAİRESİ");
 
 
-
-
     }
+
     @Given("click new company button")
     public void click_new_company_button() {
 
 
         pageHYBS.newCompanyButton.click();
     }
+
     @Given("The system should confirm that it is on the New Company page,then enter the company information, and finally press the button to add the new company seamlessly.")
     public void the_system_should_confirm_that_it_is_on_the_new_company_page_then_enter_the_company_information_and_finally_press_the_button_to_add_the_new_company_seamlessly() {
 
 
-        pageHYBS.vergiNumarasi.sendKeys("1234567890");
-        pageHYBS.firmaKisaAd.click();
-        ReusableMethods.wait(4);
-        pageHYBS.firmaKisaAd.sendKeys("Test Company");
-        pageHYBS.firmaUnvani.sendKeys("Test Company");
-        pageHYBS.telefon.sendKeys("1234567890");
 
-        Select typeDropdown = new Select(pageHYBS.firmaTipi);
-        typeDropdown.selectByVisibleText("A.Ş.");
+        // Alanları doldurma
+        pageHYBS.taxIdInputt.sendKeys("1234567890");
+        ReusableMethods.wait(1);
+        pageHYBS.titleInputt.sendKeys("company");
+        ReusableMethods.wait(5);
+        pageHYBS.nameInputt.sendKeys("XYZ Ltd.");
+        ReusableMethods.wait(3);
+        pageHYBS.phoneInputt.sendKeys("1234567890");
+        pageHYBS.phone1Inputt.sendKeys("0987654321");
+        pageHYBS.emailInputt.sendKeys("info@companyxyz.com");
+        ReusableMethods.scrolldown_bypixel_2000();
 
-        Select provinceDropdown = new Select(pageHYBS.ilce);
-        provinceDropdown.selectByVisibleText("Yahyalı");
+        ReusableMethods.wait(3);
 
-        pageHYBS.ecompanyposta.sendKeys("test@test.com"); // E-posta alanı ekleniyor
+        Select selectFirmaTipi = new Select(pageHYBS.firmaTipiDropdown);
 
-        Select taxAdministrationDropdown = new Select(pageHYBS.vergiDairesi);
-        taxAdministrationDropdown.selectByVisibleText("DEVELİ VERGİ DAİRESİ");
+        // İkinci seçeneği seç
+        selectFirmaTipi.selectByIndex(1);
 
-        Select groupTypeDropdown = new Select(pageHYBS.firmaGrup);
-        groupTypeDropdown.selectByVisibleText("Hafriyatçı");
+        // İkinci seçeneğin değerini al
+        String secondSelectedOption = selectFirmaTipi.getFirstSelectedOption().getText();
 
-        pageHYBS.adres.sendKeys("Test Address");
+        pageHYBS.companyAddilceLIST.click();
+        ReusableMethods.wait(3);
+        pageHYBS.companyAddLıstINPUT.sendKeys("Talas"+Keys.ENTER);
+        ReusableMethods.scrolldown_bypixel_2000();
+        ReusableMethods.wait(6);
+        pageHYBS.vergidairesiLİST.click();
+        ReusableMethods.wait(2);
+        pageHYBS.vergidairesiLİSTINPUT.sendKeys("MİMARSİNAN VERGİ DAİRESİ"+ Keys.ENTER);
 
 
 
 
+        ReusableMethods.wait(3);
+      pageHYBS.companyAddHAFRIYATCIKAMULIST.click();
+      ReusableMethods.wait(1);
+      pageHYBS.companyAddHAFRIYATCIKAMUINPUT.sendKeys("Kamu" + Keys.ENTER);
 
-        pageHYBS.olusturButton.click();
 
+ actions.
+         sendKeys(Keys.ARROW_DOWN).
+         sendKeys(Keys.ARROW_DOWN).
+         sendKeys(Keys.ARROW_DOWN).
+
+         perform();
+
+      pageHYBS.companyAddaddressINPUT.sendKeys("YENİ MAHALLE ABDURRAHMAN");
 
     }
-
-
 }

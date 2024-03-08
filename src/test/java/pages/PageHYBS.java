@@ -35,195 +35,189 @@ public class PageHYBS {
 
     //4- Anaysayfalinki
     @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[1]/a")
-    public  WebElement AnasayfaLink;
+    public WebElement AnasayfaLink;
 
 
     //5- IsletmeModuluLink
-   @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[2]/a")
-   public  WebElement isletmeModuluLink;
+    @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[2]/a")
+    public WebElement isletmeModuluLink;
 
 
- //6- IsletmeModuluLink
- @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[4]/a/span")
- public  WebElement TalepListeleriLink;
+    //6- IsletmeModuluLink
+    @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[4]/a/span")
+    public WebElement TalepListeleriLink;
 
 
-  //7- Su ve K.i
-  @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[5]/a/span")
-  public  WebElement SuveKiTalepLink;
+    //7- Su ve K.i
+    @FindBy(xpath = "//*[@id=\"sidebar_nav\"]/ul/li[5]/a/span")
+    public WebElement SuveKiTalepLink;
 
-  // 8- FirmaListesi
-  @FindBy(xpath = "//a[text()=\"Firma Listesi\"]")
-  public  WebElement FirmaListesi;
+    // 8- FirmaListesi
+    @FindBy(xpath = "//a[text()=\"Firma Listesi\"]")
+    public WebElement FirmaListesi;
 
- @FindBy(xpath = "//a[text()=\"Araç Listesi\"]")
- public  WebElement AracListesi;
+    @FindBy(xpath = "//a[text()=\"Araç Listesi\"]")
+    public WebElement AracListesi;
 
 
- @FindBy(xpath = "//a[text()=\"Araç Kiralama\"]")
- public  WebElement AracKiralama;
+    @FindBy(xpath = "//a[text()=\"Araç Kiralama\"]")
+    public WebElement AracKiralama;
 
 
- @FindBy(xpath = "//a[text()=\"Yapı Ruhsat Talebi\"]")
- public  WebElement YapıRuhsatTalebiLinki;
+    @FindBy(xpath = "//a[text()=\"Yapı Ruhsat Talebi\"]")
+    public WebElement YapıRuhsatTalebiLinki;
 
- @FindBy(xpath = " //a[text()=\"Harici Kazı Talebi\"]")
- public  WebElement HariciKazıTalebiLinki;
+    @FindBy(xpath = " //a[text()=\"Harici Kazı Talebi\"]")
+    public WebElement HariciKazıTalebiLinki;
 
 
- @FindBy(xpath = "//span[text()=\"Su ve K.İ. Talep Listeleri\"]")
- public  WebElement suveKiTalepLinki;
+    @FindBy(xpath = "//span[text()=\"Su ve K.İ. Talep Listeleri\"]")
+    public WebElement suveKiTalepLinki;
 
 
+    @FindBy(xpath = "//a[text()=\"Alt Yapı İş Talebi\"]")
+    public WebElement altyapıTaleblink;
 
+    @FindBy(xpath = "//span[text()=\"İş Süreçleri\"]")
+    public WebElement isSurecleriLink;
 
- @FindBy(xpath = "//a[text()=\"Alt Yapı İş Talebi\"]")
- public  WebElement altyapıTaleblink;
 
- @FindBy(xpath = "//span[text()=\"İş Süreçleri\"]")
- public  WebElement isSurecleriLink;
+    @FindBy(xpath = "//a[text()=\"Yapı Ruhsatlı İş Süreci\"]")
+    public WebElement yapiRuhsatliisSurecleriLink;
 
 
- @FindBy(xpath = "//a[text()=\"Yapı Ruhsatlı İş Süreci\"]")
- public  WebElement yapiRuhsatliisSurecleriLink;
+    @FindBy(xpath = "//a[text()=\"Harici Kazı İş Süreci\"]")
+    public WebElement hariciKaziisSurecleriLink;
 
 
- @FindBy(xpath = "//a[text()=\"Harici Kazı İş Süreci\"]")
- public  WebElement hariciKaziisSurecleriLink;
+    @FindBy(xpath = "//a[text()=\"İnşaat Dolgu İş Süreci\"]")
+    public WebElement insaatDolguisSurecleriLink;
 
 
- @FindBy(xpath = "//a[text()=\"İnşaat Dolgu İş Süreci\"]")
- public  WebElement insaatDolguisSurecleriLink;
+    @FindBy(xpath = "//span[text()=\"Su ve K.İ. İş Süreçleri\"]")
+    public WebElement suveKiissureclerilink;
 
+    @FindBy(xpath = "//a[text()=\"Döküm Sahası Hareketleri\"]")
+    public WebElement dokumsahasihareketleri;
 
- @FindBy(xpath = "//span[text()=\"Su ve K.İ. İş Süreçleri\"]")
- public  WebElement suveKiissureclerilink;
 
- @FindBy(xpath = "//a[text()=\"Döküm Sahası Hareketleri\"]")
- public  WebElement dokumsahasihareketleri;
+    @FindBy(xpath = "//span[text()=\"Küçük Araç\"]")
+    public WebElement kucukaraclink;
 
 
- @FindBy(xpath = "//span[text()=\"Küçük Araç\"]")
- public  WebElement kucukaraclink;
+    @FindBy(xpath = "//a[text()=\"Alt Yapı İş Süreci\"]")
+    public WebElement altyapıissurecilink;
 
 
- @FindBy(xpath = "//a[text()=\"Alt Yapı İş Süreci\"]")
- public  WebElement altyapıissurecilink;
+    @FindBy(xpath = "//a[text()=\"Küçük Araç İşlemleri\"]")
+    public WebElement kucukaracislemleri;
 
 
- @FindBy(xpath = "//a[text()=\"Küçük Araç İşlemleri\"]")
- public  WebElement kucukaracislemleri;
+    @FindBy(xpath = "//span[text()=\"Sistem Yönetimi\"]")
+    public WebElement sistemyonetimilinki;
 
 
- @FindBy(xpath = "//span[text()=\"Sistem Yönetimi\"]")
- public  WebElement sistemyonetimilinki;
+    @FindBy(xpath = "//a[text()=\"Mali Listesi\"]")
+    public WebElement maliListesilinki;
 
 
- @FindBy(xpath = "//a[text()=\"Mali Listesi\"]")
- public  WebElement maliListesilinki;
+    @FindBy(xpath = "//span[text()=\"Raporlar\"]")
+    public WebElement raporlarlinki;
 
+    @FindBy(xpath = "//a[text()=\"Araç Takip Sistemi\"]")
+    public WebElement aracTakipSistemilinki;
 
- @FindBy(xpath = "//span[text()=\"Raporlar\"]")
- public  WebElement raporlarlinki;
+    @FindBy(xpath = "//a[text()=\"Döküm Sahası Listesi\"]")
+    public WebElement dokumsahasılistesi;
 
- @FindBy(xpath = "//a[text()=\"Araç Takip Sistemi\"]")
- public  WebElement aracTakipSistemilinki;
+    @FindBy(xpath = "//a[text()=\"Kullanıcı Listesi\"]")
+    public WebElement kullanicilistesi;
 
- @FindBy(xpath = "//a[text()=\"Döküm Sahası Listesi\"]")
- public  WebElement dokumsahasılistesi;
 
- @FindBy(xpath = "//a[text()=\"Kullanıcı Listesi\"]")
- public  WebElement kullanicilistesi;
+    @FindBy(xpath = "//a[text()=\"Log Listesi\"]")
+    public WebElement loglistesi;
 
 
+    @FindBy(id = " company_list_dt")
+    public WebElement firmalistesitablosu;
 
- @FindBy(xpath = "//a[text()=\"Log Listesi\"]")
- public  WebElement loglistesi;
+    @FindBy(xpath = " //th[text()=\" Firma Ünvanı\"]")
+    public WebElement firmaUnvanibasligi;
 
+    @FindBy(xpath = "//th[text()=\"Işlem ve Mobil Uygulama Yetklisi Telefon\"]")
+    public WebElement islemvemobiluygulamatelefonbasligi;
 
- @FindBy(id = " company_list_dt")
- public  WebElement firmalistesitablosu;
+    @FindBy(xpath = "//th[text()=\"İlçe\"]")
+    public WebElement ilcebasligi;
 
- @FindBy(xpath = " //th[text()=\" Firma Ünvanı\"]")
- public  WebElement firmaUnvanibasligi;
 
- @FindBy(xpath = "//th[text()=\"Işlem ve Mobil Uygulama Yetklisi Telefon\"]")
- public  WebElement islemvemobiluygulamatelefonbasligi;
+    @FindBy(xpath = "//th[text()=\"Adres\"]")
+    public WebElement adresbasligi;
 
- @FindBy(xpath = "//th[text()=\"İlçe\"]")
- public  WebElement ilcebasligi;
 
+    @FindBy(xpath = "//th[text()=\"E-Posta\"]")
+    public WebElement epostabasligi;
 
- @FindBy(xpath = "//th[text()=\"Adres\"]")
- public  WebElement adresbasligi;
 
+    @FindBy(xpath = "//th[text()=\"Sicil No\"]")
+    public WebElement sicilnobasligi;
 
- @FindBy(xpath = "//th[text()=\"E-Posta\"]")
- public  WebElement epostabasligi;
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[1]/div/label[2]/span/span[1]/span/span[2]")
+    public WebElement firmalistesilütfengrupsecinizdropdown;
 
 
- @FindBy(xpath = "//th[text()=\"Sicil No\"]")
- public  WebElement sicilnobasligi;
+    @FindBy(xpath = "//span[text()=\"Hafriyatçı\"]")
+    public WebElement dropdowndakihafriyatci;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[1]/div/label[2]/span/span[1]/span/span[2]")
- public  WebElement firmalistesilütfengrupsecinizdropdown;
 
+    @FindBy(xpath = "//span[text()=\"İlçe Belediye\"]")
+    public WebElement dropdowndakiilcebelediye;
 
- @FindBy(xpath = "//span[text()=\"Hafriyatçı\"]")
- public  WebElement dropdowndakihafriyatci;
 
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement companygroupCurrentsearchtext;
 
- @FindBy(xpath = "//span[text()=\"İlçe Belediye\"]")
- public  WebElement dropdowndakiilcebelediye;
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span/label")
+    public WebElement userpassivelist;
 
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span")
+    public WebElement userpassivelistEVET;
 
- @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
- public  WebElement companygroupCurrentsearchtext;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span/label")
- public  WebElement userpassivelist;
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span/label")
+    public WebElement blacklist;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span")
- public  WebElement userpassivelistEVET;
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span")
+    public WebElement blacklistEVET;
 
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span/label")
+    public WebElement cleancompanylist;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span/label")
- public  WebElement blacklist;
+    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span")
+    public WebElement cleancompanyEVET;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[2]/span")
- public  WebElement blacklistEVET;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span/label")
- public  WebElement cleancompanylist;
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[1]/div[1]/div/div")
+    public WebElement nameInput;
 
- @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[3]/span")
- public  WebElement cleancompanyEVET;
+    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[3]/div[1]/div/div")
+    public WebElement phoneInput;
 
+    @FindBy(id = "province_filter")
+    public WebElement provinceInput;
 
+    @FindBy(id = "address_filter")
+    public WebElement addressInput;
 
- @FindBy(xpath="//*[@id=\"company_form\"]/fieldset/div[1]/div[1]/div/div")
- public WebElement nameInput;
+    @FindBy(id = "email_filter")
+    public WebElement emailInput;
 
- @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[3]/div[1]/div/div")
- public WebElement phoneInput;
+    @FindBy(id = "register_no_filter")
+    public WebElement registerNoInput;
 
- @FindBy(id = "province_filter")
- public WebElement provinceInput;
 
- @FindBy(id = "address_filter")
- public WebElement addressInput;
-
- @FindBy(id = "email_filter")
- public WebElement emailInput;
-
- @FindBy(id = "register_no_filter")
- public WebElement registerNoInput;
-
-
-
- @FindBy(id = "tax_office_filter")
- public WebElement taxOfficeInput;
-
+    @FindBy(id = "tax_office_filter")
+    public WebElement taxOfficeInput;
 
 
     @FindBy(name = "tax_id")
@@ -233,12 +227,8 @@ public class PageHYBS {
     public WebElement titleInput;
 
 
-
-
-
     @FindBy(xpath = "//input[@name=\"phone1\"]")
     public WebElement phone1Input;
-
 
 
     @FindBy(id = "id_type")
@@ -257,12 +247,12 @@ public class PageHYBS {
     public WebElement addressTextarea;
 
     @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[1]/div[2]/div/div")
-    public  WebElement companyshortname;
+    public WebElement companyshortname;
 
     @FindBy(xpath = "//input[@id=\"id_phone\"]")
-    public  WebElement islemmailphone;
+    public WebElement islemmailphone;
     @FindBy(xpath = "//input[@id=\"id_email\"]")
-    public  WebElement eposta;
+    public WebElement eposta;
     @FindBy(id = "save")
     public WebElement saveButton;
 
@@ -279,43 +269,112 @@ public class PageHYBS {
     @FindBy(xpath = "//footer[@id='edit_footer']//button[@id='update_button']")
     public WebElement updateButton;
 
- @FindBy(linkText = "Yeni Firma")
- public WebElement newCompanyButton;
+    @FindBy(linkText = "Yeni Firma")
+    public WebElement newCompanyButton;
 
 
-
+    // Locatorlar
     @FindBy(id = "id_tax_id")
-    public WebElement vergiNumarasi;
+    public WebElement taxIdField;
 
     @FindBy(id = "id_title")
-    public WebElement firmaKisaAd;
+    public WebElement shortNameField;
 
     @FindBy(id = "id_name")
-    public WebElement firmaUnvani;
+    public WebElement titleField;
 
     @FindBy(id = "id_phone")
-    public WebElement telefon;
+    public WebElement phoneField;
+
+    @FindBy(id = "id_phone1")
+    public WebElement secondPhoneField;
 
     @FindBy(id = "id_email")
-    public WebElement ecompanyposta;
+    public WebElement emailField;
 
-    @FindBy(id = "id_type")
-    public WebElement firmaTipi;
 
-    @FindBy(id = "id_province")
-    public WebElement ilce;
+    @FindBy(xpath = "//label[text()='Firma Tipi']/following-sibling::div//span")
+    public WebElement companyTypeDropdown;
 
-    @FindBy(id = "id_tax_administration")
-    public WebElement vergiDairesi;
+    @FindBy(xpath = "//label[text()='İlçe']/following-sibling::div//span")
+    public WebElement provinceDropdownn;
 
-    @FindBy(id = "id_group_type")
-    public WebElement firmaGrup;
+    @FindBy(xpath = "//label[text()='Vergi Dairesi']/following-sibling::div//span")
+    public WebElement taxAdministrationDropdownn;
+
+    @FindBy(xpath = "//label[text()='Firma Grup']/following-sibling::div//span")
+    public WebElement companyGroupDropdown;
 
     @FindBy(id = "id_address")
-    public WebElement adres;
+    public WebElement addressField;
 
-    @FindBy(id = "save") // Olustur butonunun locatoru ekleniyor
-    public WebElement olusturButton;
+//*************************************************************************************************
+
+    @FindBy(id = "id_tax_id")
+    public WebElement taxIdInputt;
+
+    @FindBy(xpath = "//input[@id=\"id_title\"]")
+    public WebElement titleInputt;
+
+    @FindBy(id = "id_name")
+    public WebElement nameInputt;
+
+    @FindBy(id = "id_phone")
+    public WebElement phoneInputt;
+
+
+
+    @FindBy(id = "id_phone1")
+    public WebElement phone1Inputt;
+
+    @FindBy(id = "id_email")
+    public WebElement emailInputt;
+    @FindBy(xpath = "//textarea[@id=\"id_address\"]")
+    public WebElement companyAddaddressINPUT;
+    @FindBy(name = "type")
+    public WebElement firmaTipiDropdown;
+
+
+    @FindBy(xpath = "//span[@id=\"select2-id_tax_administration-container\"]")
+    public WebElement vergidairesiLİST;
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vergidairesiLİSTINPUT;
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement companyAddLıstINPUT;
+    @FindBy(xpath = "//span[@id=\"select2-id_province-container\"]")
+    public WebElement companyAddilceLIST;
+
+    @FindBy(xpath = "//span[@id=\"select2-id_group_type-container\"]")
+    public WebElement companyAddHAFRIYATCIKAMULIST;
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement companyAddHAFRIYATCIKAMUINPUT;
+    @FindBy(xpath = "//select[@id='id_province']//following-sibling::span[@class='dropdown-wrapper']")
+    public WebElement provinceDropdownWrapper;
+
+    @FindBy(xpath = "//select[@id='id_tax_administration']//following-sibling::span[@class='dropdown-wrapper']")
+    public WebElement taxAdministrationDropdownWrapper;
+
+    @FindBy(xpath = "//select[@id='id_group_type']//following-sibling::span[@class='dropdown-wrapper']")
+    public WebElement companyGroupDropdownWrapper;
+
+    @FindBy(id = "id_address")
+    public WebElement addressTextareat;
+
+    @FindBy(id = "save")
+    public WebElement saveButtont;
+
+    @FindBy(id = "reset_company")
+    public WebElement cancelButtont;
+
+    @FindBy(id = "update_button")
+    public WebElement updateButtont;
+
+
+
+
+
 
 
 
@@ -503,22 +562,27 @@ public class PageHYBS {
     @FindBy(xpath = "(//select[@id=\"id_type\"])[1]")
     public WebElement companyinformationUpdateCOMPANYTIP;
 
-    @FindBy(xpath = "//*[@id=\"id_tax_administration\"]")
+    @FindBy(xpath = "//span[@id=\"select2-id_tax_administration-container\"]")
     public WebElement companyinformationUpdateTAXADDRESS;
 
-    @FindBy(xpath = "//*[@id=\"id_address\"]")
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public  WebElement companyinformationINPUTTAXADDRESS;
+    @FindBy(xpath = "//textarea[@id=\"id_address\"]")
     public WebElement companyinformationADDRESS;
 
     @FindBy(xpath = "//*[@id=\"id_title\"]")
     public WebElement companyinformationCOMPANYSHORTNAME;
 
 
-    @FindBy(xpath = "//*[@id=\"id_phone\"]")
+    @FindBy(xpath = "//input[@id=\"id_phone\"]")
     public WebElement companyinformationPHONE;
 
 
-    @FindBy(xpath = "//select[@id=\"id_province\"]")
+    @FindBy(xpath = "(//span[@class=\"select2-selection select2-selection--single\"])[1]")
     public WebElement companyinformationILCE;
+
+    @FindBy(xpath = "//input[@id=\"id_email\"]")
+    public WebElement companyinformationEMAIL;
 
     @FindBy(xpath = "//select[@id=\"id_group_type\"]")
     public WebElement companyinformationHAFRIYATCI;

@@ -120,16 +120,33 @@ public class US_4_Stepdefinitions {
         ReusableMethods.scrolldown_600();
 
         ReusableMethods.wait(3);
-        Select provinceDropdown = new Select(pageHYBS.companyinformationUpdateTAXADDRESS);
-        provinceDropdown.selectByVisibleText("ERCİYES VERGİ DAİRESİ");
+      //  Select provinceDropdown = new Select(pageHYBS.companyinformationUpdateTAXADDRESS);
+        // provinceDropdown.selectByVisibleText("ERCİYES VERGİ DAİRESİ");
 
         pageHYBS.companyinformationADDRESS.clear();
         pageHYBS.companyinformationADDRESS.sendKeys("YENİ MAHALLE KAYSERİ");
 
         pageHYBS.companyinformationCOMPANYSHORTNAME.clear();
         pageHYBS.companyinformationCOMPANYSHORTNAME.sendKeys("Abdurrahmandeneme");
+        ReusableMethods.scrolldown_600();
+        pageHYBS.companyinformationPHONE.clear();
+        pageHYBS.companyinformationPHONE.sendKeys("05404040404");
+        ReusableMethods.wait(3);
+        ReusableMethods.scrolldown_600();
+        pageHYBS.companyinformationEMAIL.clear();
+        pageHYBS.companyinformationEMAIL.sendKeys("alas@gmail.com");
+        ReusableMethods.scrolldown_600();
+        ReusableMethods.wait(3);
 
-     /// burda kaldık   kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+        Select selectılce=new Select(pageHYBS.companyinformationILCE);
+        selectılce.selectByVisibleText("SARIZ");
+
+
+
+        pageHYBS.companyinformationHAFRIYATCI.click();
+        pageHYBS.companyinformationHAFRIYATCI.sendKeys("Kamu");
+
+
     }
 
 

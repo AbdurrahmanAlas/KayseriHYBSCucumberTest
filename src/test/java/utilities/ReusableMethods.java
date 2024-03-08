@@ -37,6 +37,12 @@ public class ReusableMethods {
     // 2 - ************************ EXPLICIT METHODU ********************************//
     // ELEMENT GÖRÜNENE KADAR BEKLEME METHODU
 
+    public static void selectDropdownOption(WebDriver driver, WebElement dropdownContainer, String optionText) {
+        dropdownContainer.click();
+        WebElement option = driver.findElement(By.xpath("//ul[@class='select2-results__options']//li[contains(text(), '" + optionText + "')]"));
+        option.click();
+    }
+
 
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
@@ -452,7 +458,7 @@ public class ReusableMethods {
     public static void scrolldown_600() {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
+        js.executeScript("window.scrollBy(0,600)");
 
     }
 
