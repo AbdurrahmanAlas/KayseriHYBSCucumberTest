@@ -39,7 +39,7 @@
       * the user clicks on Company_Information,Company_Personnel,Company_Users,Company_Documents,Vehicles,Vehicle_Documents,Financial_Transactions,TIB,Balance_Movements,Call_List,Construction_Fill_List,Penalty_List,Complaint_List,CONTRACT link
 
 
-    @tc07
+
       Scenario: TC_0404  When you click on the INFORMATION and COMPANY USERS heading, the entered
       information about the company should appear. and all information MUST BE UPDATED when the Update button is clicked.
         # BİLGİLER ve FİRMA KULLANICILARİ başlıgına tiklandiginda firmaya ait girilen bilgiler gelmelidir.
@@ -53,3 +53,27 @@
         * the user clicks on the "UPDATE" button the user verifies that the company information update form is opened
         * the user enters new information the user verifies that the information is updated
 
+
+      #Ana sayfada "Firma Personelleri ve Firma Belgeleri" başlığına tıklayın.
+      #Sayfanın "Firma Personelleri" ve "Firma Belgeleri" bölümlerinin görüntülendiğini doğrulayın.
+      #Yeni bir firma personeli eklemek için "Yeni Personel Ekle" butonuna tıklayın.
+      #Yeni personelin adını, soyadını, departmanını ve diğer gerekli bilgileri girin.
+      #Personeli kaydetmek için "Kaydet" butonuna tıklayın.
+      #Eklenen personelin sağ kısımda listelendiğini doğrulayın.
+      #Yeni bir firma belgesi eklemek için "Yeni Belge Ekle" butonuna tıklayın.
+      #Yeni belgenin adını, türünü, tarihini ve diğer gerekli bilgileri girin.
+      #Belgeyi kaydetmek için "Kaydet" butonuna tıklayın.
+      #Eklenen belgenin sağ kısımda listelendiğini doğrulayın.
+
+    @tc07
+      Scenario: TC_0405 When you click on the "COMPANY PERSONNEL AND COMPANY DOCUMENTS" heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
+      "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
+
+        Given Login to HYBS site, click the Login button and log in with your User information.
+        * User should be able to click on OPERATION MODULE
+        * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
+        * click on the inspect eye icon
+        * the user clicks on the COMPANY PERSONNEL link and the user verifies that the company information is correctly loaded
+        * the user enters CompanyPersonnel new information the user verifies that the information is enter
+        * the user clicks on the COMPANY DOCUMENTS  button the user verifies that the company information update form is opened
+        *  * the user enters CompanyDocuments new information the user verifies that the information is enter

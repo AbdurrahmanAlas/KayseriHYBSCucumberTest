@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -100,57 +101,100 @@ public class US_4_Stepdefinitions {
     public void the_user_enters_new_information_the_user_verifies_that_the_information_is_updated() {
 
 
-        pageHYBS.companyinformationUpdateTAXNO.clear();
-        pageHYBS.companyinformationUpdateTAXNO.sendKeys("1234567777");
-
-        pageHYBS.companyinformationUpdateNAME.click();
-        ReusableMethods.wait(10);
-
-        pageHYBS.companyinformationUpdateNAME.clear();
-        pageHYBS.companyinformationUpdateNAME.sendKeys("YeniCompany");
-
-        pageHYBS.companyinformationUpdatePHONE.clear();
-        pageHYBS.companyinformationUpdatePHONE.sendKeys("11111111111");
-
-
-
-        Select typeDropdown = new Select(pageHYBS.companyinformationUpdateCOMPANYTIP);
-        typeDropdown.selectByVisibleText("A.Ş.");
-
-        ReusableMethods.scrolldown_600();
+        // Alanları doldurma
+        pageHYBS.taxIdInputt.clear();
+        pageHYBS.taxIdInputt.sendKeys("52625");
+        ReusableMethods.wait(1);
+        pageHYBS.titleInputt.clear();
+        pageHYBS.titleInputt.sendKeys("GUNCELLEMEDeniyoruz");
+        ReusableMethods.wait(2);
+        pageHYBS.nameInputt.clear();
+        pageHYBS.nameInputt.sendKeys("XYZ Ltd.");
+        ReusableMethods.wait(3);
+        pageHYBS.phoneInputt.clear();
+        pageHYBS.phoneInputt.sendKeys("1234567890");
+        ReusableMethods.wait(2);
+        pageHYBS.emailInputt.clear();
+        pageHYBS.emailInputt.sendKeys("info@companyxyz.com");
+        ReusableMethods.scrolldown_bypixel_2000();
 
         ReusableMethods.wait(3);
-      //  Select provinceDropdown = new Select(pageHYBS.companyinformationUpdateTAXADDRESS);
-        // provinceDropdown.selectByVisibleText("ERCİYES VERGİ DAİRESİ");
 
-        pageHYBS.companyinformationADDRESS.clear();
-        pageHYBS.companyinformationADDRESS.sendKeys("YENİ MAHALLE KAYSERİ");
+        Select selectFirmaTipi = new Select(pageHYBS.firmaTipiDropdown);
 
-        pageHYBS.companyinformationCOMPANYSHORTNAME.clear();
-        pageHYBS.companyinformationCOMPANYSHORTNAME.sendKeys("Abdurrahmandeneme");
-        ReusableMethods.scrolldown_600();
-        pageHYBS.companyinformationPHONE.clear();
-        pageHYBS.companyinformationPHONE.sendKeys("05404040404");
+        // İkinci seçeneği seç
+        selectFirmaTipi.selectByIndex(1);
+
+        // İkinci seçeneğin değerini al
+        String secondSelectedOption = selectFirmaTipi.getFirstSelectedOption().getText();
+
+        pageHYBS.companyAddilceLIST.click();
         ReusableMethods.wait(3);
-        ReusableMethods.scrolldown_600();
-        pageHYBS.companyinformationEMAIL.clear();
-        pageHYBS.companyinformationEMAIL.sendKeys("alas@gmail.com");
-        ReusableMethods.scrolldown_600();
+        pageHYBS.companyAddLıstINPUT.sendKeys("Kocasinan"+ Keys.ENTER);
+        ReusableMethods.scrolldown_bypixel_2000();
+        ReusableMethods.wait(6);
+        pageHYBS.vergidairesiLİST.click();
+        ReusableMethods.wait(2);
+        pageHYBS.vergidairesiLİSTINPUT.sendKeys("GEVHER NESİBE VERGİ DAİRESİ"+ Keys.ENTER);
+
+
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
         ReusableMethods.wait(3);
+        pageHYBS.companyAddHAFRIYATCIKAMULIST.click();
+        ReusableMethods.wait(1);
+        pageHYBS.companyAddHAFRIYATCIKAMUINPUT.sendKeys("İLÇE" + Keys.ENTER);
 
-        Select selectılce=new Select(pageHYBS.companyinformationILCE);
-        selectılce.selectByVisibleText("SARIZ");
 
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
-
-        pageHYBS.companyinformationHAFRIYATCI.click();
-        pageHYBS.companyinformationHAFRIYATCI.sendKeys("Kamu");
+        pageHYBS.companyAddaddressINPUT.sendKeys(" ABDURRAHMAN GÜNCELLEME DENİYOR");
 
 
     }
 
 
+    @Given("the user clicks on the COMPANY PERSONNEL link and the user verifies that the company information is correctly loaded")
+    public void the_user_clicks_on_the_company_personnel_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded() {
 
+        pageHYBS.companyPersonnelLink.click();
+        Assert.assertTrue(pageHYBS.companyPersonnelLinkTable.isDisplayed());
+
+
+    }
+
+    @Given("the user enters CompanyPersonnel new information the user verifies that the information is enter")
+    public void the_user_enters_company_personnel_new_information_the_user_verifies_that_the_information_is_enter() {
+
+
+
+
+
+
+
+    }
+
+    @Given("the user clicks on the COMPANY DOCUMENTS  button the user verifies that the company information update form is opened")
+    public void the_user_clicks_on_the_company_documents_button_the_user_verifies_that_the_company_information_update_form_is_opened() {
+
+
+
+
+    }
+    @Given("* the user enters CompanyDocuments new information the user verifies that the information is enter")
+    public void the_user_enters_company_documents_new_information_the_user_verifies_that_the_information_is_enter() {
+
+
+
+
+
+
+    }
 
 
 

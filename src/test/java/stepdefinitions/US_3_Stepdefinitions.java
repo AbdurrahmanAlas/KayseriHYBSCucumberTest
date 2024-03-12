@@ -186,6 +186,9 @@ public class US_3_Stepdefinitions {
         pageHYBS.vergidairesiLİSTINPUT.sendKeys("MİMARSİNAN VERGİ DAİRESİ"+ Keys.ENTER);
 
 
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
 
         ReusableMethods.wait(3);
@@ -194,12 +197,9 @@ public class US_3_Stepdefinitions {
       pageHYBS.companyAddHAFRIYATCIKAMUINPUT.sendKeys("Kamu" + Keys.ENTER);
 
 
- actions.
-         sendKeys(Keys.ARROW_DOWN).
-         sendKeys(Keys.ARROW_DOWN).
-         sendKeys(Keys.ARROW_DOWN).
-
-         perform();
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
       pageHYBS.companyAddaddressINPUT.sendKeys("YENİ MAHALLE ABDURRAHMAN");
 
