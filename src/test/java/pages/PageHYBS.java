@@ -335,6 +335,21 @@ public class PageHYBS {
     public WebElement firmaTipiDropdown;
 
 
+
+
+
+    //(//select[@name="subtype"])[2]
+
+
+
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//span[@id=\"select2-id_tax_administration-container\"]")
     public WebElement vergidairesiLİST;
 
@@ -372,6 +387,60 @@ public class PageHYBS {
     public WebElement updateButtont;
 
 
+    @FindBy(xpath = "//input[@id=\"newVehiclePlate\"]")
+    public WebElement vehicleplate;
+    @FindBy(xpath = "//*[@id=\"newVehicleAge\"]")
+    public WebElement vehicleAge;
+    @FindBy(xpath = "//*[@id=\"newVehicleHgs\"]")
+    public WebElement vehicleHgs;
+    @FindBy(xpath = "//*[@id=\"newVehicleTare\"]")
+    public WebElement vehicleTare;
+
+    @FindBy(xpath = "//*[@id=\"select2-newVehicleBrand-container\"]")
+    public WebElement vehicleMARKADROPDOWN;
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vehicleMARKADROPDOWNINPUT;
+
+
+    @FindBy(xpath = "//span[@id=\"select2-newVehicleType-container\"]")
+    public WebElement vehicleTIPDROPDOWN;
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vehicleTIPDROPDOWNINPUT;
+
+    @FindBy(xpath = "//input[@id=\"newVehicleImei\"]")
+    public WebElement vehicleCIHAZIMEI;
+
+    @FindBy(xpath = "//input[@id=\"newVehicleCapacity\"]")
+    public WebElement vehicleKAPASITE;
+
+
+    @FindBy(xpath = "//span[@id=\"select2-newVehicleModel-container\"]")
+    public WebElement vehicleMODELDROPDOWN;
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vehicleMODELDROPDOWNINPUT;
+
+    @FindBy(xpath = "//input[@id=\"newVehicleSim\"]")
+    public WebElement vehicleSIMKARTNO;
+
+    @FindBy(xpath = "//*[@id=\"vehicle_add_form\"]/fieldset/div[3]/div[3]/div/label[2]/i")
+    public WebElement vehicleDAMPERSENSORUVARYOK;
+
+    @FindBy(xpath = "//button[@id=\"saveVehicle\"]")
+    public WebElement vehicleSAVEBUTTON;
+
+
+    @FindBy(xpath = "//span[@id=\"select2-plate-container\"]")
+    public WebElement vehicleDOCUMENTPLATE;
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vehicleDOCUMENTPLATEINPUT;
+
+    @FindBy(xpath = "(//input[@id=\"id_name\"])[3]")
+    public WebElement vehicleDOCUMENTNAME;
+
+
+    @FindBy(xpath = "(//select[@name=\"subtype\"])[2]")
+    public WebElement vehicleDOCUMENTALTTIP;
 
 
 
@@ -382,7 +451,19 @@ public class PageHYBS {
 
 
 
-    @FindBy(xpath = "(//span[@class=\"col-sm-4 text-center no-padding\"])[4]")
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//span[@class=\"col-sm-4 text-center no-padding\"])[1]")
     public WebElement incelegözsimgesi;
     @FindBy(xpath = " //div[@class=\"col-md-6 col-lg-6 no-padding\"]")
     public WebElement firmaAdıveSicilNoGeldimi;
@@ -589,6 +670,27 @@ public class PageHYBS {
 
 
 
+    @FindBy(xpath = "//input[@id=\"newPersonName\"]")
+    public WebElement companyPersonelNameGiris;
+
+    @FindBy(xpath = "//input[@id=\"newPersonTelephone\"]")
+    public WebElement companyPersonelTelefonGiris;
+
+    @FindBy(xpath = "//input[@id=\"newPersonTelephone2\"]")
+    public WebElement companyPersonelTelefonGiris2;
+
+
+    @FindBy(xpath = "//input[@id=\"newPersonEmail\"]")
+    public WebElement companyPersonelEmailGiris;
+
+    @FindBy(xpath = "(//select[@name=\"subtype\"])[1]")
+    public WebElement CompanydocumentDropdownTicaretSicil;
+
+    @FindBy(xpath = "//button[@id=\"savePerson\"]")
+    public WebElement CompanydocumentDropdownTicaretSicilSAVEBUTTON;
+
+    @FindBy(xpath = "//button[@id=\"uploadCompanyDocument\"]")
+    public WebElement companydocumentFILEUPLOADsave;
 
 
 
@@ -613,7 +715,10 @@ public class PageHYBS {
 
 
 
-   /* public File getHaritaResmiScreenshot() throws IOException {
+
+
+
+    /* public File getHaritaResmiScreenshot() throws IOException {
         return haritaResmi.getScreenshotAs(OutputType.FILE);
 
     /* public void fillForm(String taxId, String shortTitle, String fullName, String phone, String companyPhone, String email, String province, String taxAdministration, String groupType, String address) {
@@ -685,10 +790,8 @@ public class PageHYBS {
     public WebElement araclistesicurrenttext;
 
 
-
-
-
-
+    @FindBy(xpath = "(//input[@id=\"id_name\"])[2]")
+    public  WebElement CompanyDocumentName;
 
 
 

@@ -1,18 +1,27 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pages.PageHYBS;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import static utilities.Driver.driver;
+
 public class US_4_Stepdefinitions {
 
-    PageHYBS pageHYBS=new PageHYBS();
-    Actions actions=new Actions(Driver.getDriver());
+    PageHYBS pageHYBS = new PageHYBS();
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("click on the inspect eye icon")
     public void click_on_the_inspect_eye_icon() {
@@ -23,7 +32,7 @@ public class US_4_Stepdefinitions {
     public void company_name_and_registration_number_must_appear() {
 
 
-   Assert.assertTrue(pageHYBS.firmaAdıveSicilNoGeldimi.isDisplayed());
+        Assert.assertTrue(pageHYBS.firmaAdıveSicilNoGeldimi.isDisplayed());
 
 
     }
@@ -34,21 +43,20 @@ public class US_4_Stepdefinitions {
         Assert.assertTrue(pageHYBS.karaListeyeAlbutton.isDisplayed());
 
     }
+
     @Given("The company's BALANCE, ATS DOCUMENT EXTEND, BLACKLIST and their functions should work properly when clicked.")
     public void the_company_s_balance_ats_document_extend_blacklıst_and_their_functions_should_work_properly_when_clicked() {
 
-     pageHYBS.ATSOnayBelgesiButton.click();
+        pageHYBS.ATSOnayBelgesiButton.click();
 
-     Assert.assertTrue(pageHYBS.ATSBelgesiUzatText.isDisplayed());
+        Assert.assertTrue(pageHYBS.ATSBelgesiUzatText.isDisplayed());
         ReusableMethods.wait(3);
-     pageHYBS.ATSBelgesiUzatTextinUzerindekiCarpı.click();
+        pageHYBS.ATSBelgesiUzatTextinUzerindekiCarpı.click();
         ReusableMethods.wait(3);
-     pageHYBS.karaListeyeAlbutton.click();
+        pageHYBS.karaListeyeAlbutton.click();
         ReusableMethods.wait(3);
-     Assert.assertTrue(pageHYBS.karalisteText.isDisplayed());
-     pageHYBS.KaralisteTextIptalbutonu.click();
-
-
+        Assert.assertTrue(pageHYBS.karalisteText.isDisplayed());
+        pageHYBS.KaralisteTextIptalbutonu.click();
 
 
     }
@@ -83,6 +91,7 @@ public class US_4_Stepdefinitions {
         Assert.assertTrue(pageHYBS.complaintListLinkTable.isDisplayed());
 
     }
+
     @Given("the user clicks on the {string} link and the user verifies that the company information is correctly loaded")
     public void the_user_clicks_on_the_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded(String string) {
 
@@ -91,12 +100,14 @@ public class US_4_Stepdefinitions {
 
 
     }
+
     @Given("the user clicks on the {string} button the user verifies that the company information update form is opened")
     public void the_user_clicks_on_the_button_the_user_verifies_that_the_company_information_update_form_is_opened(String string) {
 
-       pageHYBS.companyinformationUpdateButton.click();
+        pageHYBS.companyinformationUpdateButton.click();
 
     }
+
     @Given("the user enters new information the user verifies that the information is updated")
     public void the_user_enters_new_information_the_user_verifies_that_the_information_is_updated() {
 
@@ -130,12 +141,12 @@ public class US_4_Stepdefinitions {
 
         pageHYBS.companyAddilceLIST.click();
         ReusableMethods.wait(3);
-        pageHYBS.companyAddLıstINPUT.sendKeys("Kocasinan"+ Keys.ENTER);
+        pageHYBS.companyAddLıstINPUT.sendKeys("Kocasinan" + Keys.ENTER);
         ReusableMethods.scrolldown_bypixel_2000();
         ReusableMethods.wait(6);
         pageHYBS.vergidairesiLİST.click();
         ReusableMethods.wait(2);
-        pageHYBS.vergidairesiLİSTINPUT.sendKeys("GEVHER NESİBE VERGİ DAİRESİ"+ Keys.ENTER);
+        pageHYBS.vergidairesiLİSTINPUT.sendKeys("GEVHER NESİBE VERGİ DAİRESİ" + Keys.ENTER);
 
 
         actions.sendKeys(Keys.PAGE_DOWN);
@@ -174,7 +185,12 @@ public class US_4_Stepdefinitions {
 
 
 
+        pageHYBS.companyPersonelNameGiris.sendKeys("DenemeA");
+        pageHYBS.companyPersonelTelefonGiris.sendKeys("05050505");
+        pageHYBS.companyPersonelTelefonGiris2.sendKeys("050505064+46405");
+        pageHYBS.companyPersonelEmailGiris.sendKeys("apo@gmail");
 
+       pageHYBS.CompanydocumentDropdownTicaretSicilSAVEBUTTON.click();
 
 
     }
@@ -182,25 +198,104 @@ public class US_4_Stepdefinitions {
     @Given("the user clicks on the COMPANY DOCUMENTS  button the user verifies that the company information update form is opened")
     public void the_user_clicks_on_the_company_documents_button_the_user_verifies_that_the_company_information_update_form_is_opened() {
 
+        pageHYBS.companyDocumentsLink.click();
+        Assert.assertTrue(pageHYBS.companyDocumentsLinkTable.isDisplayed());
+
+    }
+
+    @Given("the user enters CompanyDocuments new information the user verifies that the information is enter")
+    public void the_user_enters_company_documents_new_information_the_user_verifies_that_the_information_is_enter() throws FileNotFoundException {
+
+
+        pageHYBS.CompanyDocumentName.sendKeys("2.denemeyapıyoruz la");
+        Select select = new Select(pageHYBS.CompanydocumentDropdownTicaretSicil);
+        select.selectByVisibleText("Fatura");
+
+        ReusableMethods.wait(3);
+        actions.sendKeys(Keys.PAGE_DOWN);
+
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.wait(5);
+
+
+
+
+        String dosyaYolu="C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
+        FileInputStream fis=new FileInputStream(dosyaYolu);
+        System.out.println(System.getProperty("user.dir"));
+
+        WebElement dosyaSecButonu= driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
+        /*
+          dosya sec butonuna bastiktan sonra
+          bilgisayardan selenium ile dosya secmemiz mumkun degil
+          onun yerine
+          dosyaSecButonu.sendKeys("DosyaYolu") yaparsak
+          dosya secme islemi yapilmis olacaktir
+         */
+
+        String yuklenecekDosyaYolu= System.getProperty("user.home") +
+                "\\Desktop\\resimler\\zabıta.png";
+
+        //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
+
+        dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
+
+        ReusableMethods.wait(5);
+
+pageHYBS.companydocumentFILEUPLOADsave.click();
+
+
+    }
+
+    @Given("the user clicks on the VEHICLE link and the user verifies that the company information is correctly loaded")
+    public void the_user_clicks_on_the_vehıcle_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded() {
+
+        pageHYBS.vehiclesLink.click();
+         ReusableMethods.wait(2);
 
 
 
     }
-    @Given("* the user enters CompanyDocuments new information the user verifies that the information is enter")
-    public void the_user_enters_company_documents_new_information_the_user_verifies_that_the_information_is_enter() {
+    @Given("the user enters VEHICLE new information the user verifies that the information is enter")
+    public void the_user_enters_vehıcle_new_information_the_user_verifies_that_the_information_is_enter() {
 
+      pageHYBS.vehicleplate.click();
+        pageHYBS.vehicleplate.sendKeys("38DE345");
+        pageHYBS.vehicleAge.sendKeys("1989");
+        pageHYBS.vehicleHgs.sendKeys("123123123");
+        pageHYBS.vehicleKAPASITE.sendKeys("130000");
+        pageHYBS.vehicleMARKADROPDOWN.click();
+        pageHYBS.companyAddLıstINPUT.sendKeys("MAN"+Keys.ENTER);
+        pageHYBS.vehicleTIPDROPDOWN.click();
+        pageHYBS.vehicleTIPDROPDOWNINPUT.sendKeys("Kamyon"+Keys.ENTER);
+        pageHYBS.vehicleCIHAZIMEI.click();
+        pageHYBS.vehicleKAPASITE.sendKeys("19000"+Keys.ENTER);
+        pageHYBS.vehicleMODELDROPDOWN.click();
+        pageHYBS.vehicleMODELDROPDOWNINPUT.sendKeys("CF");
+        pageHYBS.vehicleSIMKARTNO.sendKeys("1234");
+        pageHYBS.vehicleDAMPERSENSORUVARYOK.click();
+        pageHYBS.vehicleSAVEBUTTON.click();
 
 
 
 
 
     }
+    @Given("the user clicks on the VEHICLEDOCUMENT link and the user verifies that the company information is correctly loaded")
+    public void the_user_clicks_on_the_vehıcledocument_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded() {
+        pageHYBS.vehicleDocumentsLink.click();
+        ReusableMethods.wait(2);
+    }
+    @Given("the user enters VEHICLEDOCUMENT new information the user verifies that the information is enter")
+    public void the_user_enters_vehıcledocument_new_information_the_user_verifies_that_the_information_is_enter() {
 
+        pageHYBS.vehicleDOCUMENTPLATE.click();
+        pageHYBS.vehicleDOCUMENTPLATEINPUT.sendKeys("38DE345"+Keys.ENTER);
+        pageHYBS.vehicleDOCUMENTNAME.sendKeys("belge yukleniyor");
 
+        Select select=new Select(pageHYBS.vehicleDOCUMENTALTTIP);
+        select.selectByVisibleText("Servis Formu");
 
-
-
-
-
+    }
 
 }
