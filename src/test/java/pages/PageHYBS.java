@@ -692,8 +692,8 @@ public class PageHYBS {
     @FindBy(xpath = "//button[@id=\"uploadCompanyDocument\"]")
     public WebElement companydocumentFILEUPLOADsave;
 
-
-
+   @FindBy(xpath = "(//input[@id=\"id_path\"])[1]")
+   public  WebElement VehicleDocumentUpload;
 
 
 

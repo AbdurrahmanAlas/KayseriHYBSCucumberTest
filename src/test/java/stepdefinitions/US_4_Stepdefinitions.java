@@ -287,15 +287,33 @@ pageHYBS.companydocumentFILEUPLOADsave.click();
         ReusableMethods.wait(2);
     }
     @Given("the user enters VEHICLEDOCUMENT new information the user verifies that the information is enter")
-    public void the_user_enters_vehıcledocument_new_information_the_user_verifies_that_the_information_is_enter() {
+    public void the_user_enters_vehıcledocument_new_information_the_user_verifies_that_the_information_is_enter() throws FileNotFoundException {
 
         pageHYBS.vehicleDOCUMENTPLATE.click();
         pageHYBS.vehicleDOCUMENTPLATEINPUT.sendKeys("38DE345"+Keys.ENTER);
         pageHYBS.vehicleDOCUMENTNAME.sendKeys("belge yukleniyor");
-
+ReusableMethods.wait(1);
         Select select=new Select(pageHYBS.vehicleDOCUMENTALTTIP);
         select.selectByVisibleText("Servis Formu");
+        ReusableMethods.wait(5);
 
+        String dosyaYolu="C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
+        FileInputStream fis=new FileInputStream(dosyaYolu);
+        System.out.println(System.getProperty("user.dir"));
+        ReusableMethods.wait(5);
+
+        WebElement dosyaSecButonu= driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
+
+        String yuklenecekDosyaYolu= System.getProperty("user.home") +
+                "\\Desktop\\resimler\\zabıta.png";
+
+        //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
+
+        dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
+
+
+
+        pageHYBS.companydocumentFILEUPLOADsave.click();
     }
 
 }
