@@ -16,6 +16,7 @@ import utilities.ReusableMethods;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Set;
 
 import static utilities.Driver.driver;
 
@@ -390,4 +391,43 @@ public class US_4_Stepdefinitions {
     }
 
 
+    @Given("verify TAAHHUTNAME page")
+    public void verify_taahhutname_page() {
+
+        // "Taahhütname" düğmesini bul
+        WebElement undertakingButton = driver.findElement(By.xpath("//button[contains(text(), 'Taahhütname')]"));
+
+        // Düğmeye tıkla
+        undertakingButton.click();
+
+        ReusableMethods.wait(3);
+        // Şu anki pencereyi sakla
+        String mainWindowHandle = driver.getWindowHandle();
+
+        // Diğer açılan pencereleri sakla
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Yeni pencereyi bul ve geçiş yap
+        for (String handle : windowHandles) {
+            if (!handle.equals(mainWindowHandle)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+
+        // Yeni pencerenin başlığını kontrol et
+        String newWindowTitle = driver.getTitle();
+        if (newWindowTitle.contains("Taahhütname")) {
+            System.out.println("Taahhütname penceresi başarıyla açıldı.");
+        } else {
+            System.out.println("Taahhütname penceresi açılmadı veya beklenmeyen bir başlık var.");
+        }
+
+
+    }
 }
+
+
+
+
+

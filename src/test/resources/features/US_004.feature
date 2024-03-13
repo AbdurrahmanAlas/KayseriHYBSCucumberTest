@@ -138,7 +138,7 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     * click on the inspect eye icon
    * When clicked on the BALANCE TRANSACTIONS header, the relevant page should appear. Users should be able to perform queries smoothly using the Search box and checkboxes
-  @tc07
+
   Scenario: TC_0412 When you click on the "CALL LIST, CONSTRUCTION FILLER LIST, PENALTY LIST, COMPLAINT LIST, " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
   "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
 
@@ -147,3 +147,12 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     * click on the inspect eye icon
     * When you click on the CALL LIST, CONSTRUCTION FILLER LIST, PENALTY LIST, COMPLAINT LIST, the relevant page should appear. and querying can be done without any problems with Searchbox and checkboxes.
+@ye
+  Scenario: TC_0413 When you click on the "TAAHHUTNAME " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
+  "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
+
+    Given Login to HYBS site, click the Login button and log in with your User information.
+    * User should be able to click on OPERATION MODULE
+    * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
+    * click on the inspect eye icon
+    * verify TAAHHUTNAME page
