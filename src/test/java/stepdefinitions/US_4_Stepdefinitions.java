@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -183,14 +184,12 @@ public class US_4_Stepdefinitions {
     public void the_user_enters_company_personnel_new_information_the_user_verifies_that_the_information_is_enter() {
 
 
-
-
         pageHYBS.companyPersonelNameGiris.sendKeys("DenemeA");
         pageHYBS.companyPersonelTelefonGiris.sendKeys("05050505");
         pageHYBS.companyPersonelTelefonGiris2.sendKeys("050505064+46405");
         pageHYBS.companyPersonelEmailGiris.sendKeys("apo@gmail");
 
-       pageHYBS.CompanydocumentDropdownTicaretSicilSAVEBUTTON.click();
+        pageHYBS.CompanydocumentDropdownTicaretSicilSAVEBUTTON.click();
 
 
     }
@@ -218,13 +217,11 @@ public class US_4_Stepdefinitions {
         ReusableMethods.wait(5);
 
 
-
-
-        String dosyaYolu="C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
-        FileInputStream fis=new FileInputStream(dosyaYolu);
+        String dosyaYolu = "C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
+        FileInputStream fis = new FileInputStream(dosyaYolu);
         System.out.println(System.getProperty("user.dir"));
 
-        WebElement dosyaSecButonu= driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
+        WebElement dosyaSecButonu = driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
         /*
           dosya sec butonuna bastiktan sonra
           bilgisayardan selenium ile dosya secmemiz mumkun degil
@@ -233,7 +230,7 @@ public class US_4_Stepdefinitions {
           dosya secme islemi yapilmis olacaktir
          */
 
-        String yuklenecekDosyaYolu= System.getProperty("user.home") +
+        String yuklenecekDosyaYolu = System.getProperty("user.home") +
                 "\\Desktop\\resimler\\zabıta.png";
 
         //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
@@ -242,7 +239,7 @@ public class US_4_Stepdefinitions {
 
         ReusableMethods.wait(5);
 
-pageHYBS.companydocumentFILEUPLOADsave.click();
+        pageHYBS.companydocumentFILEUPLOADsave.click();
 
 
     }
@@ -251,25 +248,25 @@ pageHYBS.companydocumentFILEUPLOADsave.click();
     public void the_user_clicks_on_the_vehıcle_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded() {
 
         pageHYBS.vehiclesLink.click();
-         ReusableMethods.wait(2);
-
+        ReusableMethods.wait(2);
 
 
     }
+
     @Given("the user enters VEHICLE new information the user verifies that the information is enter")
     public void the_user_enters_vehıcle_new_information_the_user_verifies_that_the_information_is_enter() {
 
-      pageHYBS.vehicleplate.click();
+        pageHYBS.vehicleplate.click();
         pageHYBS.vehicleplate.sendKeys("38DE345");
         pageHYBS.vehicleAge.sendKeys("1989");
         pageHYBS.vehicleHgs.sendKeys("123123123");
         pageHYBS.vehicleKAPASITE.sendKeys("130000");
         pageHYBS.vehicleMARKADROPDOWN.click();
-        pageHYBS.companyAddLıstINPUT.sendKeys("MAN"+Keys.ENTER);
+        pageHYBS.companyAddLıstINPUT.sendKeys("MAN" + Keys.ENTER);
         pageHYBS.vehicleTIPDROPDOWN.click();
-        pageHYBS.vehicleTIPDROPDOWNINPUT.sendKeys("Kamyon"+Keys.ENTER);
+        pageHYBS.vehicleTIPDROPDOWNINPUT.sendKeys("Kamyon" + Keys.ENTER);
         pageHYBS.vehicleCIHAZIMEI.click();
-        pageHYBS.vehicleKAPASITE.sendKeys("19000"+Keys.ENTER);
+        pageHYBS.vehicleKAPASITE.sendKeys("19000" + Keys.ENTER);
         pageHYBS.vehicleMODELDROPDOWN.click();
         pageHYBS.vehicleMODELDROPDOWNINPUT.sendKeys("CF");
         pageHYBS.vehicleSIMKARTNO.sendKeys("1234");
@@ -277,34 +274,33 @@ pageHYBS.companydocumentFILEUPLOADsave.click();
         pageHYBS.vehicleSAVEBUTTON.click();
 
 
-
-
-
     }
+
     @Given("the user clicks on the VEHICLEDOCUMENT link and the user verifies that the company information is correctly loaded")
     public void the_user_clicks_on_the_vehıcledocument_link_and_the_user_verifies_that_the_company_information_is_correctly_loaded() {
         pageHYBS.vehicleDocumentsLink.click();
         ReusableMethods.wait(2);
     }
+
     @Given("the user enters VEHICLEDOCUMENT new information the user verifies that the information is enter")
     public void the_user_enters_vehıcledocument_new_information_the_user_verifies_that_the_information_is_enter() throws FileNotFoundException {
 
         pageHYBS.vehicleDOCUMENTPLATE.click();
-        pageHYBS.vehicleDOCUMENTPLATEINPUT.sendKeys("38DE345"+Keys.ENTER);
+        pageHYBS.vehicleDOCUMENTPLATEINPUT.sendKeys("38DE345" + Keys.ENTER);
         pageHYBS.vehicleDOCUMENTNAME.sendKeys("belge yukleniyor");
-ReusableMethods.wait(1);
-        Select select=new Select(pageHYBS.vehicleDOCUMENTALTTIP);
+        ReusableMethods.wait(1);
+        Select select = new Select(pageHYBS.vehicleDOCUMENTALTTIP);
         select.selectByVisibleText("Servis Formu");
         ReusableMethods.wait(5);
 
-        String dosyaYolu="C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
-        FileInputStream fis=new FileInputStream(dosyaYolu);
+        String dosyaYolu = "C:\\Users\\aalas\\Desktop\\resim\\java.docx.docx";
+        FileInputStream fis = new FileInputStream(dosyaYolu);
         System.out.println(System.getProperty("user.dir"));
         ReusableMethods.wait(5);
 
-        WebElement dosyaSecButonu= driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
+        WebElement dosyaSecButonu = driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
 
-        String yuklenecekDosyaYolu= System.getProperty("user.home") +
+        String yuklenecekDosyaYolu = System.getProperty("user.home") +
                 "\\Desktop\\resimler\\zabıta.png";
 
         //    "/Users/ahmetbulutluoz/Desktop/FileTesti/deneme.txt"
@@ -312,8 +308,86 @@ ReusableMethods.wait(1);
         dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
 
 
-
         pageHYBS.companydocumentFILEUPLOADsave.click();
     }
+
+    @Given("you click on the FINANCIAL TRANSACTIONS heading, the relevant page should appear and BALANCE LOADING,BALANCE DECLINE,PAYMENT CONTROL,CREATING A TRANSPORT PERMIT CERTIFICATE,TRANSPORT PERMIT RENEWAL\"The buttons must be clickable and these titles must work without any problems.\"")
+    public void you_click_on_the_fınancıal_transactıons_heading_the_relevant_page_should_appear_and_balance_loadıng_balance_declıne_payment_control_creatıng_a_transport_permıt_certıfıcate_transport_permıt_renewal_the_buttons_must_be_clickable_and_these_titles_must_work_without_any_problems() {
+
+        pageHYBS.financialTransactionsLink.click();
+        ReusableMethods.wait(1);
+
+        Assert.assertTrue(pageHYBS.financialTransactionsLinkTable.isDisplayed());
+        // BURASINI API TESTIİ YAPARKEN TESTLERİ ALINMALI API BAĞLANTISI VAR ***************************************************************
+
+    }
+
+    @Given("clicked on the TIB header, the relevant page should appear, and the ATS APPROVAL CODE should be entered.\"")
+    public void clicked_on_the_tıb_header_the_relevant_page_should_appear_and_the_ats_approval_code_should_be_entered() {
+
+        pageHYBS.TIBLink.click();
+        Assert.assertTrue(pageHYBS.TIBLinkTable.isDisplayed());
+
+
+    }
+
+
+    @Given("When clicked on the BALANCE TRANSACTIONS header, the relevant page should appear. Users should be able to perform queries smoothly using the Search box and checkboxes")
+    public void when_clicked_on_the_balance_transactıons_header_the_relevant_page_should_appear_users_should_be_able_to_perform_queries_smoothly_using_the_search_box_and_checkboxes() {
+
+        pageHYBS.balanceMovementsLink.click();
+
+
+// Başlangıç tarih alanının JavaScript elementini bul
+        WebElement startDateInput = driver.findElement(By.id("start_date"));
+
+// JavaScript executor oluştur
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+// Başlangıç tarih alanındaki mevcut tarihi sil
+        jsExecutor.executeScript("arguments[0].value = '';", startDateInput);
+
+// İstenilen tarihi giriş alanına gir
+        jsExecutor.executeScript("arguments[0].value = '02/02/2024';", startDateInput);
+
+
+        // BİTİS tarih alanının JavaScript elementini bul
+        WebElement startDateInput1 = driver.findElement(By.id("stop_date"));
+
+// JavaScript executor oluştur
+        JavascriptExecutor jsExecutor1 = (JavascriptExecutor) driver;
+
+// Başlangıç tarih alanındaki mevcut tarihi sil
+        jsExecutor.executeScript("arguments[0].value = '';", startDateInput1);
+
+// İstenilen tarihi giriş alanına gir
+        jsExecutor.executeScript("arguments[0].value = '12/02/2024';", startDateInput1);
+
+        pageHYBS.vehiclePleaseSelect.click();
+
+        pageHYBS.balancemovementsSearch.click();
+
+
+    }
+
+
+    @Given("When you click on the CALL LIST, CONSTRUCTION FILLER LIST, PENALTY LIST, COMPLAINT LIST, the relevant page should appear. and querying can be done without any problems with Searchbox and checkboxes.")
+    public void when_you_click_on_the_call_lıst_constructıon_fıller_lıst_penalty_lıst_complaınt_lıst_the_relevant_page_should_appear_and_querying_can_be_done_without_any_problems_with_searchbox_and_checkboxes() {
+
+
+        pageHYBS.callListLink.click();
+        Assert.assertTrue(pageHYBS.callListLinkTable.isDisplayed());
+        ReusableMethods.wait(1);
+        pageHYBS.constructionFillListLink.click();
+        Assert.assertTrue(pageHYBS.constructionFillListLinkTable.isDisplayed());
+        ReusableMethods.wait(1);
+        pageHYBS.penaltyListLink.click();
+        Assert.assertTrue(pageHYBS.penaltyListLinkTable.isDisplayed());
+        ReusableMethods.wait(1);
+        pageHYBS.complaintListLink.click();
+        Assert.assertTrue(pageHYBS.complaintListLinkTable.isDisplayed());
+
+    }
+
 
 }

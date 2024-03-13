@@ -695,7 +695,11 @@ public class PageHYBS {
    @FindBy(xpath = "(//input[@id=\"id_path\"])[1]")
    public  WebElement VehicleDocumentUpload;
 
+    @FindBy(xpath = "//span[@id=\"select2-balance_plate-container\"]")
+    public  WebElement vehiclePleaseSelect;
 
+    @FindBy(xpath = "//button[@id=\"budget_activitySearch\"]")
+    public  WebElement balancemovementsSearch;
 
 
 
