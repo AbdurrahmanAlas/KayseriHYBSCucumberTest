@@ -1,0 +1,1 @@
+{"uuid":"436a1e8d-45c0-46a7-a158-a0c2d116e25e","name":"Scenario: TC_0501 \"When the 'Delete (U)' button of any company is clicked, that company should be deleted.\"","children":["0594e22f-7889-453a-a22b-6ae2abca1b54"],"befores":[],"afters":[],"start":1710408006314,"stop":1710408006321}

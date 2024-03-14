@@ -177,7 +177,7 @@ public class PageHYBS {
     @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
     public WebElement companygroupCurrentsearchtext;
 
-    @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span/label")
+    @FindBy(xpath = "(//label[@class=\"onoffswitch-label\"])[1]")
     public WebElement userpassivelist;
 
     @FindBy(xpath = "//*[@id=\"logFrom\"]/fieldset/div/div/section[2]/div[1]/span")
@@ -700,6 +700,48 @@ public class PageHYBS {
 
     @FindBy(xpath = "//button[@id=\"budget_activitySearch\"]")
     public  WebElement balancemovementsSearch;
+
+
+
+
+    @FindBy(xpath = "//span[@class='col-sm-4 text-center no-padding']/a[@class='btn btn-xs btn-danger']")
+    public WebElement disableEnableButton;
+    @FindBy(xpath = "//button[@id=\"bot2-Msg1\"]")
+    public WebElement disableEnableButtonEVET;
+
+    @FindBy(xpath = "//td[text()=\"AATestCompany\"]")
+    public WebElement userdisableEnableAACOMPANYGORUNDUMU;
+
+    @FindBy(xpath = "(//span[@class=\"col-sm-4 text-center no-padding\"])[3]")
+    public WebElement DELETEBUTTONFİRMALİSTESİ;
+
+
+    @FindBy(xpath = "//button[@id=\"bot1-Msg1\"]")
+    public WebElement DELETEBUTTONFİRMALİSTESİGORUNDUMU;
+
+
+    @FindBy(xpath = "(//label[@class=\"onoffswitch-label\"])[1]")
+    public WebElement araclistesindekiTASIMACHECKBOXU;
+
+    @FindBy(xpath = "//a[text()=\"Araç Listesi\"]")
+    public WebElement araclistesiLİNK;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
