@@ -1,0 +1,1 @@
+{"uuid":"bfae41c8-d37a-49f1-a502-7febeb58a3dc","name":"Scenario: TC_0601 When the user clicks on the 'ATS Document' button, the relevant page should appear. And the checkboxes for 'Transport Permit' and 'ATS Document' should be visible and clickable.\"","children":["ff911193-f29e-480b-9422-f5cad28298df"],"befores":[],"afters":[],"start":1710484474322,"stop":1710484474330}

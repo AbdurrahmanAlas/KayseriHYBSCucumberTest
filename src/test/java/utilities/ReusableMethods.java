@@ -48,7 +48,10 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
+    public static WebElement waitForClickablility(List<WebElement> elements, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.elementToBeClickable((By) elements));
+    }
     // 3 - ************************ STRINGI RAKAM YAPMA METHODU ********************************//
     // Bir stringi sadece rakam olarak birakir ve integer'a cast eder.
     public static int onlyTakeNumberandParseInteger(String number) {

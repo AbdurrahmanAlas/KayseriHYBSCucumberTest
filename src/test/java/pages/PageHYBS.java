@@ -335,6 +335,50 @@ public class PageHYBS {
     public WebElement firmaTipiDropdown;
 
 
+    @FindBy(xpath = "//*[text()=\"Kayıt bulunamadı\"]")
+    public WebElement firmaTipiDropdownKAMUSECILDIMI;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -720,23 +764,36 @@ public class PageHYBS {
     public WebElement DELETEBUTTONFİRMALİSTESİGORUNDUMU;
 
 
-    @FindBy(xpath = "(//label[@class=\"onoffswitch-label\"])[1]")
+    @FindBy(xpath = "(//label[@for=\"st3\"])[2]")
     public WebElement araclistesindekiTASIMACHECKBOXU;
 
     @FindBy(xpath = "//a[text()=\"Araç Listesi\"]")
     public WebElement araclistesiLİNK;
 
 
+    @FindBy(xpath = "(//*[text()=\"2023-12-02\"])[1]")
+    public WebElement checkboxatıklayıncaTARIHGELDIMI;
+
+    @FindBy(xpath = "(//label[@for=\"ats\"])[2]")
+    public WebElement ATScheckbox;
+
+    @FindBy(xpath = "(//*[text()=\"2026-01-16\"])[1]")
+    public WebElement checkboxATSyetıklayıncaTARIHGELDIMI;
 
 
+    @FindBy(xpath = "//select[@id=\"type\"]")
+    public WebElement dropdownKAMU;
+
+    @FindBy(xpath = "(//i[@class=\"fa fa-eye\"])[1]")
+    public WebElement gotoCompany;
 
 
+    @FindBy(xpath = "//ul[@id=\"myTab2\"]")
+    public WebElement gotoCompanyGELDIMI;
 
 
-
-
-
-
+    @FindBy(xpath = "//i[@class=\"fa fa-eye\"]")
+    public List<WebElement> ıncelebutonhepsi;
 
 
 
