@@ -796,6 +796,100 @@ public class PageHYBS {
     public List<WebElement> ıncelebutonhepsi;
 
 
+    @FindBy(xpath = "//a[text()=\"Araç Kiralama\"]")
+    public WebElement vehicleRentalLink;
+
+
+    @FindBy(xpath = "//span[@class=\"select2-selection__rendered\"]")
+    public WebElement vehicleRental_Company_Select_Dropdown;
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement vehicleRental_Company_Select_Dropdown_INPUT;
+
+
+    @FindBy(xpath = "//input[@id=\"filter_company_hire\"]")
+    public WebElement vehicleRental_KIRALANABILIRVEHICLES;
+
+
+    @FindBy(xpath = "//input[@id=\"id_date\"]")
+    public WebElement vehicleRental_KiralananVEHICLE_DATE;
+
+    @FindBy(xpath = "//input[@id=\"filter_company_unhire\"]")
+    public WebElement vehicleRental_KiralananVEHICLE_COMPANYNAME;
+
+
+
+    @FindBy(xpath = "(//td[text()=\"Kayıt bulunamadı\"])[1]")
+    public List<WebElement> vehicleRental_KiralananVEHICLE_COMPANYNAME_LIST;
+    //i[text() ="Sorgula"]
+    @FindBy(xpath = "//a[text()=\"Ada-Parsel Sorgulama\"]")
+    public WebElement AdaParselSorgulamaLink;
+
+    @FindBy(xpath = "//input[@id=\"lot\"]")
+    public WebElement AdaParselSorgulamaSEARCH_ADA;
+
+    @FindBy(xpath = "//input[@id=\"plot\"]")
+    public WebElement AdaParselSorgulamaSEARCH_PARSEL;
+
+    @FindBy(xpath = "//table[@id=\"lip_table\"]")
+    public WebElement AdaParselSorgulama_LIST_TABLE;
+
+    @FindBy(xpath = "//span[@class=\"select2-selection__rendered\"]")
+    public WebElement AdaParselSorgulama_BUSINESS_TYPE;
+
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement AdaParselSorgulama_BUSINESS_TYPE_INPUT;
+
+    @FindBy(xpath = "//button[text() =\"Sorgula\"]")
+    public WebElement AdaParselSorgulama_SORGULAMA_BUTTON;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
