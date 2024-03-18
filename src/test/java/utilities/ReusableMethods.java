@@ -251,6 +251,15 @@ public class ReusableMethods {
     }
 
 
+    public static void selectCompany(WebElement companyDropdown, WebElement companyInput, String companyName) {
+        companyDropdown.click();
+        companyInput.sendKeys(companyName + Keys.ENTER);
+    }
+    public static void selectDateWithJavaScript(WebDriver driver, WebElement dateInput, String desiredDate) {
+        String script = "arguments[0].value = arguments[1];";
+        ((JavascriptExecutor) driver).executeScript(script, dateInput, desiredDate);
+    }
+
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());

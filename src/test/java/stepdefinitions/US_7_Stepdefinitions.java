@@ -8,6 +8,7 @@ import org.openqa.selenium.devtools.v85.page.Page;
 import org.testng.Assert;
 import pages.PageHYBS;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.security.Key;
 import java.time.LocalDate;
@@ -39,8 +40,8 @@ public class US_7_Stepdefinitions {
     @Given("The appropriate company and vehicle should be selectable from the list of available vehicles.")
     public void the_appropriate_company_and_vehicle_should_be_selectable_from_the_list_of_available_vehicles() {
 
-        pageHYBS.vehicleRental_Company_Select_Dropdown.click();
-        pageHYBS.vehicleRental_Company_Select_Dropdown_INPUT.sendKeys("Baloğlu"+ Keys.ENTER);
+        ReusableMethods.selectCompany(pageHYBS.companyList_DROPDOWN, pageHYBS.companyList_DROPDOWN_ıNPUT, "Baloğlu");
+
         pageHYBS.vehicleRental_KIRALANABILIRVEHICLES.sendKeys("MASTARCIOĞLU"+ Keys.ENTER);
 
         //BURADA MASTARCIOGLU SEARCHDEN GELİYOR ANCAK ONU SECEMİYORUZ SECMEK İCİN Bİ BUTON Bİ BELİRLEYİCİ YOK

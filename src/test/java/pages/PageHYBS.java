@@ -323,7 +323,6 @@ public class PageHYBS {
     public WebElement phoneInputt;
 
 
-
     @FindBy(id = "id_phone1")
     public WebElement phone1Inputt;
 
@@ -339,59 +338,7 @@ public class PageHYBS {
     public WebElement firmaTipiDropdownKAMUSECILDIMI;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //(//select[@name="subtype"])[2]
-
-
-
-
-
-
-
-
-
 
 
     @FindBy(xpath = "//span[@id=\"select2-id_tax_administration-container\"]")
@@ -487,26 +434,6 @@ public class PageHYBS {
     public WebElement vehicleDOCUMENTALTTIP;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "(//span[@class=\"col-sm-4 text-center no-padding\"])[1]")
     public WebElement incelegözsimgesi;
     @FindBy(xpath = " //div[@class=\"col-md-6 col-lg-6 no-padding\"]")
@@ -570,7 +497,6 @@ public class PageHYBS {
     public WebElement aractakipgirisdeOKBUTONU;
 
 
-
     @FindBy(xpath = "//li/a[@href=\"/track_history_page\"]")
     public WebElement gecmisIzlemeRaporuLink;
 
@@ -579,13 +505,8 @@ public class PageHYBS {
     public WebElement firmadropdown;
 
 
-
-
     @FindBy(xpath = "//select[@id=\"fleet_select2_\"]")
     public List<WebElement> aractakipfirmalist;
-
-
-
 
 
     @FindBy(xpath = "//ul[@id='myTab2']/li[contains(@class, 'active')]/a")
@@ -691,7 +612,7 @@ public class PageHYBS {
     public WebElement companyinformationUpdateTAXADDRESS;
 
     @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
-    public  WebElement companyinformationINPUTTAXADDRESS;
+    public WebElement companyinformationINPUTTAXADDRESS;
     @FindBy(xpath = "//textarea[@id=\"id_address\"]")
     public WebElement companyinformationADDRESS;
 
@@ -711,7 +632,6 @@ public class PageHYBS {
 
     @FindBy(xpath = "//select[@id=\"id_group_type\"]")
     public WebElement companyinformationHAFRIYATCI;
-
 
 
     @FindBy(xpath = "//input[@id=\"newPersonName\"]")
@@ -736,16 +656,14 @@ public class PageHYBS {
     @FindBy(xpath = "//button[@id=\"uploadCompanyDocument\"]")
     public WebElement companydocumentFILEUPLOADsave;
 
-   @FindBy(xpath = "(//input[@id=\"id_path\"])[1]")
-   public  WebElement VehicleDocumentUpload;
+    @FindBy(xpath = "(//input[@id=\"id_path\"])[1]")
+    public WebElement VehicleDocumentUpload;
 
     @FindBy(xpath = "//span[@id=\"select2-balance_plate-container\"]")
-    public  WebElement vehiclePleaseSelect;
+    public WebElement vehiclePleaseSelect;
 
     @FindBy(xpath = "//button[@id=\"budget_activitySearch\"]")
-    public  WebElement balancemovementsSearch;
-
-
+    public WebElement balancemovementsSearch;
 
 
     @FindBy(xpath = "//span[@class='col-sm-4 text-center no-padding']/a[@class='btn btn-xs btn-danger']")
@@ -801,11 +719,12 @@ public class PageHYBS {
 
 
     @FindBy(xpath = "//span[@class=\"select2-selection__rendered\"]")
-    public WebElement vehicleRental_Company_Select_Dropdown;
+    public WebElement companyList_DROPDOWN;
 
     @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
-    public WebElement vehicleRental_Company_Select_Dropdown_INPUT;
-
+    public WebElement companyList_DROPDOWN_ıNPUT;
+    @FindBy(xpath = "//label[text()=\"Araç\"]")
+    public WebElement aractext;
 
     @FindBy(xpath = "//input[@id=\"filter_company_hire\"]")
     public WebElement vehicleRental_KIRALANABILIRVEHICLES;
@@ -816,7 +735,6 @@ public class PageHYBS {
 
     @FindBy(xpath = "//input[@id=\"filter_company_unhire\"]")
     public WebElement vehicleRental_KiralananVEHICLE_COMPANYNAME;
-
 
 
     @FindBy(xpath = "(//td[text()=\"Kayıt bulunamadı\"])[1]")
@@ -845,40 +763,39 @@ public class PageHYBS {
     public WebElement AdaParselSorgulama_SORGULAMA_BUTTON;
 
 
+    @FindBy(xpath = "//a[text()=\"Ceza/Taahhüt Listesi\"]")
+    public WebElement cezaTaahhütListLINK;
 
 
+    @FindBy(xpath = "//input[@id=\"filter_s_date\"]")
+    public WebElement cezaTaahhütSEARCH_START_DATE;
+
+    @FindBy(xpath = "//input[@id=\"filter_e_date\"]")
+    public WebElement cezaTaahhütSEARCH_FINISH_DATE;
 
 
+    @FindBy(xpath = "//input[@id=\"user_name\"]")
+    public WebElement cezaTaahhütSEARCH_EKLEYEN_KISI;
+
+    @FindBy(xpath = "(//span[@class=\"select2-selection__rendered\"])[2]")
+    public WebElement cezaTaahhütSEARCH_VEHICLEDROPDOWN;
 
 
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[1]")
+    public WebElement cezaTaahhütSEARCH_VEHICLEDROPDOWN_INPUT;
 
 
+    @FindBy(xpath = "//button[text()=\"Ara\"]")
+    public WebElement cezaTaahhütSEARCH_arabutton;
 
+    @FindBy(xpath = "(//div[@id=\"wid-id-x\"])[2]")
+    public WebElement cezaTaahhütCEZA_LIST;
 
+    @FindBy(xpath = "//input[@type=\"search\"]")
+    public WebElement cezaTaahhütCEZA_LIST_SEARCH;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//tr[@class=\"odd\"]")
+    public WebElement cezaTaahhütCEZA_LIST_geldimi;
 
 
 
@@ -930,19 +847,12 @@ public class PageHYBS {
   groupTypeSelect.sendKeys(groupType);
   addressTextarea.sendKeys(address);
  }*/
- public void submitForm() {
-  saveButton.click();
- }
+    public void submitForm() {
+        saveButton.click();
+    }
 
 
-
-
-
-
-
-
-
- // ****************************************************************************************************************************************************
+    // ****************************************************************************************************************************************************
     //1- url > Subscribe pop-up exit butonu
     @FindBy(css = "#subscriptionModal > div > div.close_modal > i")
     public WebElement PopupExitButon;
@@ -975,12 +885,8 @@ public class PageHYBS {
     public WebElement userloginButon;
 
 
-
-
     @FindBy(xpath = "(//div[@id=\"vehicle_\"])[1]")
     public WebElement aractakipListButton;
-
-
 
 
     @FindBy(xpath = "(//div[@id=\"vehicle_\"])[1]//select[@id=\"fleet_select2_\"]")
@@ -988,36 +894,10 @@ public class PageHYBS {
 
 
     @FindBy(xpath = "(//input[@id=\"id_name\"])[2]")
-    public  WebElement CompanyDocumentName;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public WebElement CompanyDocumentName;
 
 
     // 7 -Login > Email
-
-
-
 
 
     //li[@class='active']/a[@href='/hafriyat/']
@@ -1888,8 +1768,6 @@ public class PageHYBS {
     public WebElement listtable;
 
 
-
-
     //profile/dashboard --> User (name)
     @FindBy(xpath = "//h4[@class='font_20 f_w_700']")
     public WebElement userName;
@@ -1914,7 +1792,7 @@ public class PageHYBS {
     // profile//dashboard//add fund-->stripe
 
     @FindBy(xpath = "//img[@title=\"Stripe\"]")
-    public  WebElement stripe;
+    public WebElement stripe;
 
 
     @FindBy(xpath = "//button[@class='amaz_primary_btn style2 text-nowrap']")
@@ -1967,8 +1845,6 @@ public class PageHYBS {
     //profile/dashboard --> stripe Pay button
     @FindBy(id = "submitButton")
     public WebElement stripe_Pay;
-
-
 
 
     //profile/dashboard --> last transaction
@@ -2050,31 +1926,31 @@ public class PageHYBS {
     public WebElement firstProduct;
 
     // All categories > Computer & Accessories > Computer > firstProduct > Add to cart Button
-    @FindBy (xpath = "(//div/a[text()='Add to Cart'])[1]")
+    @FindBy(xpath = "(//div/a[text()='Add to Cart'])[1]")
     public WebElement addToCartButton;
 
     // After click add to cart button, opened pop-up > View Cart Button
-    @FindBy (xpath = "//div/a[text()='View cart']")
+    @FindBy(xpath = "//div/a[text()='View cart']")
     public WebElement viewCartButton;
 
     // Cart > text of "Shipping charge free from"
-    @FindBy (xpath = "//h5[text()='Shipping charge free from ']")
+    @FindBy(xpath = "//h5[text()='Shipping charge free from ']")
     public WebElement shippinChargeFreeFromText;
 
     // Cart > text of Order Summary
-    @FindBy (xpath = "//div/h3[text()='Order Summary']")
+    @FindBy(xpath = "//div/h3[text()='Order Summary']")
     public WebElement orderSummartText;
 
     // Cart > text of Subtotal
-    @FindBy (xpath = "//div[@class='subtotal_lists']//h4[text()='Subtotal']")
+    @FindBy(xpath = "//div[@class='subtotal_lists']//h4[text()='Subtotal']")
     public WebElement subtotalText;
 
     // Cart > text of Shipping Charge
-    @FindBy (xpath = "//div[@class='subtotal_lists']//h4[text()='Shipping Charge']")
+    @FindBy(xpath = "//div[@class='subtotal_lists']//h4[text()='Shipping Charge']")
     public WebElement shippingChargeText;
 
     // Cart > text of Discount
-    @FindBy (xpath = "//div[@class='subtotal_lists']//h4[text()='Discount']")
+    @FindBy(xpath = "//div[@class='subtotal_lists']//h4[text()='Discount']")
     public WebElement discountText;
 
     // Cart > Total Text > behind Order Summary
@@ -2082,7 +1958,7 @@ public class PageHYBS {
     public WebElement totalText;
 
     // Cart > text of VAT/TAX/GST
-    @FindBy (xpath = "//div[@class='subtotal_lists']//h4[text()='VAT/TAX/GST']")
+    @FindBy(xpath = "//div[@class='subtotal_lists']//h4[text()='VAT/TAX/GST']")
     public WebElement vatTaxGstText;
 
     // Cart > Added Subtotal of Product
@@ -2090,19 +1966,19 @@ public class PageHYBS {
     public WebElement subTotalOfProduct;
 
     // Cart > Proceed to checkout Button
-    @FindBy (xpath = "//div/a[text()='Proceed to checkout']")
+    @FindBy(xpath = "//div/a[text()='Proceed to checkout']")
     public WebElement proceedToCheckoutButton;
     // cart > Increase QuantityButton
-    @FindBy (xpath = "//button[@class='count_single_item number_increment change_qty']")
+    @FindBy(xpath = "//button[@class='count_single_item number_increment change_qty']")
     public WebElement quantityIncreaseButton;
 
 
     //Cart > Value of Quantity
-    @FindBy (xpath = "//input[@class='count_single_item input-number qty']")
+    @FindBy(xpath = "//input[@class='count_single_item input-number qty']")
     public WebElement quantityValue;
 
     // Cart > Decrease QuantityButton
-    @FindBy (xpath = "//button[@class='count_single_item inumber_decrement change_qty']")
+    @FindBy(xpath = "//button[@class='count_single_item inumber_decrement change_qty']")
     public WebElement quantityDecreaseButton;
 
 
@@ -2116,7 +1992,7 @@ public class PageHYBS {
     public WebElement totalPrice;
 
 
-    @FindBy (xpath = "//div[@class='col-lg col-4 order-1 order-lg-0 my-3 my-lg-0']/h4")
+    @FindBy(xpath = "//div[@class='col-lg col-4 order-1 order-lg-0 my-3 my-lg-0']/h4")
     public WebElement priceOfProduct;
     //profile/dashboard --> User (name)
 
@@ -2154,12 +2030,8 @@ public class PageHYBS {
     public WebElement refundDispute;
 
 
-
     @FindBy(xpath = "(//div[contains(@class,'d-flex align-items-center flex-wrap gap_5')])[3]")
     public WebElement statusPending;
-
-
-
 
 
     @FindBy(xpath = "(//div[contains(@class,'d-flex align-items-center flex-wrap gap_5')])[4]")
