@@ -1,21 +1,26 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.PageHYBS;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import static utilities.Driver.driver;
 
@@ -42,31 +47,89 @@ public class FIRMA_LISTESI_BELGE_INDIRME {
     @Given("The ability to download documents from the document list should be tested.")
     public void the_ability_to_download_documents_from_the_document_list_should_be_tested() {
 
-        // Tüm "Görüntüle" butonlarını bul
+        // "Görüntüle" butonlarını bul
         List<WebElement> viewButtons = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
 
         // Her bir "Görüntüle" butonu için döngü
-        for (WebElement button : viewButtons) {
-            // Butona tıkla
-            button.click();
+        for (int i = 0; i < viewButtons.size(); i++) {
+            // Butonu tıkla
+            WebElement viewButton = viewButtons.get(i);
+            viewButton.click();
 
-            // Resmi çek
-            WebElement imageElement = driver.findElement(By.cssSelector("img[class='img-responsive']"));
-            String imageURL = imageElement.getAttribute("src");
+            // Ana pencereyi kaydet
+            String mainWindowHandle = driver.getWindowHandle();
 
-            // Resmi indir ve kaydet
-            try {
-                File file = new File("image_" + System.currentTimeMillis() + ".png");
-                org.apache.commons.io.FileUtils.copyURLToFile(new java.net.URL(imageURL), file);
-            } catch (IOException e) {
-                e.printStackTrace();
+            // Tüm pencere kollarını al
+            Set<String> allWindowHandles = driver.getWindowHandles();
+            for (String handle : allWindowHandles) {
+                // Ana pencere dışındaki bir pencereye geçiş yap
+                if (!handle.equals(mainWindowHandle)) {
+                    driver.switchTo().window(handle);
+                    break;
+                }
             }
 
-            // Geriye dön
-            driver.navigate().back();
+            // Belge yüklenmesini bekle
+            ReusableMethods.wait(3);
+
+            // Firma adını al
+            String companyName = getCompanyName(driver);
+
+            // Firma adına göre klasör oluştur
+            File companyDirectory = new File("pdf_files/" + companyName);
+            if (!companyDirectory.exists()) {
+                companyDirectory.mkdir();
+            }
+
+            // PDF dosyasının URL'sini al
+            String pdfUrl = driver.getCurrentUrl();
+
+            // PDF dosyasını indir ve ilgili klasöre kaydet
+            String fileName = "pdf_files/" + companyName + "/document_" + i + ".pdf";
+            downloadPDF(pdfUrl, fileName);
+
+            // Yeni pencereyi kapat
+            driver.close();
+
+            // Ana pencereye geri dön
+            driver.switchTo().window(mainWindowHandle);
+        }
+
+        // WebDriver'ı kapat
+        driver.quit();
+    }
+
+    // PDF dosyasını indiren metot
+    public static void downloadPDF(String pdfUrl, String fileName) {
+        try (InputStream in = new URL(pdfUrl).openStream();
+             FileOutputStream fos = new FileOutputStream(fileName)) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            // PDF dosyasını indir
+            while ((bytesRead = in.read(buffer)) != -1) {
+                fos.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
+    // Firma adını almak için yardımcı metot
+    public static String getCompanyName(WebDriver driver) {
+        // Sayfanın içeriğini al
+        String pageSource = driver.getPageSource();
+        // İçerikte firma adını içeren bir ifade arayın
+        // Örnek olarak, firmanın adı "Company Name" olsun
+        if (pageSource.contains("Company Name")) {
+            return "Company Name";
+        }
+        // İçerikte firma adını içeren bir ifade bulunamazsa, varsayılan değeri döndürün
+        return "Unknown Company";
+
+    }
 }
+
+
 
 
 
