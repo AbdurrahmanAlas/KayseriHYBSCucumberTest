@@ -46,7 +46,6 @@ public class FIRMA_LISTESI_BELGE_INDIRME {
 
     @Given("The ability to download documents from the document list should be tested.")
     public void the_ability_to_download_documents_from_the_document_list_should_be_tested() {
-
         // "Görüntüle" butonlarını bul
         List<WebElement> viewButtons = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
 
@@ -120,14 +119,39 @@ public class FIRMA_LISTESI_BELGE_INDIRME {
         String pageSource = driver.getPageSource();
         // İçerikte firma adını içeren bir ifade arayın
         // Örnek olarak, firmanın adı "Company Name" olsun
-        if (pageSource.contains("Company Name")) {
-            return "Company Name";
+        if (pageSource.contains("Firma")) {
+            return "Firma";
         }
         // İçerikte firma adını içeren bir ifade bulunamazsa, varsayılan değeri döndürün
         return "Unknown Company";
 
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

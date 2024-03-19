@@ -798,11 +798,23 @@ public class PageHYBS {
     public WebElement cezaTaahhütCEZA_LIST_geldimi;
 
 
+    @FindBy(xpath = "(//a[@title=\"Görüntüle\"])[1]")
+    public WebElement cezaTaahhütCEZA_GORUNTULEBUTTON;
+    @FindBy(xpath = "//h4[text()=\"Doküman Görüntüle\"]")
+    public WebElement cezaTaahhütCEZA_RESIMGORUNDUMU;
+
+    @FindBy(xpath = "(//i[@class=\"fa fa-upload\"])[1]")
+    public WebElement cezaTaahhütCEZA_RESIMYUKLEMEBUTTON;
 
 
+    @FindBy(xpath = "//input[@id=\"doc_name\"]")
+    public WebElement cezaTaahhütCEZA_RESIMYUKLE_DOKUMANADI;
 
+    @FindBy(xpath = "//select[@id=\"doc_type\"]")
+    public WebElement cezaTaahhütCEZA_RESIMYUKLE_DOKUMAN_DROPDOWN;
 
-
+    @FindBy(xpath = "//button[@id=\"selectDocument\"]")
+    public WebElement cezaTaahhütCEZA_RESIMYUKLE_DOSYA_EKLE;
 
 
 

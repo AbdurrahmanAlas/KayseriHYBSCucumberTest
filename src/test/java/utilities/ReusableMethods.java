@@ -486,6 +486,9 @@ public class ReusableMethods {
                 .sendKeys(Keys.ARROW_DOWN)
                 .sendKeys(Keys.ARROW_DOWN)
                 .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
                 .sendKeys(Keys.ARROW_DOWN).perform();
 
     }

@@ -7,3 +7,5 @@ Feature: Firma Belgelerini indirme
     * click on the inspect eye icon
     * the user clicks on the COMPANY DOCUMENTS  button the user verifies that the company information update form is opened
     * The ability to download documents from the document list should be tested.
+
+

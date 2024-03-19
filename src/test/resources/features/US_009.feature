@@ -16,7 +16,7 @@
       # ??????????????????????? burda ki sıkıntı SEARCH KISMINDA FİRMA SECİYORUZ ARACI SECILEMIYOR İLGİLEN????? BUG VAR
 
 
-    @US008
+
     Scenario: TC_0902 The relevant titles should be displayed in the penalty list, and the searched penalty should
     appear based on the criteria entered in the search section
 
@@ -30,3 +30,25 @@
   # ********************************************************
 
     ## burda kaldık 18.03.2024
+
+    Scenario: TC_0903 In any penalty, when the view button on the right side is clicked, images should be displayed."
+
+      # Ceza  Listesinde ilgili baslıklar gelmelidir ve Search kisminda
+          # arama yapilan kritere göre aranan ceza gelmelidir
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+      * User should be able to click on OPERATION MODULE
+      * User should be able to click on CEZA_tAAHHUT_LIST
+      * In any penalty, when the view button on the right side is clicked, images should be displayed."
+
+
+    @US008
+    Scenario: TC_0904 When the view button on the right side is clicked in any penalty, the image uploading page should be displayed, and images related to the penalty should be uploadable.
+
+      # Ceza  Listesinde ilgili baslıklar gelmelidir ve Search kisminda
+          # arama yapilan kritere göre aranan ceza gelmelidir
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+      * User should be able to click on OPERATION MODULE
+      * User should be able to click on CEZA_tAAHHUT_LIST
+      * When the view button on the right side is clicked in any penalty, the image uploading page should be displayed, and images related to the penalty should be uploadable.

@@ -4,122 +4,133 @@ import io.cucumber.java.en.Given;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.devtools.v85.page.Page;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PageHYBS;
+import utilities.Driver;
 import utilities.ReusableMethods;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 import java.util.Set;
 
 import static utilities.Driver.driver;
 
 public class deneme {
-    PageHYBS pageHYBS=new PageHYBS();
-    @Given("deneme yapıyorum")
-    public void deneme_yapıyorum() {
+    PageHYBS pageHYBS = new PageHYBS();
 
 
+    @Given("TUM FIRMALAR ICIN The ability to download documents from the document list should be tested.")
+    public void tum_fırmalar_ıcın_the_ability_to_download_documents_from_the_document_list_should_be_tested() {
 
-        // Tüm "Görüntüle" butonlarını bul
-        List<WebElement> viewButtons = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
-
-        // Her bir "Görüntüle" butonu için döngü
-        for (int i = 0; i < viewButtons.size(); i++) {
-            // En alttaki "Görüntüle" butonuna git ve tıkla
-            WebElement viewButton = viewButtons.get(i);
-            viewButton.click();
-
-            // Ana pencereden yeni açılan pencereye geçiş yap
-            String mainWindowHandle = driver.getWindowHandle();
-            Set<String> allWindowHandles = driver.getWindowHandles();
-            for (String handle : allWindowHandles) {
-                if (!handle.equals(mainWindowHandle)) {
-                    driver.switchTo().window(handle);
-                    break;
-                }
-            }
-            ReusableMethods.wait(3);
-            // Ekran görüntüsü al ve kaydet
-            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            try {
-                FileUtils.copyFile(screenshotFile, new File("screenshot_" + i + "_" + System.currentTimeMillis() + ".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            // Sayfayı döndür
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("document.body.style.transform = 'rotate(90deg)'");
-
-            // Yeni pencereyi kapat
-            driver.close();
-
-            // Ana pencereye geri dön
-            driver.switchTo().window(mainWindowHandle);
-        }
-
-        // Tarayıcıyı kapat
-        driver.quit();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //fdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 
         try {
-            // Sayfada "İncele" düğmelerini bul
-            List<WebElement> inceleButtons = driver.findElements(By.xpath("//i[@class='fa fa-eye']"));
+            // İncele butonlarını bul
+            List<WebElement> inceleButtons = driver.findElements(By.cssSelector("button[class='btn btn-sm btn-primary']"));
+            // Her bir incele butonu için döngü
+            for (WebElement inceleButton : inceleButtons) {
+                inceleButton.click(); // İncele butonuna tıkla
 
-            // Her "İncele" düğmesine sırayla tıkla
-            for (int i = 0; i < inceleButtons.size(); i++) {
-                // "İncele" düğmesini tekrar bul
-                inceleButtons = driver.findElements(By.xpath("//i[@class='fa fa-eye']"));
+                // Sayfanın tam olarak yüklenmesini bekleyin
+                Thread.sleep(5000);
 
-                // İncele düğmesine tıkla
-                inceleButtons.get(i).click();
+                // Firma belgeleri linkini bul ve tıkla
+                WebElement firmaBelgeleriLink = driver.findElement(By.xpath("//a[contains(text(), 'Firma Belgeleri')]"));
+                firmaBelgeleriLink.click();
 
-                // Sayfada geri git
-                driver.navigate().back();
+                // Sayfanın tam olarak yüklenmesini bekleyin
+                Thread.sleep(5000);
 
-                // Öğenin tıklanabilir olmasını bekleyin
-                ReusableMethods.waitForClickablility(pageHYBS.ıncelebutonhepsi,10);
+                // "Görüntüle" butonlarını bul
+                List<WebElement> viewButtons = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
+
+                // Her bir "Görüntüle" butonu için döngü
+                for (int i = 0; i < viewButtons.size(); i++) {
+                    // Butonu tıkla
+                    WebElement viewButton = viewButtons.get(i);
+                    viewButton.click();
+
+                    // Ana pencereyi kaydet
+                    String mainWindowHandle = driver.getWindowHandle();
+
+                    // Tüm pencere kollarını al
+                    Set<String> allWindowHandles = driver.getWindowHandles();
+                    for (String handle : allWindowHandles) {
+                        // Ana pencere dışındaki bir pencereye geçiş yap
+                        if (!handle.equals(mainWindowHandle)) {
+                            driver.switchTo().window(handle);
+                            break;
+                        }
+                    }
+
+                    // Belge yüklenmesini bekle
+                    Thread.sleep(5000);
+
+                    // Firma adını al
+                    String companyName = getCompanyName(driver);
+
+                    // Firma adına göre klasör oluştur
+                    File companyDirectory = new File("pdf_files/" + companyName);
+                    if (!companyDirectory.exists()) {
+                        companyDirectory.mkdir();
+                    }
+
+                    // PDF dosyasının URL'sini al
+                    String pdfUrl = driver.getCurrentUrl();
+
+                    // PDF dosyasını indir ve ilgili klasöre kaydet
+                    String fileName = "pdf_files/" + companyName + "/document_" + i + ".pdf";
+                    downloadPDF(pdfUrl, fileName);
+
+                    // Yeni pencereyi kapat
+                    driver.close();
+
+                    // Ana pencereye geri dön
+                    driver.switchTo().window(mainWindowHandle);
+                }
             }
-
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // WebDriver'ı kapat
+            driver.quit();
+        }
+    }
+
+    // PDF dosyasını indiren metot
+    public static void downloadPDF(String pdfUrl, String fileName) {
+        try (InputStream in = new URL(pdfUrl).openStream();
+             FileOutputStream fos = new FileOutputStream(fileName)) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            // PDF dosyasını indir
+            while ((bytesRead = in.read(buffer)) != -1) {
+                fos.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    // Firma adını almak için yardımcı metot
+    public static String getCompanyName(WebDriver driver) {
+        // Sayfanın içeriğini al
+        String pageSource = driver.getPageSource();
+        // İçerikte firma adını içeren bir ifade arayın
+        // Örnek olarak, firmanın adı "Company Name" olsun
+        if (pageSource.contains("Firma")) {
+            return "Firma";
+        }
+        // İçerikte firma adını içeren bir ifade bulunamazsa, varsayılan değeri döndürün
+        return "Unknown Company";
+    }
+
 }
+//fdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
