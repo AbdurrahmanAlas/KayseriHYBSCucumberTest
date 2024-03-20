@@ -14,6 +14,7 @@ import utilities.ReusableMethods;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.Key;
 
 import static utilities.Driver.driver;
 
@@ -121,8 +122,6 @@ public class US_9_Stepdefinitions {
         String yuklenecekDosyaYolu = System.getProperty("user.home") +
                 "\\Desktop\\resimler\\deneme.jpeg";
 
-
-
         dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
 
         ReusableMethods.wait(5);
@@ -146,8 +145,101 @@ public class US_9_Stepdefinitions {
 
     }
 
+    @Given("In any penalty, when the UPDATE button on the right side is clicked, the information regarding the penalty should be updatable.")
+    public void ın_any_penalty_when_the_update_button_on_the_right_side_is_clicked_the_information_regarding_the_penalty_should_be_updatable() {
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEMEBUTTON.click();
+
+        Select select = new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_DOKUMANTIPDROPDOWN);
+        select.selectByVisibleText("Firma Cezası");
+
+        ReusableMethods.selectCompany(pageHYBS.companyList_DROPDOWN, pageHYBS.cezaTaahhütCEZA_GUNCELLEME_COMPANY_IPDROPDOWN_INPUT, "BAĞCI" + Keys.ENTER);
+
+        Select select1 = new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_cezaTIP);
+        select1.selectByVisibleText("Belediye");
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ISLEMIYAPAN.clear();
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ISLEMIYAPAN.sendKeys("Abdurrahman" + Keys.ENTER);
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ANKETACIKLAMA.sendKeys("DENEME");
+
+// Başlangıç tarihini seçin
+        WebElement startDateInput = driver.findElement(By.id("id_date"));
+        startDateInput.click(); // Tarih seçiciyi açmak için tıklama
+        startDateInput.sendKeys("01/01/2024"); // Tarih giriş
+// Enter tuşuna basarak seçiciyi kapat
+        startDateInput.sendKeys(Keys.ENTER);
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_TUTAR.sendKeys("590");
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_geziciEkip.sendKeys("Abdurrahman" + Keys.ENTER);
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.clear();
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.sendKeys("Deniyoruz");
+
+// Doğrulamalar
+        // Doğrulamalar
+        Assert.assertTrue(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ANKETACIKLAMA.isDisplayed(), "Anket açıklama alanı görüntülendi.");
+        Assert.assertTrue(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.isDisplayed(), "Zabıta açıklama alanı görüntülendi.");
+        Assert.assertEquals(new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_DOKUMANTIPDROPDOWN).getFirstSelectedOption().getText(), "Firma Cezası", "Doküman tipi doğru seçilmiş.");
+        Assert.assertEquals(new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_cezaTIP).getFirstSelectedOption().getText(), "Belediye", "Ceza tipi doğru seçilmiş.");
+        Assert.assertEquals(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ISLEMIYAPAN.getAttribute("value"), "Abdurrahman", "İşlemi yapan kişi doğru girilmiş.");
+        Assert.assertEquals(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ANKETACIKLAMA.getAttribute("value"), "DENEME", "Anket açıklama doğru girilmiş.");
+        Assert.assertEquals(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_TUTAR.getAttribute("value"), "590", "Tutar doğru girilmiş.");
+        Assert.assertEquals(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_geziciEkip.getAttribute("value"), "Abdurrahman", "Gezici ekip doğru girilmiş.");
+        Assert.assertEquals(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.getAttribute("value"), "Deniyoruz", "Zabıta açıklama doğru girilmiş.");
 
 
+    }
+
+
+    @Given("When the ADD PENALTY button located in the top right corner of the Penalty List page is clicked, a new penalty should be added smoothly.")
+    public void when_the_add_penalty_button_located_in_the_top_right_corner_of_the_penalty_list_page_is_clicked_a_new_penalty_should_be_added_smoothly() {
+        pageHYBS.cezaTaahhüt_YENICEZAEKLE.click();
+
+        Select select = new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_DOKUMANTIPDROPDOWN);
+        select.selectByVisibleText("Firma Cezası");
+
+        ReusableMethods.selectCompany(pageHYBS.companyList_DROPDOWN,pageHYBS.cezaTaahhütCEZA_GUNCELLEME_COMPANY_IPDROPDOWN_INPUT,"GEMA");
+
+        Select select1 = new Select(pageHYBS.cezaTaahhütCEZA_GUNCELLEME_cezaTIP);
+        select1.selectByVisibleText("Belediye");
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_ANKETACIKLAMA.sendKeys("DENEME");
+
+// Başlangıç tarihini seçin
+        WebElement startDateInput = driver.findElement(By.id("id_date"));
+        startDateInput.click(); // Tarih seçiciyi açmak için tıklama
+        startDateInput.sendKeys("02/01/2024"); // Tarih giriş
+// Enter tuşuna basarak seçiciyi kapat
+        startDateInput.sendKeys(Keys.ENTER);
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_TUTAR.sendKeys("590");
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_geziciEkip.sendKeys("Abdurrahman"+Keys.ENTER);
+
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.clear();
+        pageHYBS.cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama.sendKeys("Deniyoruz");
+        pageHYBS.cezaTaahhüt_YENICEZADOKUMANEKLE.sendKeys("Yeni ceza ekleniyor");
+
+        WebElement dosyaSecButonu = driver.findElement(By.xpath("(//input[@id=\"id_path\"])[1]"));
+        /*
+          dosya sec butonuna bastiktan sonra
+          bilgisayardan selenium ile dosya secmemiz mumkun degil
+          onun yerine
+          dosyaSecButonu.sendKeys("DosyaYolu") yaparsak
+          dosya secme islemi yapilmis olacaktir
+         */
+
+        String yuklenecekDosyaYolu = System.getProperty("user.home") +
+                "\\Desktop\\resimler\\deneme.jpeg";
+
+        dosyaSecButonu.sendKeys(yuklenecekDosyaYolu);
+
+        ReusableMethods.wait(5);
+
+
+
+    }
 
 
 

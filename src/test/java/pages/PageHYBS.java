@@ -817,11 +817,73 @@ public class PageHYBS {
     public WebElement cezaTaahhütCEZA_RESIMYUKLE_DOSYA_EKLE;
 
 
+    @FindBy(xpath = "(//i[@class=\"fa fa-edit\"])[1]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEMEBUTTON;
+
+    @FindBy(xpath = "//select[@id=\"doc_type\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_DOKUMANTIPDROPDOWN;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_COMPANY_IPDROPDOWN_INPUT;
+
+    @FindBy(xpath = "//select[@id=\"id_fine_type\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_cezaTIP;
+
+
+    @FindBy(xpath = "//input[@id=\"id_police_process_user\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_ISLEMIYAPAN;
+
+    @FindBy(xpath = "//textarea[@id=\"id_description\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_ANKETACIKLAMA;
+
+
+    @FindBy(xpath = "//input[@id=\"id_amount\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_TUTAR;
+
+    @FindBy(xpath = "//span[@class=\"select2-selection select2-selection--multiple\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_geziciEkip;
+
+    @FindBy(xpath = "//textarea[@id=\"id_police_description\"]")
+    public WebElement cezaTaahhütCEZA_GUNCELLEME_zabıtaAcıklama;
+
+
+    @FindBy(xpath = "//*[text()=\" Yeni Ceza\"]")
+    public WebElement cezaTaahhüt_YENICEZAEKLE;
+
+
+    @FindBy(xpath = "//input[@id=\"doc_name\"]")
+    public WebElement cezaTaahhüt_YENICEZADOKUMANEKLE;
+
+    @FindBy(xpath = "//a[text()=\"Şikayet Listesi\"]")
+    public WebElement sikayetListesiLink;
 
 
 
+    // Locate elements using @FindBy annotation
+    @FindBy(id = "id_create_date")
+    public WebElement createDateInput;
 
+    @FindBy(id = "id_complaining_user")
+    public WebElement complainingUserInput;
 
+    @FindBy(id = "id_phone")
+    public WebElement sikayetphoneInput;
+
+    @FindBy(id = "id_mail")
+    public WebElement sikayetmailInput;
+
+    @FindBy(id = "id_reason")
+    public WebElement sikayetreasonInput;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//div[@class='success-message']")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//button[@id=\"save\"]")
+    public WebElement sikayetOlusturButton;
 
 
 

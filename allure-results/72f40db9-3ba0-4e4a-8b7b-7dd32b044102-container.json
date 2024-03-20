@@ -1,0 +1,1 @@
+{"uuid":"72f40db9-3ba0-4e4a-8b7b-7dd32b044102","name":"Scenario: TC_0801 When clicked on the 'Ada Parcel Inquiry' title, the page should enable correct inquiry based on the parcel number and plot number.","children":["bdb74f82-594c-4f36-85db-532d169714ef"],"befores":[],"afters":[],"start":1710917303118,"stop":1710917303128}
