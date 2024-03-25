@@ -859,7 +859,6 @@ public class PageHYBS {
     public WebElement sikayetListesiLink;
 
 
-
     // Locate elements using @FindBy annotation
     @FindBy(id = "id_create_date")
     public WebElement createDateInput;
@@ -885,25 +884,22 @@ public class PageHYBS {
     @FindBy(xpath = "//button[@id=\"save\"]")
     public WebElement sikayetOlusturButton;
 
+    @FindBy(xpath = "//a[text()=\"Manuel Bakiye Düşümü\"]")
+    public WebElement manuelBakiyeDüsümü;
 
 
+    @FindBy(xpath = "(//input[@type=\"number\"])[1]")
+    public WebElement manuelBakiyeDüsümüBakiyeGiris;
+
+    @FindBy(xpath = "(//textarea[@id=\"notes\"])[1]")
+    public WebElement manuelBakiyeDüsümüNOTES;
+
+    @FindBy(xpath = "//button[@id=\"send_ajax\"]")
+    public WebElement manuelBakiyeDüsümüOLUSTURBUTTON;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//button[@id=\"bot2-Msg1\"]")
+    public WebElement manuelBakiyeDüsümüOLUSTURBUTTONEVET;
 
 
     /* public File getHaritaResmiScreenshot() throws IOException {
@@ -2215,6 +2211,7 @@ public class PageHYBS {
 
     @FindBy(xpath = "//div[@class='dashboard_white_box style5 bg-white mb_25']")
     public WebElement SCustomerInformation;
+
 
 
 }
