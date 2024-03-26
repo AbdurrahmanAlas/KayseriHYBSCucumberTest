@@ -902,6 +902,152 @@ public class PageHYBS {
     public WebElement manuelBakiyeDüsümüOLUSTURBUTTONEVET;
 
 
+    @FindBy(xpath = "//span[text()=\"Talep Listeleri\"]")
+    public WebElement talepListeleriLink;
+
+    @FindBy(xpath = "//a[text()=\"Yapı Ruhsat Talebi\"]")
+    public WebElement talepListeleriYAPI_RUHSATLI_Link;
+
+
+    @FindBy(xpath = "//a[text()=\"Ruhsatlı Yeni İş Başlangıcı\"]")
+    public WebElement talepListeleriYAPI_RUHSATLI_EKLE_BUTTON;
+
+    @FindBy(xpath = "//a[text()=\"Ruhsatlı Yeni İş Başlangıcı\"]")
+    public WebElement talepListeleri_NEW_BUILDING_BUTTON;
+
+    @FindBy(xpath = "//span[@id=\"select2-id_reason-container\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_YENIYAPI_DROPDOWN;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_YENIYAPI_DROPDOWN_INPUT;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_DROPDOWN_INPUT;
+
+    @FindBy(xpath = "(//input[@id=\"id_licence_number\"])[1]")
+    public WebElement Yapı_Ruhsatı_Talebi_RUHSAT_NO;
+
+    @FindBy(xpath = "//input[@id=\"id_identity_no\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_BULTEN_NO;
+
+    @FindBy(xpath = "//input[@id=\"id_licence_confirm_date\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_DATE;
+
+    @FindBy(xpath = "//input[@id=\"id_generative_name\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_URETICI_NAME;
+
+
+    @FindBy(xpath = "//input[@id=\"id_generative_phone\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_URETICI_PHONE;
+
+    @FindBy(xpath = "//input[@id=\"id_generative_tax_id\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_vergı_no;
+
+
+    @FindBy(xpath = "//textarea[@id=\"id_generative_address\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_ADRESS;
+
+
+    @FindBy(xpath = "//input[@id=\"id_lot\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_ADA;
+
+    @FindBy(xpath = "//input[@id=\"id_plot\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_PARSEL;
+
+    @FindBy(xpath = "//input[@id=\"id_block\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_BLOCK;
+
+
+    @FindBy(xpath = "//textarea[@id=\"id_generative_address\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_ADDRES;
+
+    @FindBy(xpath = "//span[@id=\"select2-id_province-container\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_ILCEDROPDOWN;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_ILCEDROPDOWNINPUT;
+
+    @FindBy(xpath = "//span[@id=\"select2-id_neighborhood-container\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_MAHALLEDROPDOWN;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_MAHALLEDROPDOWNINPUT;
+
+    @FindBy(xpath = "//input[@id=\"id_excavation_capacity\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_KAZIMIKTARI;
+
+
+    @FindBy(xpath = "//input[@id=\"id_filler_capacity\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_DOLGUMIKTARI;
+
+
+    @FindBy(xpath = "//input[@id=\"id_empty_excavation_capacity\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_BOSKAZIMIKTARI;
+
+
+
+
+    @FindBy(xpath = "//input[@id=\"id_waste_amount\"]\n")
+    public WebElement Yapı_Ruhsatı_Talebi_ATIKMIKTARI;
+    @FindBy(xpath = "//span[@id=\"select2-id_waste_type-container\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_ATIKCINSIDROPDOWN;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_ATIKCINSIDROPDOWN_INPUT;
+
+
+    @FindBy(xpath = "//span[@id=\"select2-id_dump_sites-container\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_DOKUMSAHALARIDROPDOWN;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_DOKUMSAHALARIDROPDOWN_INPUT;
+
+    @FindBy(xpath = "//textarea[@id=\"address\"]\n")
+    public WebElement Yapı_Ruhsatı_Talebi_HAFRIYATADRESS;
+
+
+    @FindBy(xpath = "//textarea[@id=\"note\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_HAFRIYATNOTE;
+
+
+
+    @FindBy(xpath = "//input[@id=\"doc_name\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_DOKUMANADI;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* public File getHaritaResmiScreenshot() throws IOException {
         return haritaResmi.getScreenshotAs(OutputType.FILE);
 

@@ -58,4 +58,32 @@ public class US_11_Stepdefinitions {
 
     }
 
+    @Given("User Manual Balance deducted part information must be received and verified.")
+    public void user_manual_balance_deducted_part_information_must_be_received_and_verified() {
+
+        ReusableMethods.wait(3);
+
+        // Excel butonunu bul ve tıkla
+        WebElement exportExcelButton = driver.findElement(By.id("export_excel"));
+        exportExcelButton.click();
+
+        // Tablodaki verileri al ve doğrula
+        WebElement dataTable = driver.findElement(By.id("datatable_fixed_column"));
+        WebElement tableBody = dataTable.findElement(By.tagName("tbody"));
+        WebElement tableRow = tableBody.findElement(By.tagName("tr"));
+        String tableData = tableRow.getText();
+        String expectedData = "03/06/2021 12:23:00 Deneme 250,00 Emre Akdağ İptal";
+
+        // Doğrulama
+        assert tableData.equals(expectedData) : "Tablo verisi doğrulama hatası! Beklenen: " + expectedData + ", Bulunan: " + tableData;
+
+
+
+
+
+    }
+
+
+
+
 }
