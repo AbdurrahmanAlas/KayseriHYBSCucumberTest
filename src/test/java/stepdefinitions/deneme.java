@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Set;
 
+import static stepdefinitions.FIRMA_LISTESI_BELGE_INDIRME.getCompanyName;
 import static utilities.Driver.driver;
 
 public class deneme {
@@ -31,22 +32,24 @@ public class deneme {
     public void tum_fırmalar_ıcın_the_ability_to_download_documents_from_the_document_list_should_be_tested() {
 
 
+
+        ReusableMethods.wait(10);
+
+
         try {
+            // İnternet sitesini ziyaret et
+            driver.get("http://example.com");
+
             // İncele butonlarını bul
             List<WebElement> inceleButtons = driver.findElements(By.cssSelector("button[class='btn btn-sm btn-primary']"));
+
             // Her bir incele butonu için döngü
             for (WebElement inceleButton : inceleButtons) {
                 inceleButton.click(); // İncele butonuna tıkla
 
-                // Sayfanın tam olarak yüklenmesini bekleyin
-                Thread.sleep(5000);
-
                 // Firma belgeleri linkini bul ve tıkla
                 WebElement firmaBelgeleriLink = driver.findElement(By.xpath("//a[contains(text(), 'Firma Belgeleri')]"));
                 firmaBelgeleriLink.click();
-
-                // Sayfanın tam olarak yüklenmesini bekleyin
-                Thread.sleep(5000);
 
                 // "Görüntüle" butonlarını bul
                 List<WebElement> viewButtons = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
@@ -71,7 +74,7 @@ public class deneme {
                     }
 
                     // Belge yüklenmesini bekle
-                    Thread.sleep(5000);
+                    ReusableMethods.wait(3);
 
                     // Firma adını al
                     String companyName = getCompanyName(driver);
@@ -95,15 +98,14 @@ public class deneme {
                     // Ana pencereye geri dön
                     driver.switchTo().window(mainWindowHandle);
                 }
+
+                // WebDriver'ı kapat
+                driver.quit();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
-            // WebDriver'ı kapat
-            driver.quit();
+
         }
     }
-
     // PDF dosyasını indiren metot
     public static void downloadPDF(String pdfUrl, String fileName) {
         try (InputStream in = new URL(pdfUrl).openStream();
@@ -118,19 +120,5 @@ public class deneme {
             e.printStackTrace();
         }
     }
-
-    // Firma adını almak için yardımcı metot
-    public static String getCompanyName(WebDriver driver) {
-        // Sayfanın içeriğini al
-        String pageSource = driver.getPageSource();
-        // İçerikte firma adını içeren bir ifade arayın
-        // Örnek olarak, firmanın adı "Company Name" olsun
-        if (pageSource.contains("Firma")) {
-            return "Firma";
-        }
-        // İçerikte firma adını içeren bir ifade bulunamazsa, varsayılan değeri döndürün
-        return "Unknown Company";
-    }
-
 }
 //fdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss

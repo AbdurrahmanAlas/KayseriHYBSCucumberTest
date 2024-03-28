@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.PageHYBS;
+import pages.PageN2MOBIL;
 
 import java.io.File;
 import java.io.IOException;
@@ -93,6 +94,22 @@ public class ReusableMethods {
 
     }
 
+    public static void loginn2MOBIL(String username, String password) {
+
+        // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
+
+        PageN2MOBIL pageN2MOBIL = new PageN2MOBIL();
+        Driver.getDriver().get(ConfigReader.getProperty("urln2MOBIL"));
+        ReusableMethods.wait(5);
+        pageN2MOBIL.emailAddresn2MOBIL.sendKeys(username);
+        pageN2MOBIL.passwordn2MOBIL.sendKeys(password);
+        ReusableMethods.wait(3);
+        pageN2MOBIL.signInbutonun2MOBIL.click();
+        ReusableMethods.wait(3);
+
+
+
+    }
 
     public static void TakipLoginHYBS(String username, String password) {
 

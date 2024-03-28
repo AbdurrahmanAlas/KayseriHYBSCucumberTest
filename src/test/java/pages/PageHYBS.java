@@ -23,6 +23,15 @@ public class PageHYBS {
     @FindBy(xpath = "//*[@id=\"id_username\"]")
     public WebElement emailAddres;
 
+
+
+
+
+    @FindBy(xpath = "//a[text()=\"  Alarmlar\"]")
+    public WebElement alarmbuttonlink;
+
+
+
     //2- Login > Password
 
     @FindBy(xpath = "//input[@id=\"id_password\"]")

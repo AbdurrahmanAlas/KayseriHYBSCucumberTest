@@ -17,6 +17,8 @@ public class US_1_Stepdefinitions {
 
         ReusableMethods.loginHYBS("abdurrahman.alas","Als.2297");
     }
+
+
     @Then("it is verified that it went to the requested page")
     public void it_is_verified_that_it_went_to_the_requested_page() {
 
