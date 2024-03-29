@@ -82,7 +82,8 @@ public class PageN2MOBIL {
     @FindBy(xpath = "//button[text()=\"OK\"]")
     public WebElement basarılıOK;
 
-
+    @FindBy(xpath = "(//small[text()=\"Bu Alanın Doldurulması Zorunludur !\"])[1]")
+    public  WebElement bualanındoldurulmasımesajıgorunuyor;
 
 
 

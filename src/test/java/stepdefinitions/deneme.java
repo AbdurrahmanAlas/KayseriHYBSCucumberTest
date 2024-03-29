@@ -122,3 +122,45 @@ public class deneme {
     }
 }
 //fdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+
+
+/*
+ String[] alarmTurleri = {"Cihaz Müdahele", "Giriş Cihazı", "Kapı Açılma"};
+
+        // Her bir firma için alarmların oluşturulması işlemi
+        for (String firma : firmalar) {
+            // Her bir alarm türü için işlemleri gerçekleştir
+            for (String alarmTuru : alarmTurleri) {
+                olusturAlarm(firma, alarmTuru);
+            }
+        }
+    }
+
+    public void olusturAlarm(String firmaAdi, String alarmTuru) {
+        PageN2MOBIL pageN2MOBIL = new PageN2MOBIL();
+        pageN2MOBIL.alarmbuttonlink.click();
+        pageN2MOBIL.dropdownFırmalar.click();
+        pageN2MOBIL.DropdownINPUT.sendKeys(firmaAdi + Keys.ENTER);
+        pageN2MOBIL.alarmCLICK.click();
+        pageN2MOBIL.yeniAlarm.click();
+        ReusableMethods.wait(2);
+        pageN2MOBIL.TumunuSecDropdown.click();
+        ReusableMethods.wait(5);
+
+        pageN2MOBIL.DropdownALARMLAR.click();
+        ReusableMethods.wait(3);
+        pageN2MOBIL.DropdownALARMLAR_INPUT.sendKeys(alarmTuru + " " + Keys.ENTER);
+        pageN2MOBIL.DropdownBILDIRIM.click();
+        pageN2MOBIL.DropdownBILDIRIM_INPUT.sendKeys("Mobil Bildirim" + Keys.ENTER);
+        pageN2MOBIL.DropdownKULLANICILAR.click();
+        pageN2MOBIL.DropdownKULLANICILAR_INPUT.sendKeys("Ramazan Korkmaz" + Keys.ENTER);
+        pageN2MOBIL.DropdownKULLANICILAR_INPUT.sendKeys("Ozgur Yıldırım" + Keys.ENTER);
+        pageN2MOBIL.DropdownKULLANICILAR_INPUT.sendKeys("Furkan Kocer" + Keys.ENTER);
+        pageN2MOBIL.DropdownKULLANICILAR_INPUT.sendKeys("Burak Per" + Keys.ENTER);
+        pageN2MOBIL.DropdownKULLANICILAR_INPUT.sendKeys("Abdurrahman Alas" + Keys.ENTER);
+        pageN2MOBIL.BOSLUGATIKLA.click();
+        pageN2MOBIL.ALARM_KAYDET.click();
+        pageN2MOBIL.basarılıOK.click();
+        ReusableMethods.wait(2);
+        ReusableMethods.wait(7);
+ */

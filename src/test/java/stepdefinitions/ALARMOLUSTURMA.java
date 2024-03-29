@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.PageHYBS;
 import pages.PageN2MOBIL;
 import utilities.ReusableMethods;
 
@@ -28,9 +29,8 @@ public class ALARMOLUSTURMA {
 
         String[] firmalar = {
                 "ABDULLAH AYASILI",
-                "ADEM BÖLÜKBASI",
-                "AHMET ADANALI",
-                "AHMET CEM KIS",
+                "ADEM BÖLÜKBAŞ",
+                "AHMET CEM",
                 "AHMET İLHAN",
                 "AHMET KARAKAYA",
                 "AHMET ÖNDER SOYKAN",
@@ -244,44 +244,34 @@ public class ALARMOLUSTURMA {
 
         };
 
-
-        String[] alarmTurleri = {"Pasif", "Cihaz Müdahele", "Giriş Cihazı", "Kapı Açılma"};
+        String[] alarmTurleri = {"Pasif","Giriş Cihazı","Cihaz Müdahele",  "Kapı Açılma"};
 
         // Her bir firma için alarmların oluşturulması işlemi
         for (String firma : firmalar) {
-            boolean aracVarMi = aracVarMi(firma); // Her firmanın aracı olup olmadığını kontrol et
             // Her bir alarm türü için işlemleri gerçekleştir
             for (String alarmTuru : alarmTurleri) {
-                olusturAlarm(firma, alarmTuru, aracVarMi);
+                olusturAlarm(firma, alarmTuru);
             }
         }
     }
 
-    public boolean aracVarMi(String firmaAdi) {
-        // Firma adına göre aracın varlığını kontrol et ve buna göre boolean değer döndür
-        // Örnek bir kontrol yapısı:
-        if (firmaAdi.equals("Firma1") || firmaAdi.equals("Firma2")) {
-            return true; // Arac var
-        } else {
-            return false; // Arac yok
-        }
-    }
-
-    public void olusturAlarm(String firmaAdi, String alarmTuru, boolean aracVarMi) {
+    public void olusturAlarm(String firmaAdi, String alarmTuru) {
         PageN2MOBIL pageN2MOBIL = new PageN2MOBIL();
         pageN2MOBIL.alarmbuttonlink.click();
         pageN2MOBIL.dropdownFırmalar.click();
+
+        // Önceki firma adını temizle
+        pageN2MOBIL.DropdownINPUT.sendKeys(Keys.CONTROL + "a");
+        pageN2MOBIL.DropdownINPUT.sendKeys(Keys.DELETE);
+
         pageN2MOBIL.DropdownINPUT.sendKeys(firmaAdi + Keys.ENTER);
+        ReusableMethods.wait(5);
         pageN2MOBIL.alarmCLICK.click();
         pageN2MOBIL.yeniAlarm.click();
         ReusableMethods.wait(2);
-
-        if (aracVarMi) {
-            pageN2MOBIL.TumunuSecDropdown.click();
-        }
+        pageN2MOBIL.TumunuSecDropdown.click();
 
         pageN2MOBIL.DropdownALARMLAR.click();
-        ReusableMethods.wait(2);
         pageN2MOBIL.DropdownALARMLAR_INPUT.sendKeys(alarmTuru + " " + Keys.ENTER);
         pageN2MOBIL.DropdownBILDIRIM.click();
         pageN2MOBIL.DropdownBILDIRIM_INPUT.sendKeys("Mobil Bildirim" + Keys.ENTER);
@@ -294,17 +284,11 @@ public class ALARMOLUSTURMA {
         pageN2MOBIL.BOSLUGATIKLA.click();
         pageN2MOBIL.ALARM_KAYDET.click();
         pageN2MOBIL.basarılıOK.click();
-        driver.navigate().refresh();
         ReusableMethods.wait(5);
+
     }
 
 }
-
-
-
-
-
-
 
 
 
