@@ -1,9 +1,11 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class PageN2MOBIL {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
 
     @FindBy(xpath = "//input[@id=\"__BVID__12\"]")
@@ -65,8 +68,11 @@ public class PageN2MOBIL {
     public WebElement BOSLUGATIKLA;
     @FindBy(xpath = "//i[@class=\"open-indicator\"]")
     public WebElement DamperDROPDOWN;
+    @FindBy(xpath = "//input[@type=\"search\"]")
+    public WebElement DamperDROPDOWN_INPUT;
 
-    @FindBy(xpath = "//label[text()=\"when_active\"]")
+
+    @FindBy(xpath = "(//label[@class=\"custom-control-label\"])[9]")
     public WebElement DamperDROPDOWNwhenActive;
 
     @FindBy(xpath = "//button[@class=\"btn btn-primary pull-right\"]")
@@ -75,6 +81,8 @@ public class PageN2MOBIL {
 
     @FindBy(xpath = "//button[text()=\"OK\"]")
     public WebElement basarılıOK;
+
+
 
 
 

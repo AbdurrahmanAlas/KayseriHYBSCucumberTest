@@ -111,6 +111,11 @@ public class ReusableMethods {
 
     }
 
+
+
+
+
+
     public static void TakipLoginHYBS(String username, String password) {
 
         // username ve password'ü kendiniz verebilir ya da ConfigReader class'ı verebilirsiniz.
