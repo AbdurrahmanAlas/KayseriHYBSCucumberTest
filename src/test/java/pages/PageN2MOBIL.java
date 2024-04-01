@@ -86,5 +86,10 @@ public class PageN2MOBIL {
     public  WebElement bualanındoldurulmasımesajıgorunuyor;
 
 
+    @FindBy(xpath = "//a[@id=\"vehicle_docs\"]")
+    public  WebElement companylist_VEHICLE_DOCUMENT;
+
+
+
 
 }

@@ -94,6 +94,21 @@ public class FIRMA_LISTESI_BELGE_INDIRME {
             driver.switchTo().window(mainWindowHandle);
         }
 
+        // Eğer "Görüntüle" butonu bulunamazsa ekran görüntüsü al
+        if (viewButtons.isEmpty()) {
+            // Ekran görüntüsü al
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+            // Dosyayı kaydet
+            try {
+                File destinationFile = new File("pdf_files/no_view_button_screenshot.png");
+                FileUtils.copyFile(screenshotFile, destinationFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         // WebDriver'ı kapat
         driver.quit();
     }
@@ -124,7 +139,6 @@ public class FIRMA_LISTESI_BELGE_INDIRME {
         }
         // İçerikte firma adını içeren bir ifade bulunamazsa, varsayılan değeri döndürün
         return "Unknown Company";
-
     }
 
 }
