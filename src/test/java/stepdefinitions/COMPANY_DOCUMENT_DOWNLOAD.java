@@ -78,7 +78,7 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
         }
 
 
-
+/////////////////////////////
 
         ReusableMethods.wait(3);
         pageN2MOBIL.companylist_VEHICLE_DOCUMENT.click();
@@ -151,7 +151,7 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
         incelegözsimgesi2.click();
 
         pageHYBS.companyDocumentsLink.click();
-
+///****************************************************************************************************************************************
 
         // "Görüntüle" veya "Aç" butonlarını bul
         List<WebElement> viewButtons2 = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));
@@ -161,6 +161,69 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
             // Butonu tıkla
             WebElement viewButton2 = viewButtons2.get(i);
             viewButton2.click();
+
+            // Ana pencereyi kaydet
+            String mainWindowHandle = driver.getWindowHandle();
+
+            // Tüm pencere kollarını al
+            Set<String> allWindowHandles = driver.getWindowHandles();
+            for (String handle : allWindowHandles) {
+                // Ana pencere dışındaki bir pencereye geçiş yap
+                if (!handle.equals(mainWindowHandle)) {
+                    driver.switchTo().window(handle);
+                    break;
+                }
+            }
+
+
+
+
+
+            // Belge yüklenmesini bekle
+            ReusableMethods.wait(3);
+
+            // Firma adını al
+            String companyName = getCompanyName(driver);
+
+            // Firma adına göre klasör oluştur
+            File companyDirectory = new File("pdf_files/" + companyName);
+            if (!companyDirectory.exists()) {
+                companyDirectory.mkdir();
+            }
+
+            // PDF dosyasının URL'sini al
+            String pdfUrl = driver.getCurrentUrl();
+
+            // PDF dosyasını indir ve ilgili klasöre kaydet
+            String pdfFileName = "pdf_files/" + companyName + "/document_" + i + ".pdf";
+            boolean downloadSuccessful = downloadPDF(pdfUrl, pdfFileName);
+
+            // Ekran görüntüsü al
+            takeScreenshot(driver, companyName, i, downloadSuccessful);
+
+            // Yeni pencereyi kapat
+            driver.close();
+
+            // Ana pencereye geri dön
+            driver.switchTo().window(mainWindowHandle);
+        }
+
+
+        ReusableMethods.wait(3);
+        pageN2MOBIL.companylist_VEHICLE_DOCUMENT.click();
+        ReusableMethods.wait(3);
+
+
+
+
+        // "Görüntüle" veya "Aç" butonlarını bul
+        List<WebElement> viewButtons3 = driver.findElements(By.cssSelector("a[data-original-title='Aç']"));
+
+        // Her bir buton için döngü
+        for (int i = 0; i < viewButtons3.size(); i++) {
+            // Butonu tıkla
+            WebElement viewButton3 = viewButtons3.get(i);
+            viewButton3.click();
 
             // Ana pencereyi kaydet
             String mainWindowHandle = driver.getWindowHandle();
@@ -202,10 +265,19 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
 
             // Ana pencereye geri dön
             driver.switchTo().window(mainWindowHandle);
+
+
+
         }
 
 
+        pageHYBS.isletmeModuluLink.click();
+        pageHYBS.FirmaListesi.click();
 
+        WebElement incelegözsimgesi3 = driver.findElement(By.xpath("(//span[@class='col-sm-4 text-center no-padding'])[7]"));
+        incelegözsimgesi3.click();
+
+        pageHYBS.companyDocumentsLink.click();
 
 
 
