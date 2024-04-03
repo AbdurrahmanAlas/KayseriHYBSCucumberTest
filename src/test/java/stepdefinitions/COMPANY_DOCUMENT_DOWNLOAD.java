@@ -87,7 +87,7 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
 
 
 
-        // "Görüntüle" veya "Aç" butonlarını bul
+        // Arac belgeleri "Aç" butonlarını bul
         List<WebElement> viewButtons1 = driver.findElements(By.cssSelector("a[data-original-title='Aç']"));
 
         // Her bir buton için döngü
@@ -142,7 +142,7 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
         }
 
 
-
+// ikinci firmaya geciyoruz.
         PageHYBS pageHYBS=new PageHYBS();
         pageHYBS.isletmeModuluLink.click();
         pageHYBS.FirmaListesi.click();
@@ -151,7 +151,7 @@ public class COMPANY_DOCUMENT_DOWNLOAD {
         incelegözsimgesi2.click();
 
         pageHYBS.companyDocumentsLink.click();
-///****************************************************************************************************************************************
+
 
         // "Görüntüle" veya "Aç" butonlarını bul
         List<WebElement> viewButtons2 = driver.findElements(By.cssSelector("a[data-original-title='Görüntüle']"));

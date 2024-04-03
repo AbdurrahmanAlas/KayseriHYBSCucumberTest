@@ -1026,7 +1026,23 @@ public class PageHYBS {
     public WebElement Yapı_Ruhsatı_Talebi_DOKUMANADI;
 
 
+    @FindBy(xpath = "//button[text()=\"Oluştur\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_OLUSTURBUTTON;
 
+
+    @FindBy(xpath = "(//a[@title=\"İşi Pasife Al\"])[1]")
+    public WebElement Yapı_Ruhsatı_Talebi_ISIPASIFEAL;
+
+    @FindBy(xpath = "//textarea[@id=\"passive_description\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_PASIFEALACIKLAMA;
+
+    @FindBy(xpath = "(//button[text()=\"İptal\"])[1]")
+    public WebElement Yapı_Ruhsatı_Talebi_PASIFEAL_IPTAL;
+
+    @FindBy(xpath = "(//button[text()=\"İptal\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_PASIFEAL_IPTAL2;
+    @FindBy(xpath = "(//i[@class=\"fa fa-close\"])[1]")
+    public WebElement Yapı_Ruhsatı_Talebi_SIL;
 
 
 
