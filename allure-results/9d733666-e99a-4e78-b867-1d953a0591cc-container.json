@@ -1,0 +1,1 @@
+{"uuid":"9d733666-e99a-4e78-b867-1d953a0591cc","name":"Scenario: TC_01205 When BUILDING PERMIT REQUEST is clicked, the UPDATE buttons on the right side regarding building permits should be active.","children":["dc1b0c27-106a-40b5-aac1-de2922f067b4"],"befores":[],"afters":[],"start":1712215642376,"stop":1712215642388}

@@ -1,7 +1,9 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +14,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.security.Key;
+import java.util.Set;
 
 import static utilities.Driver.driver;
 
@@ -182,6 +185,7 @@ public class US_12_Stepdefinitions {
         Assert.assertTrue(pageHYBS.Yapı_Ruhsatı_Talebi_PASIFEAL_IPTAL.isDisplayed());
 
         driver.navigate().refresh();
+        ReusableMethods.wait(3);
 
 
 
@@ -190,12 +194,182 @@ public class US_12_Stepdefinitions {
     public void click_the_delete_job_button_and_verify() {
 
     pageHYBS.Yapı_Ruhsatı_Talebi_SIL.click();
+    ReusableMethods.wait(3);
         driver.navigate().refresh();
+        ReusableMethods.wait(3);
+
+
+    }
+
+    @Given("click on EK2 and verify it has arrived")
+    public void click_on_ek2_and_verify_it_has_arrived() {
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_EK2.click();
+
+
+        // Orijinal pencereyi sakla
+        String originalWindow = driver.getWindowHandle();
+        pageHYBS.Yapı_Ruhsatı_Talebi_EK2.click();
+
+        // Yeni açılan pencerelerin setini al
+        Set<String> windows = driver.getWindowHandles();
+        // Yeni açılan pencereyi bul ve ana pencereyle değiştir
+        for (String window : windows) {
+            if (!window.equals(originalWindow)) {
+                driver.switchTo().window(window);
+                break;
+            }
+        }
+
+        // Yeni sekmedeki URL'i al
+        String newTabURL = driver.getCurrentUrl();
+
+        // Doğru URL'yi assert ile kontrol et
+        assert newTabURL.equals("https://kayserihybs.n2mobil.com.tr/media/belgeler/is_belgeleri/4425/Ruhsat-Belgesi") : "Beklenen URL doğru değil"; // Beklenen URL'yi uygun şekilde değiştirin
+
+        System.out.println("Doğru URL");
+
+
+    }
+
+
+
+    @Given("click on UPDATE and verify it has arrived")
+    public void click_on_update_and_verify_it_has_arrived() {
+
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_GUNCELLEBUTTON_.click();
+
+        pageHYBS.companyList_DROPDOWN.click();
+        pageHYBS.Yapı_Ruhsatı_Talebi_DROPDOWN_INPUT.sendKeys("Gecici"+Keys.ENTER);
+
+        ReusableMethods.wait(2);
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_YENIYAPI_DROPDOWN.click();
+        pageHYBS.Yapı_Ruhsatı_Talebi_YENIYAPI_DROPDOWN_INPUT.clear();
+        pageHYBS.Yapı_Ruhsatı_Talebi_YENIYAPI_DROPDOWN_INPUT.sendKeys("ilave"+Keys.ENTER);
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_RUHSAT_NO.clear();
+        pageHYBS.Yapı_Ruhsatı_Talebi_RUHSAT_NO.sendKeys("12345611");
+        pageHYBS.Yapı_Ruhsatı_Talebi_BULTEN_NO.clear();
+        pageHYBS.Yapı_Ruhsatı_Talebi_BULTEN_NO.sendKeys("4545435435");
+        ReusableMethods.wait(2);
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_DATE.click();
+
+        // Seçim kutusu içindeki input alanını bul
+        WebElement searchInput = driver.findElement(By.className("select2-search__field"));
+
+        // Input alanına yazı gönder
+        searchInput.sendKeys("aa"+Keys.ENTER);
+
+
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_URETICI_NAME.clear();
+        pageHYBS.Yapı_Ruhsatı_Talebi_URETICI_NAME.sendKeys("Denemeuretici");
+        pageHYBS.Yapı_Ruhsatı_Talebi_URETICI_PHONE.clear();
+        pageHYBS.Yapı_Ruhsatı_Talebi_URETICI_PHONE.sendKeys("0542525252");
+        pageHYBS.Yapı_Ruhsatı_Talebi_vergı_no.sendKeys("252");
+        pageHYBS.Yapı_Ruhsatı_Talebi_ADDRES.sendKeys("Sanayi mahallesi Deneme");
+        pageHYBS.Yapı_Ruhsatı_Talebi_ADA.sendKeys("123457");
+        pageHYBS.Yapı_Ruhsatı_Talebi_PARSEL.sendKeys("123457");
+        pageHYBS.Yapı_Ruhsatı_Talebi_BLOCK.sendKeys("FEVZİ ÇAKMAK");
+
+        ReusableMethods.wait(3);
+        ReusableMethods.scrolldown_600();
+        ReusableMethods.wait(3);
+        pageHYBS.Yapı_Ruhsatı_Talebi_ILCEDROPDOWN.click();
+        ReusableMethods.wait(1);
+        pageHYBS.Yapı_Ruhsatı_Talebi_ILCEDROPDOWNINPUT.sendKeys("Yahyalı"+Keys.ENTER);
+        ReusableMethods.scrolldown_600();
+
+        ReusableMethods.scrolldown();
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_KAZIMIKTARI.sendKeys("500");
+        pageHYBS.Yapı_Ruhsatı_Talebi_DOLGUMIKTARI.sendKeys("8500");
+        pageHYBS.Yapı_Ruhsatı_Talebi_BOSKAZIMIKTARI.sendKeys("700");
+
+        ReusableMethods.wait(3);
+        ReusableMethods.scrolldown_600();
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_ATIKCINSIDROPDOWN.click();
+        pageHYBS.Yapı_Ruhsatı_Talebi_ATIKCINSIDROPDOWN_INPUT.sendKeys("İnşaat Yıkıntı Toprağı");
+        pageHYBS.Yapı_Ruhsatı_Talebi_ATIKMIKTARI.sendKeys("202292");
+        ReusableMethods.wait(2);
+        ReusableMethods.scrolldown_600();
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_DOKUMSAHALARIDROPDOWN.click();
+        pageHYBS.Yapı_Ruhsatı_Talebi_DOKUMSAHALARIDROPDOWN_INPUT.sendKeys("Akin Döküm Sahası"+Keys.ENTER);
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_HAFRIYATADRESS.sendKeys("DENEME");
+        pageHYBS.Yapı_Ruhsatı_Talebi_HAFRIYATNOTE.sendKeys("denemem");
+        ReusableMethods.scrolldown();
+
+
+
+
+        pageHYBS.Yapı_Ruhsatı_Talebi_GUNCELLEBUTTON.click();
+
+
+
+    }
+
+
+    @Given("Click on the External Excavation Request link")
+    public void click_on_the_external_excavation_request_link() {
+        pageHYBS.talepListeleriLink.click();
+
+        pageHYBS.HariciKazıTalebiLinki.click();
+
+
+    }
+    @Given("Click on the Add new External Excavation request button")
+    public void click_on_the_add_new_external_excavation_request_button() {
+
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI.click();
+
+
+
+
+    }
+    @Given("Add and create information in new External excavation request")
+    public void add_and_create_information_in_new_external_excavation_request() {
+
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıName.sendKeys("Deneme Harici Kazı");
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıPHONE.sendKeys("080181718");
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıADDRESS.sendKeys("DenemeAdres");
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ADA.sendKeys("456");
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_PARSEL.sendKeys("3333");
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ILCESEC.click();
+
+      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ILCE_INPUT.sendKeys("Tomarza"+Keys.ENTER);
+
+        ReusableMethods.wait(3);
+        // Actions sınıfını kullanarak sayfayı belirli bir elemente kadar kaydırma
+    ReusableMethods.scrolldown();
+    ReusableMethods.wait(3);
+
+// Ardından kalan giriş alanlarına değerlerinizi girebilirsiniz
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DATE.click();
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_TIPSEC.click();
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_TIPSEC_INPUT.sendKeys("Dolgu" + Keys.ENTER);
+        ReusableMethods.scrolldown();
+        ReusableMethods.wait(2);
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC.click();
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC_INPUT.sendKeys("ÖZGE");
+
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI.click();
+        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI_INPUT.sendKeys("Yılanlı" + Keys.ENTER);
+
+    }
+    @Given("Edit verify new external dig request has been added")
+    public void edit_verify_new_external_dig_request_has_been_added() {
 
 
 
 
 
     }
+
 
 }

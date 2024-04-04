@@ -25,8 +25,8 @@
       * Verify that the added information has arrived
 
 
-    @01103
-    Scenario:TC_01203 When BUILDING PERMIT REQUEST is clicked, the DEACTIVATE, DELETE, APPENDIX-2 buttons on the right side regarding building permits should be active.
+
+    Scenario:TC_01203 When BUILDING PERMIT REQUEST is clicked, the DEACTIVATE, DELETE, -2 buttons on the right side regarding building permits should be active.
       # YAPI RUHSAT TALEBİ  tıklandıgında eklenen yapı ruhsatlari ile ilgili  sag kisimda bulunan PASİFE AL,SİL,EK-2 butonlari aktif calismalidir.
 
       Given Login to HYBS site, click the Login button and log in with your User information.
@@ -34,5 +34,38 @@
       * User should be able to click on BUILDINGlıst
       * Click the Deactivate job button and verify
       * click the Delete job button and verify
+
+
+
+    Scenario:TC_01204 When BUILDING PERMIT REQUEST is clicked, the  APPENDIX-2 buttons on the right side regarding building permits should be active.
+      # YAPI RUHSAT TALEBİ  tıklandıgında eklenen yapı ruhsatlari ile ilgili  sag kisimda bulunan EK-2 butonlari aktif calismalidir.
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+      * click  YapıRuhsatTaleb
+      * click on EK2 and verify it has arrived
+
+
+    Scenario:TC_01205 When BUILDING PERMIT REQUEST is clicked, the UPDATE buttons on the right side regarding building permits should be active.
+      # YAPI RUHSAT TALEBİ  tıklandıgında eklenen yapı ruhsatlari ile ilgili  sag kisimda bulunan EK-2 butonlari aktif calismalidir.
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+      * click  YapıRuhsatTaleb
+      * click on UPDATE and verify it has arrived
+
+
+
+    @01106
+    Scenario:TC_01205 When the User Request Lists/EXTERNAL EXCAVATION REQUEST heading is clicked, the functions on the page should work properly.
+      # Kullanici Talep Listeleri/HARİCİ KAZI TALEBİ basligina tiklanildiginda sayfadaki islevler düzgün calismalidir.
+
+      Given Login to HYBS site, click the Login button and log in with your User information.
+
+      * Click on the External Excavation Request link
+      * Click on the Add new External Excavation request button
+      * Add and create information in new External excavation request
+      * Edit verify new external dig request has been added
+
+
+
 
 

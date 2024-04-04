@@ -521,9 +521,9 @@ public class ReusableMethods {
 
     }
 
-    public static void scrolldown_bypixel_400() {
+    public static void scrolldown_bypixel_10000() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
+        js.executeScript("window.scrollBy(0,10000)");
 
     }
 

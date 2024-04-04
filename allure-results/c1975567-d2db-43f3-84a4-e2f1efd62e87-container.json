@@ -1,0 +1,1 @@
+{"uuid":"c1975567-d2db-43f3-84a4-e2f1efd62e87","name":"Scenario: TC_01203 When BUILDING PERMIT REQUEST is clicked, the DEACTIVATE, DELETE, APPENDIX-2 buttons on the right side regarding building permits should be active.","children":["b9dc7c3e-11b9-4c25-a0f8-456362586f50"],"befores":[],"afters":[],"start":1712214600945,"stop":1712214600962}

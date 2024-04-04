@@ -1030,6 +1030,8 @@ public class PageHYBS {
     public WebElement Yapı_Ruhsatı_Talebi_OLUSTURBUTTON;
 
 
+    @FindBy(xpath = "//button[text()=\"Güncelle\"]")
+    public WebElement Yapı_Ruhsatı_Talebi_GUNCELLEBUTTON;
     @FindBy(xpath = "(//a[@title=\"İşi Pasife Al\"])[1]")
     public WebElement Yapı_Ruhsatı_Talebi_ISIPASIFEAL;
 
@@ -1041,23 +1043,85 @@ public class PageHYBS {
 
     @FindBy(xpath = "(//button[text()=\"İptal\"])[2]")
     public WebElement Yapı_Ruhsatı_Talebi_PASIFEAL_IPTAL2;
-    @FindBy(xpath = "(//i[@class=\"fa fa-close\"])[1]")
+    @FindBy(xpath = "(//i[@class=\"fa fa-close\"])[2]")
     public WebElement Yapı_Ruhsatı_Talebi_SIL;
 
+    @FindBy(xpath = "//*[@id=\"datatable_fixed_column\"]/tbody/tr[2]/td[8]/div[2]/a[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_EK2;
+
+    @FindBy(xpath = "(//i[@class=\"fa fa-edit\"])[2]")
+    public WebElement Yapı_Ruhsatı_Talebi_GUNCELLEBUTTON_;
+
+    @FindBy(xpath = "//a[text()=\" Yeni Harici Kazı Talebi Ekle\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI;
+
+    @FindBy(xpath = "//input[@id=\"id_generative_name\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_uretıcıName;
+
+    @FindBy(xpath = "//input[@id=\"id_generative_phone\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_uretıcıPHONE;
+
+    @FindBy(xpath = "//textarea[@id=\"id_generative_address\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_uretıcıADDRESS;
+
+
+    @FindBy(xpath = "//input[@id=\"id_from_lot\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_ADA;
+
+
+    @FindBy(xpath = "//input[@id=\"id_from_plot\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_PARSEL;
+
+    @FindBy(xpath = "(//span[@role=\"presentation\"])[1]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_ILCESEC;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_ILCE_INPUT;
+
+    @FindBy(xpath = "(//span[@role=\"presentation\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_MAHALLESEC;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_MAHALLE_INPUT;
+
+    @FindBy(xpath = "//textarea[@id=\"id_from_address\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_BASLANGICADRESI;
+
+
+    @FindBy(xpath = "//input[@id=\"id_date\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_DATE;
+
+    @FindBy(xpath = "(//span[@role=\"presentation\"])[3]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_TIPSEC;
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_TIPSEC_INPUT;
+
+    @FindBy(xpath = "(//span[@role=\"presentation\"])[4]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC_INPUT;
+
+    @FindBy(xpath = "//*[@id=\"checkout-form\"]/fieldset[2]/div[4]/section[1]/div/label[2]/span/span[1]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_ARACSEC;
+
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_ARACSEC_INPUT;
+
+
+    @FindBy(xpath = "(//span[@role=\"presentation\"])[5]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI;
+
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI_INPUT;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+//input[@id="id_date"]
 
 
 
