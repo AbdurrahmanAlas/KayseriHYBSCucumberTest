@@ -1097,14 +1097,14 @@ public class PageHYBS {
     @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
     public WebElement hariciKaziTalebi_YENIHARICIKAZI_TIPSEC_INPUT;
 
-    @FindBy(xpath = "(//span[@role=\"presentation\"])[4]")
+    @FindBy(xpath = "//*[@id=\"checkout-form\"]/fieldset[2]/div[3]/section[3]/div/label[2]")
     public WebElement hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC;
 
 
     @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
     public WebElement hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC_INPUT;
 
-    @FindBy(xpath = "//*[@id=\"checkout-form\"]/fieldset[2]/div[4]/section[1]/div/label[2]/span/span[1]")
+    @FindBy(xpath = "//span[@class=\"select2 select2-container select2-container--default select2-container--focus\"]")
     public WebElement hariciKaziTalebi_YENIHARICIKAZI_ARACSEC;
 
 
@@ -1122,6 +1122,56 @@ public class PageHYBS {
 
 
 //input[@id="id_date"]
+
+    @FindBy(xpath = "(//a[@class=\"btn btn-xs btn-warning\"])[1]")
+    public WebElement hariciKaziTalebi_HARICIKAZI_Updatebutton;
+
+    @FindBy(xpath = "(//a[@class=\"btn btn-sm btn-danger\"])[1]")
+    public WebElement hariciKaziTalebi_HARICIKAZI_Deletebutton;
+
+
+    @FindBy(xpath = "//textarea[@id=\"input_comment\"]")
+    public WebElement hariciKaziTalebi_HARICIKAZI_DeleteAcıklama;
+
+    @FindBy(xpath = "//button[@id=\"modalCloseBtn\"]")
+    public WebElement hariciKaziTalebi_HARICIKAZI_DeleteKAPAT;
+
+    @FindBy(xpath = "(//a[@class=\"btn btn-sm btn-primary\"])[1]")
+    public WebElement hariciKaziTalebi_HARICIKAZI_EK2BUTTON;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,1 @@
+{"uuid":"89fa1477-f8c6-45ab-a8b7-90e78bc4598e","name":"Scenario: TC_01303 When EXTERNAL EXCAVATION REQUEST is clicked, the  DELETE, button on the right side regarding the added building permits should be active.","children":["af4f322e-e2eb-4825-83a0-afdedfc20272"],"befores":[],"afters":[],"start":1712300855638,"stop":1712300855652}

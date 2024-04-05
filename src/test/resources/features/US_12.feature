@@ -54,16 +54,8 @@
 
 
 
-    @01106
-    Scenario:TC_01205 When the User Request Lists/EXTERNAL EXCAVATION REQUEST heading is clicked, the functions on the page should work properly.
-      # Kullanici Talep Listeleri/HARİCİ KAZI TALEBİ basligina tiklanildiginda sayfadaki islevler düzgün calismalidir.
 
-      Given Login to HYBS site, click the Login button and log in with your User information.
 
-      * Click on the External Excavation Request link
-      * Click on the Add new External Excavation request button
-      * Add and create information in new External excavation request
-      * Edit verify new external dig request has been added
 
 
 

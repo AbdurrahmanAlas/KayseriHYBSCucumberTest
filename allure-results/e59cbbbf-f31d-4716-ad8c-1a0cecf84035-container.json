@@ -1,0 +1,1 @@
+{"uuid":"e59cbbbf-f31d-4716-ad8c-1a0cecf84035","name":"Scenario: TC_01302 When EXTERNAL EXCAVATION REQUEST is clicked, the PASSIVE, DELETE, APPENDIX-2 buttons on the right side regarding the added building permits should be active.","children":["eb5c2981-5f4c-4514-8930-62328a6e6f17"],"befores":[],"afters":[],"start":1712300495080,"stop":1712300495094}

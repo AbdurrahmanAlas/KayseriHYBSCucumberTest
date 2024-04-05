@@ -315,61 +315,6 @@ public class US_12_Stepdefinitions {
     }
 
 
-    @Given("Click on the External Excavation Request link")
-    public void click_on_the_external_excavation_request_link() {
-        pageHYBS.talepListeleriLink.click();
-
-        pageHYBS.HariciKazıTalebiLinki.click();
-
-
-    }
-    @Given("Click on the Add new External Excavation request button")
-    public void click_on_the_add_new_external_excavation_request_button() {
-
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI.click();
-
-
-
-
-    }
-    @Given("Add and create information in new External excavation request")
-    public void add_and_create_information_in_new_external_excavation_request() {
-
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıName.sendKeys("Deneme Harici Kazı");
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıPHONE.sendKeys("080181718");
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_uretıcıADDRESS.sendKeys("DenemeAdres");
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ADA.sendKeys("456");
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_PARSEL.sendKeys("3333");
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ILCESEC.click();
-
-      pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_ILCE_INPUT.sendKeys("Tomarza"+Keys.ENTER);
-
-        ReusableMethods.wait(3);
-        // Actions sınıfını kullanarak sayfayı belirli bir elemente kadar kaydırma
-    ReusableMethods.scrolldown();
-    ReusableMethods.wait(3);
-
-// Ardından kalan giriş alanlarına değerlerinizi girebilirsiniz
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DATE.click();
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_TIPSEC.click();
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_TIPSEC_INPUT.sendKeys("Dolgu" + Keys.ENTER);
-        ReusableMethods.scrolldown();
-        ReusableMethods.wait(2);
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC.click();
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_FIRMASEC_INPUT.sendKeys("ÖZGE");
-
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI.click();
-        pageHYBS.hariciKaziTalebi_YENIHARICIKAZI_DOKUMSAHASI_INPUT.sendKeys("Yılanlı" + Keys.ENTER);
-
-    }
-    @Given("Edit verify new external dig request has been added")
-    public void edit_verify_new_external_dig_request_has_been_added() {
-
-
-
-
-
-    }
 
 
 }
