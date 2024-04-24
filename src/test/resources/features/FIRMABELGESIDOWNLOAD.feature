@@ -1,4 +1,4 @@
-Feature: Firma Belgelerini indirme
+Feature: US_001 Firma Belgelerini indirme
 
   Scenario: Tum firmalarin firma belgelerini ve arac belgelerini indir
     Given Login to HYBS site, click the Login button and log in with your User information.
