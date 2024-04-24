@@ -1,1 +1,0 @@
-{"uuid":"93d9e3a1-0c74-42fb-83ea-75500298c69e","name":"Scenario: \"TC_0401 When the REVIEW (eye) button of any company is clicked, it should be directed to the page containing the DETAILS of that company.","children":["62fdf59b-6dbc-46e5-8dc7-9e6a84c44042"],"befores":[],"afters":[],"start":1709556936864,"stop":1709556936880}

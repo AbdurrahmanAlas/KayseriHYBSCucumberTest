@@ -1,1 +1,0 @@
-{"uuid":"dde6d364-9ce0-4a14-a878-34e1a148ffa2","name":"Scenario: TC_0904 When the view button on the right side is clicked in any penalty, the image uploading page should be displayed, and images related to the penalty should be uploadable.","children":["8fc499fe-9ec0-4057-a7a3-991141d97e88"],"befores":[],"afters":[],"start":1710917303232,"stop":1710917303240}

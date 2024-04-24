@@ -1139,29 +1139,92 @@ public class PageHYBS {
     @FindBy(xpath = "(//a[@class=\"btn btn-sm btn-primary\"])[1]")
     public WebElement hariciKaziTalebi_HARICIKAZI_EK2BUTTON;
 
+    @FindBy(xpath = "//a[text()=\"İnşaat Dolgu Talebi\"]")
+    public WebElement INSAATDOLGUTALEBI_link;
+    @FindBy(xpath = "//a[text()=\" Yeni İnşaat Dolgu Talebi Ekle\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BUTTON;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_firmaSec;
 
 
+    @FindBy(xpath = "(//span[@class=\"select2-selection__rendered\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_ılceDropdown;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_ılceDropdown_INPUT;
+
+    @FindBy(xpath = "(//span[@class=\"select2-selection__rendered\"])[3]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_mahalleDropdown;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_mahalleDropdown_INPUT;
 
 
+    @FindBy(xpath = "//textarea[@name=\"from_address\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_NEREDEN;
 
 
+    @FindBy(xpath = "//textarea[@name=\"to_address\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_NEREYE;
+
+    @FindBy(xpath = "//input[@id=\"id_from_lot\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BASLANGIC_ADA;
 
 
+    @FindBy(xpath = "//input[@id=\"id_from_plot\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BASLANGIC_PARSEL;
+
+    @FindBy(xpath = "(//span[@class=\"select2-selection__rendered\"])[4]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BASLANGIC_ILCE;
+
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BASLANGIC_ILCE_INPUT;
+
+    @FindBy(xpath = "//input[@id=\"id_to_lot\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BITIS_ADA;
 
 
+    @FindBy(xpath = "//input[@id=\"id_to_plot\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BITIS_PARSEL;
+
+    @FindBy(xpath = "(//span[@class=\"select2-selection__rendered\"])[5]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BITIS_ILCE;
 
 
+    @FindBy(xpath = "(//input[@class=\"select2-search__field\"])[2]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_BITIS_ILCE_INPUT;
+
+    @FindBy(xpath = "//input[@id=\"id_truck_number\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_ARACSAYISI;
 
 
+    @FindBy(xpath = "//input[@id=\"id_caller\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_TALEPEDENKISI;
+
+    @FindBy(xpath = "//input[@id=\"id_phone\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_TALEPEDENTELEFON;
 
 
+    @FindBy(xpath = "//button[text()=\"Oluştur\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_OLUSTURBUTTON;
 
 
+    @FindBy(xpath = "(//i[@class=\"fa fa-edit\"])[4]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_GUNCELLE_BUTTON;
+
+    @FindBy(xpath = "(//i[@class=\"fa fa-minus\"])[3]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_SIL_BUTTON;
+
+    @FindBy(xpath = "(//i[@class=\"fa fa-eye\"])[3]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_YUKLENENBELGE;
+
+    @FindBy(xpath = "//button[text()=\"İptal Et\"]")
+    public WebElement yeniINSAATDOLGUTALEBIEKLE_SIL_IPTALET;
 
 
-
-
-
+    @FindBy(xpath = "//a[text()=\"Yapı Ruhsatlı İş Süreci\"]")
+    public WebElement yapıRuhsatlıIsSurecılink;
 
 
 

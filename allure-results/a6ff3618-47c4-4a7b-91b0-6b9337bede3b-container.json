@@ -1,1 +1,0 @@
-{"uuid":"a6ff3618-47c4-4a7b-91b0-6b9337bede3b","name":"Scenario: TC_0906 When the \"ADD PENALTY\" button located in the top right corner of the Penalty List page is clicked, a new penalty should be added smoothly.","children":["438a68f7-92e8-4c43-a112-01db2bedb6e8"],"befores":[],"afters":[],"start":1710933370660,"stop":1710933370670}
