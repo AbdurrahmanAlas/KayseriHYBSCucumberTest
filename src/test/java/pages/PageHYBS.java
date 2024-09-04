@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.List;
+
+import static utilities.Driver.driver;
 
 public class PageHYBS {
 
@@ -1227,15 +1230,48 @@ public class PageHYBS {
     public WebElement yapıRuhsatlıIsSurecılink;
 
 
+    @FindBy(xpath = "//span[text()=\"Küçük Araç\"]")
+    public WebElement KucukAracModuluLink;
+
+    @FindBy(xpath = "//a[text()=\"Küçük Araç İşlemleri\"]")
+    public WebElement KucukAracIslemleriLink;
+
+
+    @FindBy(xpath = "//a[text()=\" Küçük Araç Ekle\"]")
+    public WebElement KucukAracEkleButton;
+
+
+    @FindBy(id = "id_plate")
+    public WebElement plateInput;
+
+    @FindBy(id = "id_tax_id")
+    public WebElement kucukAractaxId;
+
+
+    @FindBy(id = "id_name")
+    public WebElement kucukAracnameInput;
+
+    @FindBy(id = "id_surname")
+    public WebElement kucukAracSurnameInput;
+
+
+    @FindBy(xpath = "//span[@class=\"select2-selection__rendered\"]")
+    public WebElement kucukAracTipiDropdownn;
+
+    @FindBy(xpath = "//input[@class=\"select2-search__field\"]")
+    public WebElement kucukAracTipiDropdownnInput;
+
+
+    @FindBy(xpath = "//input[@id=\"id_gsm\"]")
+    public WebElement kucukAracTipiTelefon;
+
+    @FindBy(xpath = "//input[@id=\"id_email\"]")
+    public WebElement kucukAracTipigmail;
 
 
 
-
-
-
-
-
-
+    @FindBy(xpath = "(//button[text()=\"Ekle\"])[1]")
+    public WebElement kucukAracTipiEKLEBUTTON;
 
 
 
