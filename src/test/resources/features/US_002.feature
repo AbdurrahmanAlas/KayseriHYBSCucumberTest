@@ -16,8 +16,8 @@ Feature: US_002 The appearance of the Home Page, Operation Module, Demand Lists,
             #      * Kullanıcının Ana Sayfa, İş Modülü, Talep Listeleri, Su ve Temizlik Talep Listeleri bağlantılarına gittiği doğrulanmalıdır.
             #      * Ana Sayfa bağlantısının açıldığını doğrulayın
             #      * BusinessModule bağlantısının açıldığını doğrulayın
-            #      *RequestLists bağlantısının açıldığını doğrulayın
-            #      * Su ve Sanitasyon Talep Listeleri bağlantısının açıldığını doğrulayın
+            #      * RequestLists bağlantısının açıldığını doğrulayın
+            #      * Su ve Kanalizazyon Talep Listeleri bağlantısının açıldığını doğrulayın
 
 
 

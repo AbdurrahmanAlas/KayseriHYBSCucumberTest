@@ -12,7 +12,7 @@ Feature: US_001 Site login scenario with user information
 
       # Özellik: US_001 Kullanıcı bilgileriyle siteye giriş senaryosu
       #    # Ana Sayfaya kullanıcı giriş senaryosu
-      #
+
       #    Senaryo: TC_0101 Doğru Kullanıcı Adı ve Şifreyle Giriş Yapın
       #      HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
       #      * İstenilen sayfaya gittiği doğrulandı

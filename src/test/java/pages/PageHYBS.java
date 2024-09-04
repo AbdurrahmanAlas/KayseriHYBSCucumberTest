@@ -209,10 +209,10 @@ public class PageHYBS {
     public WebElement cleancompanyEVET;
 
 
-    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[1]/div[1]/div/div")
+    @FindBy(xpath = "//*[@id=\"name_filter\"]")
     public WebElement nameInput;
 
-    @FindBy(xpath = "//*[@id=\"company_form\"]/fieldset/div[3]/div[1]/div/div")
+    @FindBy(xpath = "//*[@id=\"phone_filter\"]")
     public WebElement phoneInput;
 
     @FindBy(id = "province_filter")
@@ -283,6 +283,10 @@ public class PageHYBS {
 
     @FindBy(linkText = "Yeni Firma")
     public WebElement newCompanyButton;
+
+
+    @FindBy(xpath = "//*[@class=\"fa fa-file-excel-o\"]")
+    public WebElement excelbuttoncompany;
 
 
     // Locatorlar

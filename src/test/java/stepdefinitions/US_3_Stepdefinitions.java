@@ -153,7 +153,6 @@ public class US_3_Stepdefinitions {
     public void the_system_should_confirm_that_it_is_on_the_new_company_page_then_enter_the_company_information_and_finally_press_the_button_to_add_the_new_company_seamlessly() {
 
 
-
         // Alanları doldurma
         pageHYBS.taxIdInputt.sendKeys("1234567890");
         ReusableMethods.wait(1);
@@ -178,12 +177,12 @@ public class US_3_Stepdefinitions {
 
         pageHYBS.companyAddilceLIST.click();
         ReusableMethods.wait(3);
-        pageHYBS.companyAddLıstINPUT.sendKeys("Talas"+Keys.ENTER);
+        pageHYBS.companyAddLıstINPUT.sendKeys("Talas" + Keys.ENTER);
         ReusableMethods.scrolldown_bypixel_2000();
         ReusableMethods.wait(6);
         pageHYBS.vergidairesiLİST.click();
         ReusableMethods.wait(2);
-        pageHYBS.vergidairesiLİSTINPUT.sendKeys("MİMARSİNAN VERGİ DAİRESİ"+ Keys.ENTER);
+        pageHYBS.vergidairesiLİSTINPUT.sendKeys("MİMARSİNAN VERGİ DAİRESİ" + Keys.ENTER);
 
 
         actions.sendKeys(Keys.PAGE_DOWN);
@@ -192,16 +191,16 @@ public class US_3_Stepdefinitions {
 
 
         ReusableMethods.wait(3);
-      pageHYBS.companyAddHAFRIYATCIKAMULIST.click();
-      ReusableMethods.wait(1);
-      pageHYBS.companyAddHAFRIYATCIKAMUINPUT.sendKeys("Kamu" + Keys.ENTER);
+        pageHYBS.companyAddHAFRIYATCIKAMULIST.click();
+        ReusableMethods.wait(1);
+        pageHYBS.companyAddHAFRIYATCIKAMUINPUT.sendKeys("Kamu" + Keys.ENTER);
 
 
         actions.sendKeys(Keys.PAGE_DOWN);
         actions.sendKeys(Keys.PAGE_DOWN);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
-      pageHYBS.companyAddaddressINPUT.sendKeys("YENİ MAHALLE ABDURRAHMAN");
+        pageHYBS.companyAddaddressINPUT.sendKeys("YENİ MAHALLE ABDURRAHMAN");
 
     }
 }

@@ -33,8 +33,8 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
       * User should be able to click on OPERATION MODULE
       * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
       * click user passive radiobutton and verify user passive list
-    * click cleaning company radiobutton and verify cleaning company list
-    * click black list radiobutton and black list
+      * click cleaning company radiobutton and verify cleaning company list
+      * click black list radiobutton and black list
 
 
      Scenario: TC0304 Searchbox Lara should be listed according to the categories to be searched when you are clicking on ong by one.
@@ -45,7 +45,12 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
        * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
        * When the user clicks on the SearchBoxes one by one, a listing should be made according to the categories to be searched."
 
-       #degisiklik deneme
+
+       # HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+       #       * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
+       #       *Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
+       #       * Kullanıcı SearchBox'lara tek tek tıkladığında aranacak kategorilere göre listeleme yapılmalıdır."
+
 
 
 
@@ -59,3 +64,21 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
          * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
          * click new company button
          * The system should confirm that it is on the New Company page,then enter the company information, and finally press the button to add the new company seamlessly.
+
+
+         # Senaryo: TC0304 Yeni şirket sayfasında olduğu belirlenmeli ve şirket bilgileri girilerek yeni şirket sorunsuz bir şekilde eklenmelidir.
+
+         #   HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+         #   * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
+         #   * Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
+         #   * yeni şirket düğmesine tıklayın
+         #   * Sistem Yeni Şirket sayfasında olduğunu doğrulamalı, ardından şirket bilgilerini girmeli ve son olarak yeni şirketi sorunsuz bir şekilde eklemek için butona basmalıdır.
+
+
+       Scenario:  TC0305 Firma Listesi sayfasında EXCEL alma butonu olmalı ve sistemdeki AKTİF PASİF SİLİNEN tüm firmalar excele aktarılabilmelidir.
+
+         Given Login to HYBS site, click the Login button and log in with your User information.
+         * User should be able to click on OPERATION MODULE
+         * click companylist button
+         * click excel button
+
