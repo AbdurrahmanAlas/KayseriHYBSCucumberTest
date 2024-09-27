@@ -68,17 +68,11 @@ Feature: US_003 When the user has climbed to the company, the relevant titles sh
 
          # Senaryo: TC0304 Yeni şirket sayfasında olduğu belirlenmeli ve şirket bilgileri girilerek yeni şirket sorunsuz bir şekilde eklenmelidir.
 
-         #   HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+         #    HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
          #   * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
          #   * Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
          #   * yeni şirket düğmesine tıklayın
          #   * Sistem Yeni Şirket sayfasında olduğunu doğrulamalı, ardından şirket bilgilerini girmeli ve son olarak yeni şirketi sorunsuz bir şekilde eklemek için butona basmalıdır.
 
 
-       Scenario:  TC0305 Firma Listesi sayfasında EXCEL alma butonu olmalı ve sistemdeki AKTİF PASİF SİLİNEN tüm firmalar excele aktarılabilmelidir.
-
-         Given Login to HYBS site, click the Login button and log in with your User information.
-         * User should be able to click on OPERATION MODULE
-         * click companylist button
-         * click excel button
 

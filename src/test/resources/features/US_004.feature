@@ -14,16 +14,28 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     *  Company Name and Registration number must appear.
 
 
+       #HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+       #    * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
+       #    *Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
+       #    * göz inceleme simgesine tıklayın
+       #    * Firma Adı ve Sicil numarası görünmelidir.
+
   Scenario: "TC_0402 The company's BALANCE, ATS DOCUMENT EXTEND, BLACKLIST buttons should be visible and their functions should work properly when clicked.
         # Firmaya ait BAKİYE, ATS BELGE SÜRESİ UZAT ,KARALİSTEYE AL butonlari görüntülenebilmeli ve tiklandiginda fonksiyonlari düzgün calisabilmelidir
 
     Given Login to HYBS site, click the Login button and log in with your User information.
-    * User should be able to click on OPERATION MODULE
-    * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
+    *  User should be able to click on OPERATION MODULE
+    *  The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     *  click on the inspect eye icon
     *  The company's BALANCE, ATS DOCUMENT EXTEND, BLACKLIST buttons should be visible
-    * The company's BALANCE, ATS DOCUMENT EXTEND, BLACKLIST and their functions should work properly when clicked.
+    *  The company's BALANCE, ATS DOCUMENT EXTEND, BLACKLIST and their functions should work properly when clicked.
 
+    #    HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+    #    * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
+    #    *Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
+    #    * göz inceleme simgesine tıklayın
+    #    * Firmanın BAKİYE, ATS BELGE UZATMA, KARA LİSTE butonları görünür olmalıdır.
+    #    * Firmanın BAKİYE, ATS BELGE UZATMA, KARA LİSTE ve fonksiyonları tıklandığında düzgün çalışmalıdır.
 
   Scenario: TC_0403  Company Information, Company Personnel, Company Users, Company Documents, Vehicles, Vehicle Documents, Financial Transactions, TİB, Balance Movements, Call List,
   Construction Fill List, Penalty List, Complaint List, COMMITMENT links should be displayed and when the relevant title is clicked, it should be navigated smoothly.
@@ -35,6 +47,14 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     *  click on the inspect eye icon
     * the user clicks on Company_Information,Company_Personnel,Company_Users,Company_Documents,Vehicles,Vehicle_Documents,Financial_Transactions,TIB,Balance_Movements,Call_List,Construction_Fill_List,Penalty_List,Complaint_List,CONTRACT link
+
+   # Senaryo: TC_0403 Şirket Bilgileri, Şirket Personeli, Şirket Kullanıcıları, Şirket Evrakları, Araçlar, Araç Evrakları, Mali İşlemler, TİB, Bakiye Hareketleri, Çağrı Listesi,
+   #  İnşaat Dolum Listesi, Ceza Listesi, Şikayet Listesi, TAAHHÜT linkleri görüntülenmeli ve ilgili başlığa tıklandığında sorunsuz bir şekilde gezinilmelidir.
+   #    HYBS sitesine giriş yapıldıktan sonra Giriş butonuna tıklayın ve Kullanıcı bilgilerinizle giriş yapın.
+   #    * Kullanıcı İŞLEM MODÜLÜ'ne tıklayabilmelidir
+   #    *Kullanıcı FİRMA LİSTESİ linkine tıklayıp ilgili sayfaya gider ve firmalara ait bilgilerin listelenip listelenmediği test edilir."
+   #    * göz inceleme simgesine tıklayın
+   #    * kullanıcı Şirket_Bilgileri,Şirket_Personeli,Şirket_Kullanıcıları,Şirket_Belgeleri,Taşıtlar,Araç_Belgeleri,Finansal_İşlemler,TİB,Bakiye_Hareketleri,Çağrı_Listesi,İnşaat_Doldurma_Listesi,Ceza_Listesi,Şikayet_Listesi,SÖZLEŞME linkine tıklar
 
 
   Scenario: TC_0404  When you click on the INFORMATION and COMPANY USERS heading, the entered
@@ -85,7 +105,6 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * the user enters CompanyDocuments new information the user verifies that the information is enter
 
 
-
   Scenario: TC_0407 When you click on the "VEHİCLE  " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
   "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
 
@@ -129,7 +148,6 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * clicked on the TIB header, the relevant page should appear, and the ATS APPROVAL CODE should be entered."
 
 
-
   Scenario: TC_0411 When you click on the "BALANCE TRANSACTIONS " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
   "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
 
@@ -137,7 +155,7 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * User should be able to click on OPERATION MODULE
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     * click on the inspect eye icon
-   * When clicked on the BALANCE TRANSACTIONS header, the relevant page should appear. Users should be able to perform queries smoothly using the Search box and checkboxes
+    * When clicked on the BALANCE TRANSACTIONS header, the relevant page should appear. Users should be able to perform queries smoothly using the Search box and checkboxes
 
   Scenario: TC_0412 When you click on the "CALL LIST, CONSTRUCTION FILLER LIST, PENALTY LIST, COMPLAINT LIST, " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
   "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
@@ -147,7 +165,8 @@ Feature: US_004 When the user clicks on the BusinessModule/CompanyList/REVIEW(ey
     * The user clicks on the COMPANY LIST link and goes to the relevant page, and it is tested that the information about the companies is listed."
     * click on the inspect eye icon
     * When you click on the CALL LIST, CONSTRUCTION FILLER LIST, PENALTY LIST, COMPLAINT LIST, the relevant page should appear. and querying can be done without any problems with Searchbox and checkboxes.
-@ye
+
+  @ye
   Scenario: TC_0413 When you click on the "TAAHHUTNAME " heading, the relevant page should appear and when we add a new company personnel, it should be added without any problems and the added Personnel should be listed on the right.
   "When we add a new company document, it should be added without any problems and the added document should be listed on the right."
 
